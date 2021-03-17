@@ -1,0 +1,27 @@
+.Message-Container {
+    display: sticky;
+
+    width: 100vw;
+    height: 150px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.Message {
+    font-size: 22px;
+    width: 90%;
+    line-height: 50px;
+    font-family: 'Open sans',sans-serif;
+    text-align: center;
+}
+
+
+@media only screen and (min-width: 300px) {
+    .Message {
+        font-size: 18px;
+        line-height: normal;
+    }
+}
