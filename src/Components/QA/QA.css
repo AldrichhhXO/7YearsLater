@@ -1,0 +1,50 @@
+.QA {
+    width: 100%;
+    text-align: center;
+}
+
+
+.QA p {
+    font-size: 'Open sans', sans-serif;
+}
+
+.Section-Header {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 23px;
+}
+
+.Section-Border {
+    width: 20%;
+    margin: 30px auto;
+}
+
+.QA-Message {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 18px;
+    font-family: 'Open sans',  sans-serif;
+}
+
+
+.Questions-Container {
+    width:  70%;
+    margin: 50px auto;
+}
+
+.QA-Question {
+    text-align: left;
+    font-size: 20px;
+}
+
+.QA-Question strong {
+    margin-right: 15px;
+}
+
+
+.QA-Response {
+    width:  80%;
+    font-size: 16px;
+    margin: 0 auto;
+    line-height: 25px;
+    margin-bottom: 30px;;
+}

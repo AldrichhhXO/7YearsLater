@@ -28,5 +28,5 @@ const storyText2= "Anthony stood behind me, arms wrapped tightly across my chest
 
 const storyText3 = "I looked up at him bursting in laughter, thinking to myself, FINALLY! " +
 "I’ve loved him since our college days, although I made sure not to be the first one to admit it." +
-"I love you too, baby"
+' "I love you too, baby"'
 

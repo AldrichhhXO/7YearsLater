@@ -7,8 +7,10 @@ import './Landing.css'
 
 
 /* Right side Components */
+import EventSummary from '../../Components/EventSummary/EventSummary'
 import Story from '../../Components/Story/Story'
 import Schedule from '../../Components/Schedule/Schedule'
+import QA from '../../Components/QA/QA'
 
 
 let countdown = new Date("Jul 29, 2021 16:00:00").getTime();
@@ -26,19 +28,15 @@ let x = setInterval(() => {
 })
 
 export default function Landing() {
+
+    document.title = "Reboja | Dorsey"
+
     return (
         <div>
+            
             <div className = "Carousel"></div>
             <div className = "Right-Section">
-                <div className = "First">
-                    <div>
-                        <p className = "Location">Rancho Palos Verdes, CA, USA</p>
-                        <p className = "Date">Thursday, 29 2021</p>
-                        <p className = "Time"></p>
-                    </div>
-
-                    <button className =  "RSVP-Button">RSVP</button>
-                </div>
+                <EventSummary />
                 <Story />
 
                 <div className ="About">
@@ -47,6 +45,7 @@ export default function Landing() {
                     <div className = "Video-Placeholder"></div>
                 </div>
                 <Schedule />
+                <QA />
             </div>
         </div>
     )
