@@ -13,9 +13,15 @@ import Schedule from '../../Components/Schedule/Schedule'
 import QA from '../../Components/QA/QA'
 
 
-let countdown = new Date("Jul 29, 2021 16:00:00").getTime();
 
-let x = setInterval(() => {
+
+export default function Landing() {
+
+    document.title = "Reboja | Dorsey"
+
+    let countdown = new Date("Jul 29, 2021 16:00:00").getTime();
+
+    let x = setInterval(() => {
     let now = new Date().getTime();
     // Find distance between the two.
     let amount = countdown - now;
@@ -26,10 +32,6 @@ let x = setInterval(() => {
     let seconds = Math.floor((amount % (1000 * 60)) / 1000);
     document.getElementsByClassName("Time")[0].innerHTML  = days  + " Days " + hours + " Hrs " + minutes + " Mins " + seconds + " Secs"
 })
-
-export default function Landing() {
-
-    document.title = "Reboja | Dorsey"
 
     return (
         <div>

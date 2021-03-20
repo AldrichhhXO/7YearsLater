@@ -1,0 +1,60 @@
+.Admin-Login-Form {
+    width: 40%;
+    height:  550px;
+    max-width: 500px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    ;
+}
+
+
+.Admin-Login-Form-Title {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    margin-top: 65px;
+    font-size: 27px;
+    font-weight: 900;
+}
+
+.Admin-Login-Form hr {
+    width: 33%;
+    height: 1px;
+    background-color: gray;
+    margin-bottom: 30px;
+}
+
+.Form-Element {
+    width: 70%;
+    margin-bottom: 30px;
+}
+
+
+.Form-Element label {
+    font-size: 22px;
+    font-family: 'Open sans', sans-serif;
+   
+}
+
+.Form-Element input {
+   height: 30px;
+   font-size: 18px;
+   width: 90%;
+   margin-top: 20px;
+   margin-left: 20px;;
+   text-indent: 20px;
+   font-family: 'Open sans', sans-serif;
+   padding: 5px 0px;
+}
+
+
+.Admin-Login-Form input[type=submit] {
+    margin-top: 20px;
+    width: 35%;
+    height: 35px;
+    font-size: 18px;
+    border: 1px solid black;
+    background-color: inherit;
+    font-family: 'Open sans', sans-serif;
+    cursor: pointer;
+}
