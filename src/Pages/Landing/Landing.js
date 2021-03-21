@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import CovidMessage from '../../Components/CovidMessage/CovidMessage'
 
@@ -17,26 +17,15 @@ import QA from '../../Components/QA/QA'
 
 export default function Landing() {
 
+
     document.title = "Reboja | Dorsey"
-
-    let countdown = new Date("Jul 29, 2021 16:00:00").getTime();
-
-    let x = setInterval(() => {
-    let now = new Date().getTime();
-    // Find distance between the two.
-    let amount = countdown - now;
-    // Time Calculation
-    let days = Math.floor(amount/ (1000 * 60 * 60 * 24))
-    let hours = Math.floor((amount % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((amount % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((amount % (1000 * 60)) / 1000);
-    document.getElementsByClassName("Time")[0].innerHTML  = days  + " Days " + hours + " Hrs " + minutes + " Mins " + seconds + " Secs"
-})
 
     return (
         <div>
             
-            <div className = "Carousel"></div>
+            <div className = "Carousel">
+
+            </div>
             <div className = "Right-Section">
                 <EventSummary />
                 <Story />
@@ -44,7 +33,18 @@ export default function Landing() {
                 <div className ="About">
                     <h1>About us</h1>
                     <hr />
-                    <div className = "Video-Placeholder"></div>
+                    <div className = "Video-Placeholder">
+                        <iframe 
+                            width = "100%"
+                            height = "100%"
+                            src="https://www.youtube.com/embed/kSndLA81dwg?modestbranding=1&rel=0" 
+                            title="YouTube video player" 
+                            frameBorder="0" 
+                            allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" 
+                            
+                            allowFullScreen = "allowFullScreen">
+                        </iframe>
+                    </div>
                 </div>
                 <Schedule />
                 <QA />

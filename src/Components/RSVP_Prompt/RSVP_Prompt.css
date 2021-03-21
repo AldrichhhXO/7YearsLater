@@ -1,0 +1,57 @@
+.RSVP-Prompt {
+    width: 40%;
+    height: 500px;
+    box-shadow: 5px 10px 10px rgba(0,0,0,0.07), -5px -10px 10px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.RSVP-Prompt h1, p {
+    text-align: center;
+}
+
+.RSVP-Prompt input {
+    height: 30px;
+    margin-bottom: 20px;
+    text-indent: 15px;
+    font-size: 17px;
+    padding: 5px 0px;
+    font-family: 'Open sans', sans-serif;
+}
+
+.RSVP-Prompt input[type=text]:first-child {
+    margin-right: 25px;
+}
+
+.RSVP-Prompt input[type=email] {
+    width: 40%;
+}
+
+.RSVP-Title {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 35px;
+}
+
+.RSVP-Text {
+    font-family: 'Open sans', sans-serif;
+}
+
+.Next-Button {
+    color: teal;
+    text-decoration: none;
+    border: 1px solid teal;
+    width: 20%;
+    height: 35px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.125s;
+}
+
+.Next-Button:hover {
+    background-color: teal;
+    color: white;
+}
