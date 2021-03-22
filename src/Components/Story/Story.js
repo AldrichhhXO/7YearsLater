@@ -9,7 +9,7 @@ export default function Story() {
     return (
         <div className = "Story">
             <h1>Story</h1>
-            <hr />
+            <hr style = {{marginBottom: '70px'}}/>
             <p className = "Story-Text">{storyText}</p>
             <br />
             <p className = "Story-Text">{storyText2}</p>

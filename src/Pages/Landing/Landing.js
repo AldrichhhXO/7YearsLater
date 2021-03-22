@@ -5,6 +5,9 @@ import CovidMessage from '../../Components/CovidMessage/CovidMessage'
 import CenteredLayout from '../../Layout/CenteredLayout/CenteredLayout'
 import './Landing.css'
 
+// Carousel Component
+import Carousel from '../../Components/Carousel/Carousel'
+
 
 /* Right side Components */
 import EventSummary from '../../Components/EventSummary/EventSummary'
@@ -24,7 +27,8 @@ export default function Landing() {
         <div>
             
             <div className = "Carousel">
-
+                <Carousel />
+                <div className = "Time-Text">TEST TEXT</div>
             </div>
             <div className = "Right-Section">
                 <EventSummary />

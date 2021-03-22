@@ -1,12 +1,17 @@
 .Carousel {
     width: 61%;
-    background: url(../../images/Wedding.jpeg);
     height: 100vh;
     float: left;
 
     /* Sticky so  that only the right moves */
     position: fixed;
     top: 0px;
+}
+
+.Time-Text {
+    position: absolute;
+    z-index: 1;
+    
 }
 
 .Right-Section {

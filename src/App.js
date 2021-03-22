@@ -6,7 +6,9 @@ import Landing from './Pages/Landing/Landing'
 
 import Admin from './Pages/Admin/Admin'
 import Dashboard from './Pages/Admin/Dashboard/Dashboard'
+
 import RSVP from './Pages/RSVP/RSVP'
+import Questionaire from './Pages/Questionaire/Questionaire'
 
 import Error from './Pages/Error/Error'
 
@@ -19,6 +21,7 @@ function App() {
 
         {/** RSVP Route */}
         <Route exact path = "/rsvp" render = {() => <RSVP /> } />
+        <Route exact path = "/rsvp/qa" render = {() => <Questionaire /> } />
 
         {/** Admin Routes */}
         <Route exact path = "/admin" render = {() => <Admin />}/>

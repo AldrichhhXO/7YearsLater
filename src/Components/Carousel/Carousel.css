@@ -1,0 +1,54 @@
+.Slide-Image{
+    width: 100%;
+    height: 100vh;
+}
+
+
+
+.Image1 {
+    background: url(../../images/Carousel/image1.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+.Image2 {
+    background: url(../../images/Carousel/image2.jpeg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+}
+
+.Image3 {
+    background: url(../../images/Carousel/image3.jpeg);
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.Image4 {
+    background: url(../../images/Carousel/image4.jpeg);
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.Image5 {
+    background: url(../../images/Carousel/image5.jpeg);
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.Image6 {
+    background: url(../../images/Carousel/image6.jpeg);
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.Image7 {
+    background: url(../../images/Carousel/image7.jpeg);
+    background-size: cover;
+    background-position: center;
+    
+}
