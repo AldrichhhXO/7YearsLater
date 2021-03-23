@@ -7,6 +7,7 @@ import './Landing.css'
 
 // Carousel Component
 import Carousel from '../../Components/Carousel/Carousel'
+import MenuBar from '../../Components/MenuBar/MenuBar'
 
 
 /* Right side Components */
@@ -19,18 +20,20 @@ import QA from '../../Components/QA/QA'
 
 
 export default function Landing() {
-
-
     document.title = "Reboja | Dorsey"
 
     return (
         <div>
-            
+
             <div className = "Carousel">
+            <MenuBar />
                 <Carousel />
-                <div className = "Time-Text">TEST TEXT</div>
+           
+               {/** <Carousel /> */} 
+                
             </div>
             <div className = "Right-Section">
+           
                 <EventSummary />
                 <Story />
 
@@ -49,6 +52,7 @@ export default function Landing() {
                             allowFullScreen = "allowFullScreen">
                         </iframe>
                     </div>
+                    
                 </div>
                 <Schedule />
                 <QA />

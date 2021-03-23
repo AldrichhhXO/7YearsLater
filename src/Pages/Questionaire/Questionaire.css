@@ -1,4 +1,4 @@
-.Questionairee-Container {
+.Questionaire-Container {
 
 }
 
@@ -74,4 +74,36 @@
 .Answer-Choice:hover {
     background-color: black;
     color: white;
+}
+
+
+/*
+    Media Queries
+*/
+
+@media only screen and (min-width: 300px) {
+    .Left-Image {
+        display: none;
+    }
+
+    .Right-Content {
+        width: 100%;
+    }
+
+    .Questionaire {
+        width: 85%;
+        max-width: 450px;
+    }
+}
+
+
+@media only screen and (min-width: 1100px) {
+    .Left-Image {
+        display: block;
+       
+    }
+
+    .Right-Content {
+        width: 40%;
+    }
 }

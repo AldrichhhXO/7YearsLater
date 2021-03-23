@@ -1,5 +1,5 @@
 .RSVP-Prompt {
-    width: 40%;
+    width: 550px;
     height: 500px;
     box-shadow: 5px 10px 10px rgba(0,0,0,0.07), -5px -10px 10px rgba(0,0,0,0.04);
     display: flex;

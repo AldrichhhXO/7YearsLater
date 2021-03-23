@@ -100,6 +100,7 @@
 
 
 
+
 @media only screen and (min-width: 300px) {
     .Carousel {
         display: none;
@@ -114,6 +115,7 @@
 @media only screen and (min-width: 1200px) {
     .Carousel {
         display: block;
+        
     }
 
     .Right-Section {
