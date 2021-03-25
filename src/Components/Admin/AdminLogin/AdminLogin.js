@@ -10,9 +10,14 @@ export default class AdminLogin extends Component {
         document.title = "Reboja | Dorsey - ADMIN"
     }
 
+    handleSubmit() {
+        alert('/')
+        window.location = "/dashboard"
+    }
+
     render() {
         return (
-            <form className = "Admin-Login-Form">
+            <form className = "Admin-Login-Form" onSubmit = {this.handleSubmit}>
                 <h1 className = "Admin-Login-Form-Title">Welcome Melissa & Anthony</h1>
                 <hr />
                 <div className = "Form-Element">

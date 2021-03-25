@@ -3,6 +3,12 @@ import CenteredLayout from '../../Layout/CenteredLayout/CenteredLayout'
 import './Questionaire.css'
 
 export default class Questionaire extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            Answers: []
+        }
+    }
 
     componentDidMount() {
         document.title = "Reboja | Dorsey - RSVP Questions"
@@ -26,7 +32,7 @@ export default class Questionaire extends Component {
                             <div className = "Answer-Choice">Answer Here</div>
                             <div className = "Answer-Choice">Answer Here</div>
                         </div>
-
+                    
                     </div>
 
                 </div>

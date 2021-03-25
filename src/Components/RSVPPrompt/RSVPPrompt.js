@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import './RSVP_Prompt.css'
+import './RSVPPrompt.css'
 
 export default class RSVP_Prompt extends Component {
     constructor(props) {

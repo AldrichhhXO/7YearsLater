@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import CenteredLayout from  '../../Layout/CenteredLayout/CenteredLayout'
 
-import RSVP_Prompt from '../../Components/RSVP_Prompt/RSVP_Prompt'
+import RsvpPrompt from '../../Components/RSVPPrompt/RSVPPrompt'
 export default class RSVP extends Component {
     render() {
 
@@ -10,7 +10,7 @@ export default class RSVP extends Component {
 
         return (
             <CenteredLayout>
-                <RSVP_Prompt />
+                <RsvpPrompt />
             </CenteredLayout>
         )
     }
