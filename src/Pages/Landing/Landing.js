@@ -18,7 +18,8 @@ import CovidInformation from '../../Components/Landing/CovidInformation/CovidInf
 import QA from '../../Components/Landing/QA/QA'
 
 
-
+import MenuBar from '../../Components/Landing/MenuBar/MenuBar'
+import MenuOptions from '../../Components/Landing/MenuOptions/MenuOptions'
 
 export default function Landing() {
     document.title = "Reboja | Dorsey"
@@ -27,14 +28,17 @@ export default function Landing() {
         <div>
             
             <div className = "Carousel">
+                <MenuOptions />
+                <MenuBar />
                 <Carousel />
                 <div className = "Time-Text">TEST TEXT</div>
             </div>
             <div className = "Right-Section">
+                
                 <EventSummary />
                 <Story />
 
-                <div className ="About">
+                <div className ="About" id = "about">
                     <h1>About us</h1>
                     <hr />
                     <div className = "Video-Placeholder">
@@ -52,7 +56,7 @@ export default function Landing() {
                 </div>
                 <Schedule />
                 <Travel />
-
+                <br id = 'gifts'/>
                 <h1 className = "Section-Header">Gifts</h1>
                 <hr className = "Section-Border" />
                 <p style = {{width: '70%', lineHeight: '30px', fontFamily: 'Open sans, sans serif'}}>Your love, laughter, & company on our wedding day is the greatest gift of all that you could give us.  No gifts are needed or expected.</p>

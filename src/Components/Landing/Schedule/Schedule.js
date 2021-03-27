@@ -3,7 +3,7 @@ import "./Schedule.css"
 
 export default function Schedule() {
     return (
-        <div className = "Schedule-Container">
+        <div className = "Schedule-Container" id = 'schedule'>
             <h1>Schedule</h1>
             <hr />
 
@@ -32,7 +32,7 @@ export default function Schedule() {
                 </div>
 
                 <p>Dress code: Semi-formal or Dressy Casual.</p>
-                <p>The ceremony will be held indoors, cliffside, and the reception will be held outdoors, by the ocean.  Ladies should opt for something comfortable and light, paired with heels of your choice - as we will mainly be on concrete floors.  Fellas can simply wear a dress shirt and slacks, with the option of a tie.  If you wish to match the theme of our wedding, 	opt for vibrant & festive colors.</p>
+                <p className = "Section-Text" style = {{margin: 'auto', width: '95%', marginTop: '50px', marginBottom: '50px'}}>The ceremony will be held indoors, cliffside, and the reception will be held outdoors, by the ocean.  Ladies should opt for something comfortable and light, paired with heels of your choice - as we will mainly be on concrete floors.  Fellas can simply wear a dress shirt and slacks, with the option of a tie.  If you wish to match the theme of our wedding, 	opt for vibrant & festive colors.</p>
             </div>
         </div>
     )
