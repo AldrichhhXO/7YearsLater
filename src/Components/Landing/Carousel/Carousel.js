@@ -4,7 +4,6 @@ import { Swiper , SwiperSlide } from 'swiper/react'
 import 'swiper/swiper.scss'
 import './Carousel.css'
 
-import image1 from '../../images/Carousel/image1.jpeg'
 
 SwiperCore.use([Autoplay]);
 

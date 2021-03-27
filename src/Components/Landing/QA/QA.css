@@ -15,12 +15,14 @@
 
 .Section-Border {
     width: 20%;
-    margin: 30px auto;
+    margin: auto;
+    margin-bottom: 30px;
 }
 
 .QA-Message {
     width: 80%;
-    margin: 0 auto;
+    margin: auto;
+    margin-bottom: 70px;
     font-size: 18px;
     font-family: 'Open sans',  sans-serif;
 }
@@ -33,7 +35,11 @@
 
 .QA-Question {
     text-align: left;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 30px;
     font-size: 20px;
+    font-family: 'Open sans',  sans-serif;
 }
 
 .QA-Question strong {
@@ -46,5 +52,6 @@
     font-size: 16px;
     margin: 0 auto;
     line-height: 25px;
-    margin-bottom: 30px;;
+    margin-bottom: 50px;
+    font-family: 'Open sans',  sans-serif;
 }

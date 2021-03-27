@@ -1,26 +1,26 @@
 import React, { useEffect } from 'react'
 
-import CovidMessage from '../../Components/CovidMessage/CovidMessage'
+import CovidMessage from '../../Components/Landing/CovidMessage/CovidMessage'
 
 import CenteredLayout from '../../Layout/CenteredLayout/CenteredLayout'
 import './Landing.css'
 
 // Carousel Component
-import Carousel from '../../Components/Carousel/Carousel'
+import Carousel from '../../Components/Landing/Carousel/Carousel'
 
 
 /* Right side Components */
-import EventSummary from '../../Components/EventSummary/EventSummary'
-import Story from '../../Components/Story/Story'
-import Schedule from '../../Components/Schedule/Schedule'
-import QA from '../../Components/QA/QA'
+import EventSummary from '../../Components/Landing/EventSummary/EventSummary'
+import Story from '../../Components/Landing/Story/Story'
+import Schedule from '../../Components/Landing/Schedule/Schedule'
+import Travel from '../../Components/Landing/Travel/Travel'
+import CovidInformation from '../../Components/Landing/CovidInformation/CovidInformation'
+import QA from '../../Components/Landing/QA/QA'
 
 
 
 
 export default function Landing() {
-
-
     document.title = "Reboja | Dorsey"
 
     return (
@@ -51,7 +51,13 @@ export default function Landing() {
                     </div>
                 </div>
                 <Schedule />
-                <QA />
+                <Travel />
+
+                <h1 className = "Section-Header">Gifts</h1>
+                <hr className = "Section-Border" />
+                <p style = {{width: '70%', lineHeight: '30px', fontFamily: 'Open sans, sans serif'}}>Your love, laughter, & company on our wedding day is the greatest gift of all that you could give us.  No gifts are needed or expected.</p>
+                <CovidInformation />
+                <QA />               
             </div>
         </div>
     )
