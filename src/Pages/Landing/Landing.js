@@ -31,7 +31,6 @@ export default function Landing() {
                 <MenuOptions />
                 <MenuBar />
                 <Carousel />
-                <div className = "Time-Text">TEST TEXT</div>
             </div>
             <div className = "Right-Section">
                 
