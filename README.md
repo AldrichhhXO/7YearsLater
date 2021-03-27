@@ -4,9 +4,9 @@
 
 ### Description
 
-    This site serves as a platform for my client where they are able to display their information regarding their wedding.
+This site serves as a platform for my client where they are able to display their information regarding their wedding.
 
-    Consists of a backend that is capable of allowing the client to manage their guest list and RSVP information.
+Consists of a backend that is capable of allowing the client to manage their guest list and RSVP information.
 
 
 ### Website Routes
