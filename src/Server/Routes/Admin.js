@@ -19,7 +19,7 @@ router.post('/guestlist', (req, res, next) => {
 
 
 router.post('/admin', (req, res, next) => {
-    let [ userName, password ] = req.body;
+    let [ userName, password ] = req.body; //
 })
 
 
