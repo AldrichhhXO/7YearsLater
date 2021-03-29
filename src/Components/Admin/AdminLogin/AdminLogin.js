@@ -7,12 +7,15 @@ export default class AdminLogin extends Component {
         super(props);
         this.state = {
             userName: '',
-            password: ''
+            password: '',
+            message: ''
         }
     }
 
     componentDidMount() {
         document.title = "Reboja | Dorsey - ADMIN"
+        instance.get('/admin')
+            .then(res => this.setState({message: res.data}))
     }
 
     updateUserName = (e) => this.setState({userName: e.target.value})

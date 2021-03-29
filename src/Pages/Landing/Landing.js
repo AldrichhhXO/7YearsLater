@@ -34,10 +34,6 @@ export default function Landing() {
                 
                 <EventSummary />
                 <Story />
-<<<<<<< HEAD
-
-=======
->>>>>>> a0adcb866aa12ab2ef162a93c37915bdf0644abb
                 <div className ="About" id = "about">
                     <h1>About us</h1>
                     <hr />
