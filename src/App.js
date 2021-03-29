@@ -25,7 +25,6 @@ function App() {
 
         {/** Admin Routes */}
         <Route exact path = "/admin" render = {() => <Admin />}/>
-
         <Route exact path = "/dashboard" render  = {() => <Dashboard />} />
         
         <Route path = "*" render  ={() => <Error />} />

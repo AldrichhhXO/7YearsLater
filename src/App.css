@@ -10,3 +10,7 @@
     text-indent: 30px;
     margin-bottom: 40px;
 }
+
+html {
+    scroll-behavior: smooth;
+}

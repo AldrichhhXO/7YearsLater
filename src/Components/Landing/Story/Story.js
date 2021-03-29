@@ -7,7 +7,7 @@ import "./Story.css"
  */
 export default function Story() {
     return (
-        <div className = "Story">
+        <div className = "Story" id = "story">
             <h1>Story</h1>
             <hr style = {{marginBottom: '70px'}}/>
             <p className = "Story-Text">{storyText}</p>

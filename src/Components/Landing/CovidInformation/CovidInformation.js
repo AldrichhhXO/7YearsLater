@@ -4,6 +4,7 @@ import './CovidInformation.css'
 export default function CovidInformation() {
     return (
         <>
+            <br id = 'covid'/>
             <h1 className = "Section-Header">Covid-19 Information</h1>
             <hr className = "Section-Border"/>
             <p className = "Section-Text">In accordance to the current public health guidelines, Wayfarers Chapel is currently limited to 25 people for indoor ceremonies.  No worries!  We are hopeful this number will increase as our wedding day gets closer.  If not, we will personally inform you if you will be able to join our ceremony or simply our reception.  Thank you for understanding!</p>
