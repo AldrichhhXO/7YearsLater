@@ -23,10 +23,8 @@ import MenuOptions from '../../Components/Landing/MenuOptions/MenuOptions'
 
 export default function Landing() {
     document.title = "Reboja | Dorsey"
-
     return (
         <div>
-            
             <div className = "Carousel">
                 <MenuOptions />
                 <MenuBar />
@@ -36,7 +34,10 @@ export default function Landing() {
                 
                 <EventSummary />
                 <Story />
+<<<<<<< HEAD
 
+=======
+>>>>>>> a0adcb866aa12ab2ef162a93c37915bdf0644abb
                 <div className ="About" id = "about">
                     <h1>About us</h1>
                     <hr />
@@ -47,8 +48,7 @@ export default function Landing() {
                             src="https://www.youtube.com/embed/kSndLA81dwg?modestbranding=1&rel=0" 
                             title="YouTube video player" 
                             frameBorder="0" 
-                            allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" 
-                            
+                            allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"    
                             allowFullScreen = "allowFullScreen">
                         </iframe>
                     </div>

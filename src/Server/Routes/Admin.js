@@ -1,5 +1,4 @@
 const express = require('express');
-
 const router = express.Router();
 
 /**
@@ -17,3 +16,18 @@ router.get('/guestliist', (req, res, next) => {
 router.post('/guestlist', (req, res, next) => {
 
 });
+
+
+router.post('/admin', (req, res, next) => {
+    let [ userName, password ] = req.body;
+})
+
+
+
+router.get('/admin', (req, res, next) => {
+    res.send('hello');
+    next();
+})
+
+
+module.exports = router;
