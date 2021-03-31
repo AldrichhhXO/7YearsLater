@@ -6,12 +6,8 @@ import CenteredLayout from '../../Layout/CenteredLayout/CenteredLayout'
 import './Landing.css'
 
 // Carousel Component
-<<<<<<< HEAD
 import Carousel from '../../Components/Carousel/Carousel'
 import MenuBar from '../../Components/MenuBar/MenuBar'
-=======
-import Carousel from '../../Components/Landing/Carousel/Carousel'
->>>>>>> a5c943391f7dfde7de0370653e5b965b7bc3c1bf
 
 
 /* Right side Components */
