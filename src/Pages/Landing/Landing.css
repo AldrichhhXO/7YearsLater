@@ -109,6 +109,10 @@
     .Right-Section {
         width: 100vw;
     }
+
+    .Video-Placeholder {
+        width: 60%;
+    }
 }
 
 
@@ -120,5 +124,9 @@
 
     .Right-Section {
         width: 39%;
+    }
+
+    .Video-Placeholder {
+        width: 79%;
     }
 }

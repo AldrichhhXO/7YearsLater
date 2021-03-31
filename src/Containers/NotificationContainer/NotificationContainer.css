@@ -1,0 +1,39 @@
+.Notification-Container {
+    width: 75%;
+    height: 50%;
+    min-height: 500px;
+    background-color: white;
+    box-shadow: 5px 10px 10px rgba(0,0,0,0.3);
+}
+
+.Notification {
+    width: 100%;
+    margin: 0 auto;
+    
+}
+
+.Notification-Header {
+    text-align: center;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    margin-bottom: 50px;
+}
+
+.Notification-User {
+    text-align: left;
+    text-indent: 30px;
+    font-size: 18px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.Notification-Description {
+    width: 75%;
+    margin: 0 auto;
+    font-family: 'Open sans', sans-serif;
+    font-size: 15px;
+    line-height: 30px;
+}
+
+.Notification hr {
+    width: 60%;
+    margin: 20px auto;
+}

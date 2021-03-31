@@ -1,0 +1,16 @@
+
+/*
+    Landing Page; Right side global Styles
+*/
+.Section-Text {
+    font-family: 'Open sans',  sans-serif;
+    width: 80%;
+    line-height: 25px;
+    text-align: left;
+    text-indent: 30px;
+    margin-bottom: 40px;
+}
+
+html {
+    scroll-behavior: smooth;
+}

@@ -19,12 +19,12 @@
 .Event-Container {
     width: 80%;
     margin: 0 auto;
-    height: 1000px;
+    height: fit-content;
 }
 
 
 .Event-Date {
-    font-size: 17px;
+    font-size: 19px;
     font-family: 'Alegreya Sans SC', sans-serif;
 }
 
@@ -61,4 +61,28 @@
     height: fit-content;
     width: 50%;
     border: 1px solid black;
+}
+
+
+.Schedule-Grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: fit-content;
+   
+    font-family: 'Open sans', sans-serif;
+}
+
+.Left  {
+    grid-row: 0;
+    text-align: center;
+    text-indent: 30px;
+}
+
+.Right {
+    text-align: left;
+    float: right;
+}
+
+.Right p {
+    text-align: left;
 }
