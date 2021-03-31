@@ -10,6 +10,7 @@ import Dashboard from './Pages/Admin/Dashboard/Dashboard'
 import RSVP from './Pages/RSVP/RSVP'
 import Questionaire from './Pages/Questionaire/Questionaire'
 
+import Success from './Pages/Success/Success'
 import Error from './Pages/Error/Error'
 
 
@@ -22,10 +23,12 @@ function App() {
         {/** RSVP Route */}
         <Route exact path = "/rsvp" render = {() => <RSVP /> } />
         <Route exact path = "/rsvp/qa" render = {() => <Questionaire /> } />
+        <Route exact path = "/rsvp/success" render = {() => <Success />} />
 
         {/** Admin Routes */}
         <Route exact path = "/admin" render = {() => <Admin />}/>
         <Route exact path = "/dashboard" render  = {() => <Dashboard />} />
+
         
         <Route path = "*" render  ={() => <Error />} />
       </Switch>

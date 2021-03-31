@@ -39,9 +39,10 @@
 }
 
 .Next-Button {
-    color: teal;
+    color: black;
+    background-color: white;
     text-decoration: none;
-    border: 1px solid teal;
+    border: 1px solid black;
     width: 20%;
     height: 35px;
     font-size: 18px;
@@ -52,6 +53,6 @@
 }
 
 .Next-Button:hover {
-    background-color: teal;
+    background-color: black;
     color: white;
 }

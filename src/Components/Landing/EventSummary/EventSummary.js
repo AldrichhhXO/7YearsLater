@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react'
-import { Link } from 'react-router-dom'
+import React, {useEffect, useState} from 'react'
+import { Link, Redirect } from 'react-router-dom'
 
 import './EventSummary.css'
 
@@ -18,10 +18,8 @@ export default function EventSummary() {
         document.getElementsByClassName("Time")[0].innerHTML  = days  + " Days " + hours + " Hrs " + minutes + " Mins " + seconds + " Secs"
         })
 
-        return () => clearInterval(x)
-
-    })
-
+        return () => clearInterval(x)  
+    }, [])
 
     return (
         <div className = "Event-Summary-Container">
@@ -32,6 +30,7 @@ export default function EventSummary() {
                     <p className = "Time"></p>
                 </div>
 
+                
                 <Link to = "/rsvp" className = "RSVP-Button">RSVP</Link>
             </div>
         </div>

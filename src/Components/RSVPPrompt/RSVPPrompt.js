@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import './RSVPPrompt.css'
 
 export default class RSVP_Prompt extends Component {
@@ -8,7 +8,8 @@ export default class RSVP_Prompt extends Component {
         this.state = {
             firstName: '',
             lastName: '',
-            email: ''
+            email: '',
+            verified: false
         }
     }
 
@@ -26,7 +27,14 @@ export default class RSVP_Prompt extends Component {
     updateLastName = (e) => this.setState({lastName: e.target.value})
     updateEmail = (e) => this.setState({email: e.target.value})
 
+    handleNext = (e) => {
+        this.setState({verified: true})
+    }
+
     render() {
+
+        if (this.state.verified) return <Redirect to = {{pathname: '/rsvp/qa'}}/>
+        else
         return (
             <div className = "RSVP-Prompt">
                 <h1 className = "RSVP-Title">Melissa & Anthony</h1>
@@ -39,7 +47,7 @@ export default class RSVP_Prompt extends Component {
                     <input type = "text" placeholder =  "Last Name" value = {this.state.lastName} onChange = {this.updateLastName}/>
                 </div>
                 <input type = "email" placeholder = "Email" value = {this.state.email} onChange = {this.updateEmail}/>
-                <Link to = "/" className = "Next-Button">Next</Link>
+                <button onClick = {(e) => this.handleNext(e)} className = "Next-Button">Next</button>
             </div>
         )
     }

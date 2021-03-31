@@ -4,11 +4,23 @@ const mysql = require('mysql');
  * MySQL connection params
  */
 let connection = mysql.createConnection({
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE,
+    host: process.env.PROD_HOST || process.env.DEV_HOST,
+    user: process.env.PROD_USER || process.env.DEV_USER,
+    password: process.env.PROD_PW || process.env.DEV_PW,
+    port: process.env.PROD_PORT || process.env.DEV_PORT,
+    database: process.env.PROD_DB || process.env.DEV_DB,
+    insecureAuth: true
 })
+
+
+function connectDatabase() {
+    connection.connect((err) = {
+        if (err) {
+            throw err;
+        }
+    })
+    console.log('Connected')
+}
 
 /**
  * RetrieveGuestList query
@@ -45,3 +57,7 @@ function addGuest() {
     connection.end();
 }
 
+
+module.exports = {
+    connectDatabase
+}

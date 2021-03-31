@@ -2,9 +2,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+let dotenv = require('dotenv').config();
 
 // Routes initialization
-let AdminRouter= require('./Routes/Admin')
+let AdminRouter= require('./Routes/Admin');
+
+let mysql = require('./db/MySQL');
 
 var app = express();
 
@@ -21,6 +24,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/',AdminRouter);
 
-
+mysql.connectDatabase();
 
 module.exports = app;

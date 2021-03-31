@@ -14,3 +14,13 @@
 html {
     scroll-behavior: smooth;
 }
+
+
+.Header-Text {
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+
+.General-Font {
+    font-family: 'Open sans', sans-serif;
+}
