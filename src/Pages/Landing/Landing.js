@@ -7,7 +7,6 @@ import './Landing.css'
 
 // Carousel Component
 import Carousel from '../../Components/Carousel/Carousel'
-import MenuBar from '../../Components/MenuBar/MenuBar'
 
 
 /* Right side Components */
