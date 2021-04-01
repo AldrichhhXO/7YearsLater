@@ -25,5 +25,6 @@ app.use(cookieParser());
 app.use('/',AdminRouter);
 
 mysql.connectDatabase();
+mysql.retrieveGuestlist();
 
 module.exports = app;

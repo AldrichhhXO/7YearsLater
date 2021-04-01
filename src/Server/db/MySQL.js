@@ -14,32 +14,38 @@ let connection = mysql.createConnection({
 
 
 function connectDatabase() {
-    connection.connect((err) = {
+    connection.connect((err) => {
         if (err) {
-            throw err;
+            console.error('Error connecting: ', err)
+            return;
         }
+        console.log(connection.threadId)
     })
-    console.log('Connected')
 }
 
 /**
  * RetrieveGuestList query
  * 1. This will be responsible for getting the guestlist.
+ * 2. result returns the data, similar to JSON
+ * 3. result[0] Isolates the first one
+ * 4. result[0].FirstName Gets the first name of the first data entry
  */
 function retrieveGuestlist() {
-    connection.connect((err) => {
-        if (err) {
-            throw err;
-            
-        }
-    });
-
-    let guestListQuery = "SELECT * from GuestList"
-    connection.query(guestListQuery, () => {
-
-    });
-    connection.end();
+    let guestlistQuery = "SELECT * from GuestList;"
+    connection.query(guestlistQuery, (err, result, fields) =>{
+        console.log(result[0]);
+    })
 }
+
+function checkRsvp(req) {
+    let checkQuery = "SELECT * FROM GuestList WHERE FirstName = '*' AND LastName = '*' AND Email = '*';"
+    connection.query(checkQuery, (err, result, fields) => {
+        // Handle the after math here.
+    })
+}
+
+
+
 
 /**
  * addGuest query
@@ -59,5 +65,6 @@ function addGuest() {
 
 
 module.exports = {
-    connectDatabase
+    connectDatabase,
+    retrieveGuestlist
 }

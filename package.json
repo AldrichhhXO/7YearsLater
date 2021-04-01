@@ -27,6 +27,7 @@
     "express": "cd src/server && npm start",
     "production": "concurrently npm:build npm:express npm:start"
   },
+  "proxy": "http://localhost:3005",
   "eslintConfig": {
     "extends": [
       "react-app",

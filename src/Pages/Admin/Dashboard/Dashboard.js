@@ -1,6 +1,7 @@
 import React from 'react'
 import './Dashboard.css'
 
+import GuestList from '../../../Containers/GuestListContainer/GuestListContainer'
 import NotificationContainer from '../../../Containers/NotificationContainer/NotificationContainer'
 
 export default function Dashboard() {
