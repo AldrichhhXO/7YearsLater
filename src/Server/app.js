@@ -4,8 +4,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 let dotenv = require('dotenv').config();
 
+
 // Routes initialization
 let AdminRouter= require('./Routes/Admin');
+let RsvpRouter = require('./Routes/RSVP');
 
 let mysql = require('./db/MySQL');
 
@@ -18,13 +20,13 @@ app.use(function(req, res, next) {
     next();
   });
 
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/',AdminRouter);
+app.use('/',RsvpRouter);
 
-mysql.connectDatabase();
-mysql.retrieveGuestlist();
 
 module.exports = app;

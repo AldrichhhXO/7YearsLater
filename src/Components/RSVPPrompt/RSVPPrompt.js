@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
+import Instance from '../../API/Axios'
 import './RSVPPrompt.css'
 
 export default class RSVP_Prompt extends Component {
@@ -9,31 +10,39 @@ export default class RSVP_Prompt extends Component {
             firstName: '',
             lastName: '',
             email: '',
-            verified: false
+            verified: false,
+            user: []
         }
     }
 
-    // validates if a user exists in the database
-    checkForRSVP = (e) => {
-        e.preventDefault()
-        const body = {
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            email: this.state.email
-        }
-    }
 
     updateFirstName = (e) => this.setState({firstName: e.target.value})
     updateLastName = (e) => this.setState({lastName: e.target.value})
     updateEmail = (e) => this.setState({email: e.target.value})
 
     handleNext = (e) => {
-        this.setState({verified: true})
+        e.preventDefault()
+        const body = {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            email: this.state.email
+        }
+
+        Instance.post('/rsvp', body)
+            .then(res => {
+                console.log("Data: ", res.data)
+                this.setState({verified: true})
+            })
+            .catch(err => {
+
+            })
+
+       // this.setState({verified: true})
     }
 
     render() {
 
-        if (this.state.verified) return <Redirect to = {{pathname: '/rsvp/qa'}}/>
+        if (this.state.verified) return <Redirect  push to = {{pathname: '/rsvp/qa', state: {user: this.state.user}}} />
         else
         return (
             <div className = "RSVP-Prompt">
@@ -42,12 +51,16 @@ export default class RSVP_Prompt extends Component {
                 <p className = "RSVP-Text">Thursday, July 29, 2021</p>
                 <p className = "RSVP-Text">Enter your information to RSVP.</p>
 
-                <div>
-                    <input type = "text" placeholder = "First Name" value = {this.state.firstName} onChange = {this.updateFirstName}/>
-                    <input type = "text" placeholder =  "Last Name" value = {this.state.lastName} onChange = {this.updateLastName}/>
-                </div>
-                <input type = "email" placeholder = "Email" value = {this.state.email} onChange = {this.updateEmail}/>
-                <button onClick = {(e) => this.handleNext(e)} className = "Next-Button">Next</button>
+                <form onSubmit = {this.handleNext} className  ="RSVP-Form">
+                    <div>
+                        <input type = "text" placeholder = "First Name" value = {this.state.firstName} onChange = {this.updateFirstName}/>
+                        <input type = "text" placeholder =  "Last Name" value = {this.state.lastName} onChange = {this.updateLastName}/>
+                    </div>
+                    <input type = "email" placeholder = "Email" value = {this.state.email} onChange = {this.updateEmail}/>
+                    <button type = "submit" className = "Next-Button">Next</button>
+                </form>
+
+
             </div>
         )
     }

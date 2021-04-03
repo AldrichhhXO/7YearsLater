@@ -28,3 +28,18 @@ CREATE TABLE `Address` (
 );
 
 
+CREATE TABLE Question (
+	QuestionID INT NOT NULL AUTO_INCREMENT,
+	Question VARCHAR(50)
+	PRIMARY KEY (`QuestionID`)
+)
+
+
+CREATE TABLE Answer (
+	AnswerID INT NOT NULL AUTO_INCREMENT,
+	ANSWER VARCHAR(40),
+	QuestionID INT,
+	UserID INT,
+	PRIMARY KEY (`AnswerID`),
+	FOREIGN KEY (`UserID)
+)

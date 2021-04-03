@@ -20,12 +20,14 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start port=3001",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "express": "cd src/server && npm start",
-    "production": "concurrently npm:build npm:express npm:start"
+    "devserv": "cd src/server && npm run dev",
+    "production": "concurrently npm:build npm:express npm:start",
+    "test_prod": "concurrently npm:devserv npm:start"
   },
   "proxy": "http://localhost:3005",
   "eslintConfig": {

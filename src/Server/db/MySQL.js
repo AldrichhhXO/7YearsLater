@@ -1,26 +1,18 @@
 const mysql = require('mysql');
 
-/**
- * MySQL connection params
- */
-let connection = mysql.createConnection({
-    host: process.env.PROD_HOST || process.env.DEV_HOST,
-    user: process.env.PROD_USER || process.env.DEV_USER,
-    password: process.env.PROD_PW || process.env.DEV_PW,
-    port: process.env.PROD_PORT || process.env.DEV_PORT,
-    database: process.env.PROD_DB || process.env.DEV_DB,
-    insecureAuth: true
-})
-
-
 function connectDatabase() {
-    connection.connect((err) => {
-        if (err) {
-            console.error('Error connecting: ', err)
-            return;
-        }
-        console.log(connection.threadId)
+    /**
+     * MySQL connection params
+     */
+    let connection = mysql.createConnection({
+        host: process.env.PROD_HOST || process.env.DEV_HOST,
+        user: process.env.PROD_USER || process.env.DEV_USER,
+        password: process.env.PROD_PW || process.env.DEV_PW,
+        port: process.env.PROD_PORT || process.env.DEV_PORT,
+        database: process.env.PROD_DB || process.env.DEV_DB,
+        insecureAuth: true
     })
+    return connection
 }
 
 /**
@@ -33,15 +25,24 @@ function connectDatabase() {
 function retrieveGuestlist() {
     let guestlistQuery = "SELECT * from GuestList;"
     connection.query(guestlistQuery, (err, result, fields) =>{
-        console.log(result[0]);
+        
     })
 }
 
-function checkRsvp(req) {
-    let checkQuery = "SELECT * FROM GuestList WHERE FirstName = '*' AND LastName = '*' AND Email = '*';"
-    connection.query(checkQuery, (err, result, fields) => {
-        // Handle the after math here.
+function checkRsvp(req, res) {
+
+    let connection = connectDatabase();
+    let checkQuery = "SELECT * FROM GuestList WHERE FirstName = ? AND LastName = ? AND Email = ?;"
+
+    connection.query(checkQuery, [req.firstName, req.lastName, req.email], (error, result, fields) => {
+        if (error) console.group(error.message);
+        else {
+            
+            res.status(201).json(result)
+            connection.end()
+        }
     })
+  
 }
 
 
@@ -66,5 +67,6 @@ function addGuest() {
 
 module.exports = {
     connectDatabase,
-    retrieveGuestlist
+    retrieveGuestlist,
+    checkRsvp
 }
