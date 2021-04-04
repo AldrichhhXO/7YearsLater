@@ -11,7 +11,10 @@ let RsvpRouter = require('./Routes/RSVP');
 
 let mysql = require('./db/MySQL');
 
+
 var app = express();
+
+app.use(express.static("../build"));
 
 // Cors Initialization
 app.use(function(req, res, next) {

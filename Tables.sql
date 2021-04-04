@@ -27,19 +27,67 @@ CREATE TABLE `Address` (
 	FOREIGN KEY (`UserID`) REFERENCES GuestList(`UserID`)
 );
 
+# Question Table
 
 CREATE TABLE Question (
 	QuestionID INT NOT NULL AUTO_INCREMENT,
 	Question VARCHAR(50)
 	PRIMARY KEY (`QuestionID`)
-)
+);
 
+
+# Insert a question to the Question Table.
+
+INSERT INTO Question (Question) VALUES ("What entree would you prefer at our wedding?")
+
+# Answer Table
 
 CREATE TABLE Answer (
 	AnswerID INT NOT NULL AUTO_INCREMENT,
 	ANSWER VARCHAR(40),
 	QuestionID INT,
-	UserID INT,
 	PRIMARY KEY (`AnswerID`),
-	FOREIGN KEY (`UserID)
-)
+	FOREIGN KEY (`QuestionID`) REFERENCES Question(`QuestionID`)
+);
+
+
+## Insert an answer for the table that is connected to the 
+
+
+
+
+# Query to grab all the answers for a question
+
+SELECT q.Question, a.AnswerID, a.Answer From Question q
+INNER JOIN Answer a WHERE q.QuestionID = a.QuestionID;
+
+
+## If you want to isolate the answers specifically
+
+SELECT Answer from Answer
+Inner Join Question where Answer.QuestionID = Question.QuestionID;
+
+CREATE TABLE Poll (
+	PollID INT NOT NULL AUTO_INCREMENT,
+	QuestionID INT,
+	UserID INT,
+	AnswerID INT,
+	PRIMARY KEY (`PollID`),
+	FOREIGN KEY (`QuestionID`) REFERENCES Question(`QuestionID`),
+	FOREIGN KEY (`UserID`) REFERENCES GuestList(`UserID`)
+);
+
+# Insert Into Polls
+
+INSERT INTO POLL (QuestionID, UserID, AnswerID) VALUES
+();
+
+
+# Getting User Specific results from the Table
+
+SELECT g.UserID, g.FirstName, g.LastName, q.QuestionID, q.Question, a.AnswerID, a.Answer
+from (((Poll
+INNER JOIN GuestList g ON g.UserID = Poll.UserID)
+INNER JOIN Answer a ON Poll.QuestionID = a.QuestionID)
+INNER JOIN Question q ON Poll.QuestionID = q.QuestionID)
+WHERE Poll.UserID = 4;

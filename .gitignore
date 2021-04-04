@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/src/Server/node_modules
+/Server/node_modules
 /.pnp
 .pnp.js
 
@@ -24,5 +24,4 @@ yarn-debug.log*
 yarn-error.log*
 
 Tables.sql
-
-/src/Server/.env
+/Server/.env

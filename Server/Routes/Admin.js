@@ -24,9 +24,9 @@ router.post('/admin', (req, res, next) => {
 
 
 
-router.get('/admin', (req, res, next) => {
-    res.send('hello');
-    next();
+router.get('/admin', (req, res) => {
+    res.json({message: "hello" })
+
 })
 
 
