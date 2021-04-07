@@ -4,8 +4,23 @@ import './MenuBar.css'
 export default function MenuBar() {
     function openMenuOptions(e) {
         e.preventDefault()
-        console.log('e')
-        document.getElementsByClassName("Menu-Options")[0].style.display="flex"
+        let menuOption = document.getElementsByClassName("Menu-Option")
+
+        if (menuOption[0].classList.contains("Menu-Option-Hide"))
+        {
+            for (let i = 0; i < menuOption.length; i++) {
+                menuOption[i].classList.toggle("Menu-Option-Hide")
+            }
+        }
+        let menuOptions = document.getElementsByClassName("Menu-Options")[0]
+        if (menuOptions.classList.contains("Menu-Hide")) menuOptions.classList.toggle("Menu-Hide") 
+        menuOptions.classList.toggle("Menu-Show")
+        
+        setTimeout(() => {
+            let menu = document.getElementsByClassName("MenuBar-Container")[0]
+        menu.classList.toggle("MenuBar-Container-Hide");
+        }, 1000)
+        
     }
 
     return (

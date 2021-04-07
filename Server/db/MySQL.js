@@ -30,22 +30,76 @@ function retrieveGuestlist() {
 }
 
 function checkRsvp(req, res) {
-
     let connection = connectDatabase();
     let checkQuery = "SELECT * FROM GuestList WHERE FirstName = ? AND LastName = ? AND Email = ?;"
 
     connection.query(checkQuery, [req.firstName, req.lastName, req.email], (error, result, fields) => {
         if (error) console.group(error.message);
         else {
-            
-            res.status(201).json(result)
+            if (result.length === 0) {
+                res.status(308).json({message: "Invalid Credentials"});
+            }
+            else {
+                res.status(201).json(result)
+                
+            }
             connection.end()
         }
-    })
-  
+    }) 
 }
 
+function retreivePollQuestions(res) {
+    let connection = connectDatabase();
+    
+    pollContainer = []
 
+    // Retrieve all of the questions
+    let questionsQuery = "SELECT * FROM Question"
+
+    // Multiple queries
+    let firstQuery = connection.query(questionsQuery, (err, result) => {
+        let questionContainer = []
+        console.log(result)
+        
+        for (let i = 0; i < result.length; i++) {
+            let poll = []
+            let question = {
+                questionID: result[i].QuestionID,
+                Question: result[i].Question,
+            }
+            
+        }
+    });
+
+    /*
+    firstQuery.on('result', (row) => {
+        let secondQuery = "SELECT * FROM Answer WHERE QuestionID = ?"
+        connection.query(secondQuery,[row.QuestionID], (err, result) => {
+
+            if (result.length > 0) {
+                let poll = []
+                for (let i = 0; i < result.length; i++) {
+
+                    let answer = {
+                        questionID: result[i].QuestionID,
+                        answer: result[i].ANSWER,
+                        answerID: result[i].answerID
+                    }
+
+                    poll.push(answer)
+                    console.log(poll)
+                }
+                
+            }
+        })
+    })
+    firstQuery.on('end', (res) => {
+        
+        connection.end()
+    })
+    */
+    // connection.end()
+}
 
 
 /**
@@ -68,5 +122,6 @@ function addGuest() {
 module.exports = {
     connectDatabase,
     retrieveGuestlist,
-    checkRsvp
+    checkRsvp,
+    retreivePollQuestions
 }

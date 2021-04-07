@@ -6,6 +6,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "@googlemaps/js-api-loader": "^1.11.3",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
@@ -25,11 +26,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "express": "cd src/server && npm start",
-    "devserv": "cd src/server && npm run dev",
+    "devserv": "cd server && npm run dev",
     "production": "concurrently npm:build npm:express npm:start",
     "test_prod": "concurrently npm:devserv npm:start"
   },
-  "proxy": "http://localhost:3005",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -46,6 +46,7 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
+    ],
+    "proxy": "http://localhost:3005"
   }
 }

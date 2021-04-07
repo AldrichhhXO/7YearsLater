@@ -11,7 +11,8 @@ export default class RSVP_Prompt extends Component {
             lastName: '',
             email: '',
             verified: false,
-            user: []
+            user: [],
+            errorMessage: ''
         }
     }
 
@@ -30,18 +31,21 @@ export default class RSVP_Prompt extends Component {
 
         Instance.post('/rsvp', body)
             .then(res => {
-                console.log("Data: ", res.data)
-                this.setState({verified: true})
+                console.log(res.status)
+                //if (res.status === 308) alert('error')
+                //if (res.data.length > 0 ) this.setState({verified: true})
+                
+                
             })
             .catch(err => {
-
+                this.setState({errorMessage: 'Invalid Credentials'})
             })
 
        // this.setState({verified: true})
     }
 
     render() {
-
+        
         if (this.state.verified) return <Redirect  push to = {{pathname: '/rsvp/qa', state: {user: this.state.user}}} />
         else
         return (
@@ -50,13 +54,13 @@ export default class RSVP_Prompt extends Component {
                 <p className = "RSVP-Text">Rancho Palos Verdes, CA, USA</p>
                 <p className = "RSVP-Text">Thursday, July 29, 2021</p>
                 <p className = "RSVP-Text">Enter your information to RSVP.</p>
-
+                <p className = "Error-Message">{this.state.errorMessage}</p>
                 <form onSubmit = {this.handleNext} className  ="RSVP-Form">
                     <div>
-                        <input type = "text" placeholder = "First Name" value = {this.state.firstName} onChange = {this.updateFirstName}/>
-                        <input type = "text" placeholder =  "Last Name" value = {this.state.lastName} onChange = {this.updateLastName}/>
+                        <input type = "text" placeholder = "First Name"  value = {this.state.firstName} required = {true} onChange = {this.updateFirstName} />
+                        <input type = "text" placeholder = "Last Name" value = {this.state.lastName} required = {true} onChange = {this.updateLastName}/>
                     </div>
-                    <input type = "email" placeholder = "Email" value = {this.state.email} onChange = {this.updateEmail}/>
+                    <input type = "email" placeholder = "Email" value = {this.state.email} required = {true} onChange = {this.updateEmail}/>
                     <button type = "submit" className = "Next-Button">Next</button>
                 </form>
 

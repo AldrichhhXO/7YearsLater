@@ -1,0 +1,49 @@
+.Covid-Notice {
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    background-color: white;
+    z-index: 20;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    animation: closeMenu 2s forwards;
+    animation-delay: 11s;
+}
+
+.Covid-Notice p {
+    width: 85%;
+    margin-left: 50px;
+    font-size: 18px;
+    line-height: 30px;
+    text-indent: 20px;
+}
+
+.Message-Hide {
+    animation: fadeOut2 1s forwards;
+}
+
+.Covid-Notice-Close {
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+.Covid-Notice-Hide {
+    animation: animateClose 1s forwards;
+    animation-delay: 1s;
+}
+
+
+@keyframes closeMenu {
+    from {
+        opacity: 1;
+        height: 120px;
+    }
+
+    to {
+        opacity: 0;
+        height: 0px;
+    }
+}

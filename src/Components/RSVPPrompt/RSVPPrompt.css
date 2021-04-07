@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+   justify-content: space-between;
 }
 
 .RSVP-Prompt h1, p {
@@ -32,12 +32,34 @@
     margin-right: 25px;
 }
 
-.RSVP-Prompt input[type=email] {
-    width: 50%;
+.Input-Container {
+    position: relative;
     
+    width: fit-content;
+    height: fit-content;
 }
 
 
+
+
+.RSVP-Form input[type=email] {
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+
+
+.Error-Message {
+    border: 1.5px solid red;
+    background-color: rgba(255,0,0,0.2);
+    margin-top: -25px;
+    color: red;
+    font-size: 17px;
+    padding: 10px 15px;
+    border-radius: 0.3rem;
+    animation: fadeOut 1s forwards;
+    animation-delay: 5s;
+}
 
 .RSVP-Title {
     font-family: 'Alegreya Sans SC', sans-serif;
@@ -46,6 +68,11 @@
 
 .RSVP-Text {
     font-family: 'Open sans', sans-serif;
+    margin: 10px;
+}
+
+.RSVP-Text:nth-child(4) {
+    margin-bottom: 40px;
 }
 
 .Next-Button {

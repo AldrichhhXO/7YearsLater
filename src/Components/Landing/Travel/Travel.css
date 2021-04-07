@@ -13,3 +13,11 @@
     font-size: 20px;
     font-family: 'Open sans', sans-serif;
 }
+
+.Travel-List {
+    width: 70%;
+    margin:  auto;
+    margin-bottom: 40px;
+
+    list-style-type: disc;
+}

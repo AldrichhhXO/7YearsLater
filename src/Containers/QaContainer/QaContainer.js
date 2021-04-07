@@ -4,8 +4,7 @@ import Qa_Question from './qa_question'
 export default function QaContainer() {
     const questionsList = []
     for (let i = 0; i < questions.length; i++) {
-        console.log(i);
-        questionsList.push(<Qa_Question question = {questions[i]} response = {answers[i]}/>);
+        questionsList.push(<Qa_Question key ={i} question = {questions[i]} response = {answers[i]}/>);
     }
 
     return (

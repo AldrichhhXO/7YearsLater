@@ -3,12 +3,13 @@
     Landing Page; Right side global Styles
 */
 .Section-Text {
-    font-family: 'Open sans',  sans-serif;
     width: 80%;
     line-height: 25px;
     text-align: left;
     text-indent: 30px;
-    margin-bottom: 40px;
+    margin: auto;
+    margin-bottom: 20px;
+    
 }
 
 html {
@@ -20,7 +21,54 @@ html {
     font-family: 'Alegreya Sans SC', sans-serif;
 }
 
-
 .General-Font {
     font-family: 'Open sans', sans-serif;
+}
+
+@keyframes animateClose {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        height: 0;
+        display: none;
+    }
+}
+
+@keyframes animateHeight {
+    from {
+        height: 0%;
+    }
+    to {
+        height: 500px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut2 {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }

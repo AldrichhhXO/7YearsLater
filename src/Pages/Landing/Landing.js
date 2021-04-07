@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-import CovidMessage from '../../Components/Landing/CovidMessage/CovidMessage'
+import CovidNotice from '../../Components/Landing/CovidNotice/CovidNotice'
 
 import CenteredLayout from '../../Layout/CenteredLayout/CenteredLayout'
 import './Landing.css'
@@ -23,20 +23,26 @@ import MenuOptions from '../../Components/Landing/MenuOptions/MenuOptions'
 
 export default function Landing() {
     document.title = "Reboja | Dorsey"
+
+    let shoutoutText = "Enjoy this awesome video created for us by our talented homie, Ian, and his assistant (and wifey!), Elizabeth. Words can’t express the gratitude we have for you capturing our words, our history...7 years later in the making. Love you both!"
     return (
-        <div>
+        <div style = {{position: 'relative'}}>
+
+            <CovidNotice />
+
             <div className = "Carousel">
                 <MenuOptions />
                 <MenuBar />
                 <Carousel />
             </div>
             <div className = "Right-Section">
-                
                 <EventSummary />
                 <Story />
                 <div className ="About" id = "about">
                     <h1>About us</h1>
                     <hr />
+
+                    <p className = "General-Font" style = {{width: '80%', margin: '0 auto', marginTop: '50px', lineHeight: '28px'}}>{shoutoutText}</p>
                     <div className = "Video-Placeholder">
                         <iframe 
                             width = "100%"
@@ -55,12 +61,15 @@ export default function Landing() {
                 <br id = 'gifts'/>
                 <h1 className = "Section-Header">Gifts</h1>
                 <hr className = "Section-Border" />
-                <p style = {{width: '70%', lineHeight: '30px', fontFamily: 'Open sans, sans serif'}}>Your love, laughter, & company on our wedding day is the greatest gift of all that you could give us.  No gifts are needed or expected.</p>
+                <p style = {{width: '80%', lineHeight: '30px', fontFamily: 'Open sans, sans serif', textAlign: "left", textIndent: "20px"}}>Your love, laughter, & company on our wedding day is the greatest gift of all that you could give us.  No gifts are needed or expected.</p>
                 <CovidInformation />
                 <QA />               
             </div>
         </div>
     )
+
+
+   
 }
 
 
