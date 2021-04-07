@@ -1,10 +1,10 @@
 import React from 'react'
-import Qa_Question from './qa_question'
+import QaQuestion from './QaQuestion'
 
 export default function QaContainer() {
     const questionsList = []
     for (let i = 0; i < questions.length; i++) {
-        questionsList.push(<Qa_Question key ={i} question = {questions[i]} response = {answers[i]}/>);
+        questionsList.push(<QaQuestion key ={i} question = {questions[i]} response = {answers[i]}/>);
     }
 
     return (
@@ -13,9 +13,6 @@ export default function QaContainer() {
         </div>
     )
 }
-
-
-
 
 let questions = [
     "When is the RSVP deadline?",

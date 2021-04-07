@@ -46,7 +46,7 @@ let foodies = [
             <p className = "Section-Text">{stay1}</p>
             <p className = "Section-Text">{stay2}</p>
             <p className = "Section-Text">Please use our discount code <strong>'MAW'</strong> to book. 
-                <a target = "_blank"  href = "https://doubletree.hilton.com/en/dt/groups/personalized/L/LGBMYDT-MAW-20210729/index.jhtml?WT.mc_id=POG">Link</a>
+                <a target = "_blank"  rel="noreferrer" href = "https://doubletree.hilton.com/en/dt/groups/personalized/L/LGBMYDT-MAW-20210729/index.jhtml?WT.mc_id=POG">Link</a>
             </p>
             <p className = "Section-Text">LA is the ultimate tourist destination!  But skip the crowds & check out these spots locals recommend!</p>
             <TravelList title = "Downtown LA" travelItems = {hollywood} />

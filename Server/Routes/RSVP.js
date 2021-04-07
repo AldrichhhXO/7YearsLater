@@ -19,8 +19,12 @@ Router.post('/rsvp', (req, res, next) => {
 });
 
 
-Router.get('/api/qa', (req, res) => {
-    return mysql.retreivePollQuestions(res);
+Router.get('/rsvp/qa', (req, res) => {
+    //return mysql.retreivePollQuestions(res);
+
+    let test = mysql.retrieveSurveyQuestions();
+    res.send(test)
+    console.log(test)
 } )
 
 

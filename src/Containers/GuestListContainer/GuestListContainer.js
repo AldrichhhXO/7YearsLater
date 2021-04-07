@@ -4,6 +4,9 @@ import Guest from '../../Components/Guest/Guest'
 export default class GuestListContainer extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            guests: []
+        }
     }
 
    

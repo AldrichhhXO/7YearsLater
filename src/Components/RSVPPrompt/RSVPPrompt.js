@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import Instance from '../../API/Axios'
 import './RSVPPrompt.css'
 
@@ -32,12 +32,13 @@ export default class RSVP_Prompt extends Component {
         Instance.post('/rsvp', body)
             .then(res => {
                 console.log(res.status)
-                //if (res.status === 308) alert('error')
+                if (res.status === 308) alert('error')
                 //if (res.data.length > 0 ) this.setState({verified: true})
                 
                 
             })
             .catch(err => {
+                console.log(err)
                 this.setState({errorMessage: 'Invalid Credentials'})
             })
 
@@ -63,8 +64,6 @@ export default class RSVP_Prompt extends Component {
                     <input type = "email" placeholder = "Email" value = {this.state.email} required = {true} onChange = {this.updateEmail}/>
                     <button type = "submit" className = "Next-Button">Next</button>
                 </form>
-
-
             </div>
         )
     }

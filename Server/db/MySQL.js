@@ -48,7 +48,22 @@ function checkRsvp(req, res) {
     }) 
 }
 
-function retreivePollQuestions(res) {
+
+
+function retrieveSurveyQuestions(res) {
+    let connection = connectDatabase();
+
+    let questionsQuery = "SELECT * FROM Question"
+
+    connection.query(questionsQuery, (err, result) => {
+        if (err) return 0
+        else {
+            return 1
+        }
+    })
+}
+
+async function retreivePollQuestions(res) {
     let connection = connectDatabase();
     
     pollContainer = []
@@ -123,5 +138,6 @@ module.exports = {
     connectDatabase,
     retrieveGuestlist,
     checkRsvp,
-    retreivePollQuestions
+    retreivePollQuestions,
+    retrieveSurveyQuestions
 }

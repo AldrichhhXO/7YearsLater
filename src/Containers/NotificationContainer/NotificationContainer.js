@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import "./NotificationContainer.css"
-import Axios from 'axios'
 
 export default class NotificationContainer extends Component {
     constructor(props) {

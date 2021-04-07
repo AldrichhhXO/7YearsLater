@@ -1,5 +1,4 @@
 import React from 'react'
-import CenteredLayout from '../../../Layout/CenteredLayout/CenteredLayout'
 import QaContainer from '../../../Containers/QaContainer/QaContainer'
 import './QA.css'
 

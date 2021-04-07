@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function qa_question(props) {
+export default function QaQuestion(props) {
     return (
         <>
             <p className = "QA-Question"><strong>Q.</strong>{props.question}</p>

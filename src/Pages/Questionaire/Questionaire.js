@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
-import CenteredLayout from '../../Layout/CenteredLayout/CenteredLayout'
 import './Questionaire.css'
-
-
 
 export default class Questionaire extends Component {
     constructor(props) {

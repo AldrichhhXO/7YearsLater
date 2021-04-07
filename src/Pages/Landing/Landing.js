@@ -1,8 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import CovidNotice from '../../Components/Landing/CovidNotice/CovidNotice'
-
-import CenteredLayout from '../../Layout/CenteredLayout/CenteredLayout'
 import './Landing.css'
 
 // Carousel Component
@@ -23,8 +21,8 @@ import MenuOptions from '../../Components/Landing/MenuOptions/MenuOptions'
 
 export default function Landing() {
     document.title = "Reboja | Dorsey"
-
     let shoutoutText = "Enjoy this awesome video created for us by our talented homie, Ian, and his assistant (and wifey!), Elizabeth. Words can’t express the gratitude we have for you capturing our words, our history...7 years later in the making. Love you both!"
+    
     return (
         <div style = {{position: 'relative'}}>
 
