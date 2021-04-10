@@ -67,14 +67,16 @@ INNER JOIN Answer a WHERE q.QuestionID = a.QuestionID;
 SELECT Answer from Answer
 Inner Join Question where Answer.QuestionID = Question.QuestionID;
 
-CREATE TABLE Poll (
+
+CREATE TABLE POLL (
 	PollID INT NOT NULL AUTO_INCREMENT,
-	QuestionID INT,
-	UserID INT,
-	AnswerID INT,
-	PRIMARY KEY (`PollID`),
-	FOREIGN KEY (`QuestionID`) REFERENCES Question(`QuestionID`),
-	FOREIGN KEY (`UserID`) REFERENCES GuestList(`UserID`)
+    UserID INT NOT NULL UNIQUE,
+    Question1 VARCHAR(20) NOT NULL,
+    Question2 VARCHAR(11) NOT NULL,
+    Question3 VARCHAR(3) NOT NULL,
+    Question4 TEXT,
+    PRIMARY KEY(PollID),
+    FOREIGN KEY(UserID) REFERENCES GuestList(UserID)
 );
 vegetarian
 

@@ -15,9 +15,8 @@ export default class AnswerContainer extends Component {
 
     handleInputChange(answer) {
         this.props.handler(answer.target.value)
-        this.setState({selectedAnswer: answer.target.value})
         answer.target.classList.toggle("Selected")
-        console.log(this.state.answers)
+        
     }
 
     render() {

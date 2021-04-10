@@ -20,7 +20,7 @@ function App(props) {
         <Route exact path = "/" render = {() => <Landing />}/>
 
         {/** RSVP Route */}
-        <Route exact path = "/rsvp" render = {() => <RSVP /> } />
+        <Route exact path = "/rsvp" render = {(props) => <RSVP {...props} /> } />
         <Route exact path = "/rsvp/qa" render = {(props) => <Questionaire {...props}/> } />
         <Route exact path = "/rsvp/success" render = {() => <Success />} />
 

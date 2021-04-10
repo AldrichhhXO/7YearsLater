@@ -38,6 +38,8 @@ function retrieveGuestlist(res) {
     })
 }
 
+
+
 function checkRsvp(req, res) {
     let connection = connectDatabase();
     let checkQuery = "SELECT * FROM GuestList WHERE FirstName = ? AND LastName = ? AND Email = ?;"
@@ -79,29 +81,6 @@ function retrieveSurveyQuestions(res) {
     })
 }
 
-function retreivePollQuestions(res) {
-    let connection = connectDatabase();
-    
-    pollContainer = []
-
-    // Retrieve all of the questions
-    let questionsQuery = "SELECT * FROM Question"
-
-    // Multiple queries
-    let firstQuery = connection.query(questionsQuery, (err, result) => {
-        let questionContainer = []
-        console.log(result)
-        
-        for (let i = 0; i < result.length; i++) {
-            let poll = []
-            let question = {
-                questionID: result[i].QuestionID,
-                Question: result[i].Question,
-            }
-            
-        }
-    });
-}
 
 /**
  * addGuest query
@@ -142,29 +121,6 @@ function retrieveQuestions(req, res) {
 }
 
 
-function retrieveAnswers(req, res) {
-    let connection = connectDatabase();
-    let answersQuery = "SELECT * from Answer WHERE QuestionID = ?;"
-
-    connection.query(answersQuery, [14], (err, result) => {
-        if (err) resi.status(500).json({error: err})
-        else {
-        let answersArray = []
-        for (let i = 0; i < result.length; i++) {
-            let answer = {
-                answerID: result[i].AnswerID,
-                answer: result[i].ANSWER
-            }
-            answersArray.push(answer)
-            
-            res.status(200).send(answersArray)
-        }
-        
-        connection.end()
-        }
-    })
-}
-
 
 /**
  * Posts the poll results onto the DB.
@@ -172,18 +128,38 @@ function retrieveAnswers(req, res) {
  * @param {*} res 
  */
 function postPollResults (req, res) {
-    let results
+    let {userID, answer1, answer2, answer3, text} = req
+    let connection = connectDatabase();
 
-    res.status(200).send('Yeet')
+
+    let guests = []
+    for (let i = 0; i < userID.length; i++) {
+        let user = []
+        user.push(userID[i], answer1, answer2, answer3, text)
+        guests.push(user)
+    }
+    
+    let pollQuery = "INSERT INTO Poll (UserID, Question1, Question2, Question3, Question4) VALUES (?,?,?,?,?); "
+    connection.query(pollQuery, [guests], (err, result) => {
+        if (err) {
+            console.log(err)
+            connection.end()
+        }
+        else {
+            res.status(200).json({message: "Success"})
+            connection.end()
+        }
+    })
+    
+    
+
 }
 
 module.exports = {
     connectDatabase,
     retrieveGuestlist,
     checkRsvp,
-    retreivePollQuestions,
     retrieveSurveyQuestions,
-    retrieveAnswers,
     retrieveQuestions,
     postPollResults
 }

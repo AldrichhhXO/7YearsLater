@@ -3,82 +3,24 @@ import { Redirect } from 'react-router-dom'
 import Instance from '../../API/Axios'
 import './RSVPPrompt.css'
 
-export default class RSVP_Prompt extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            firstName: '',
-            lastName: '',
-            email: '',
-            verified: false,
-            user: [],
-            errorMessage: ''
-        }
-    }
+export default function RSVP_Prompt(props)  {
 
-
-    updateFirstName = (e) => this.setState({firstName: e.target.value})
-    updateLastName = (e) => this.setState({lastName: e.target.value})
-    updateEmail = (e) => this.setState({email: e.target.value})
-
-    handleNext = (e) => {
-        e.preventDefault()
-        const body = {
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            email: this.state.email,
-            users: []
-        }
-
-        Instance.post('/rsvp', body)
-            .then(res => {
-                console.log(res.status)
-                if (res.status === 308) alert('error')
-                if (res.data.length > 0 ) {
-                    let usersArray = []
-                    for (let i = 0; i < res.data.length; i++) {
-                        
-                        usersArray.push(res.data[i])
-                    }
-                    
-                    this.setState({users: usersArray})
-                    console.log("Users: ", this.state.users)
-                    this.setState({verified: true})
-                }
-                
-                
-            })
-            .catch(err => {
-                console.log(err)
-                this.setState({errorMessage: 'Invalid Credentials'})
-            })
-
-       // this.setState({verified: true})
-    }
-
-    render() {
-        if (this.state.verified) return (
-            <Redirect  push to = {{ 
-                pathname: '/rsvp/qa', 
-                state: {users: this.state.users }}} 
-            />)
-        else
         return (
             <div className = "RSVP-Prompt">
                 <h1 className = "RSVP-Title">Melissa & Anthony</h1>
                 <p className = "RSVP-Text">Rancho Palos Verdes, CA, USA</p>
                 <p className = "RSVP-Text">Thursday, July 29, 2021</p>
                 <p className = "RSVP-Text">Enter your information to RSVP.</p>
-                <p className = "Error-Message">{this.state.errorMessage}</p>
-                <form onSubmit = {this.handleNext} className  ="RSVP-Form">
+                {props.error ? <p className = "Error-Message">{props. errorMessage}</p> : null}
+                <form onSubmit = {props.handleSubmit} className  ="RSVP-Form">
                     <div>
-                        <input type = "text" placeholder = "First Name"  value = {this.state.firstName} required = {true} onChange = {this.updateFirstName} />
-                        <input type = "text" placeholder = "Last Name" value = {this.state.lastName} required = {true} onChange = {this.updateLastName}/>
+                        <input type = "text" placeholder = "First Name"  value = {props.firstName} required = {true} onChange = {props.handleFirstName} />
+                        <input type = "text" placeholder = "Last Name" value = {props.lastName} required = {true} onChange = {props.handleLastName}/>
                     </div>
-                    <input type = "email" placeholder = "Email" value = {this.state.email} required = {true} onChange = {this.updateEmail}/>
+                    <input type = "email" placeholder = "Email" value = {props.email} required = {true} onChange = {props.handleEmail}/>
                     <button type = "submit" className = "Next-Button">Next</button>
                 </form>
             </div>
         )
-    }
+    
 }

@@ -20,9 +20,10 @@ Router.post('/rsvp', (req, res, next) => {
 
 
 Router.post('/rsvp/qa', (req, res) => {
-    let { answer1 , answer2, answer3, text } = req.body;
+    let { userID, answer1 , answer2, answer3, text } = req.body;
 
     let body = {
+        userID,
         answer1,
         answer2, 
         answer3, 
