@@ -45,6 +45,7 @@ export default class Questionaire extends Component {
     }
 
     render() {  
+        let userIDs = []
 
         {/*
             if (this.state.users.length == 0) return <Redirect to = {{pathname: '/rsvp'}}/>
@@ -60,6 +61,7 @@ export default class Questionaire extends Component {
                 <div className = "Right-Content">
                     <h1>Welcome, {this.state.userName}!</h1>
                     <h1 className = "Questionaire-Header">RSVP Questions</h1>
+                   <p> {userIDs}</p>
                     <SurveyContainer /> 
                 </div>
             </div>

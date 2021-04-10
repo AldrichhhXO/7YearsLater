@@ -142,8 +142,6 @@ function retrieveQuestions(req, res) {
 }
 
 
-
-
 function retrieveAnswers(req, res) {
     let connection = connectDatabase();
     let answersQuery = "SELECT * from Answer WHERE QuestionID = ?;"
@@ -174,6 +172,8 @@ function retrieveAnswers(req, res) {
  * @param {*} res 
  */
 function postPollResults (req, res) {
+    let results
+
     res.status(200).send('Yeet')
 }
 

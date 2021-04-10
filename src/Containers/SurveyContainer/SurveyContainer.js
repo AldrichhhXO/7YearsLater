@@ -23,6 +23,7 @@ export default class SurveyContainer extends Component {
             answer1: '',
             answer2: '',
             answer3: '',
+            text: '',
             success: false,
             num: 0
         }
@@ -45,7 +46,7 @@ export default class SurveyContainer extends Component {
             answer1: this.state.answer1,
             answer2: this.state.answer2,
             answer3: this.state.answer3,
-            text: '',
+            text: this.state.text,
         }
         Instance.post('/rsvp/qa', body)
             .then(res => {
@@ -83,7 +84,6 @@ export default class SurveyContainer extends Component {
                     <p>{ this.state.num } / 200</p>
                     <textarea onChange = {this.updateText} value = {this.state.text} cols = {50} rows = {5} className = "Shared-Text"/>
                 </div>
-                
 
                 <button onClick = {this.handleAnswers} className = "Survey-Submit-Button">Submit</button>
             </div>

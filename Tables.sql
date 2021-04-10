@@ -76,6 +76,8 @@ CREATE TABLE Poll (
 	FOREIGN KEY (`QuestionID`) REFERENCES Question(`QuestionID`),
 	FOREIGN KEY (`UserID`) REFERENCES GuestList(`UserID`)
 );
+vegetarian
+
 
 # Insert Into Polls
 
