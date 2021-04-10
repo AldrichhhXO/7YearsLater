@@ -13,7 +13,7 @@ import Success from './Pages/Success/Success'
 import Error from './Pages/Error/Error'
 
 
-function App() {
+function App(props) {
   return (
     <Router>
       <Switch>
@@ -21,7 +21,7 @@ function App() {
 
         {/** RSVP Route */}
         <Route exact path = "/rsvp" render = {() => <RSVP /> } />
-        <Route exact path = "/rsvp/qa" render = {() => <Questionaire /> } />
+        <Route exact path = "/rsvp/qa" render = {(props) => <Questionaire {...props}/> } />
         <Route exact path = "/rsvp/success" render = {() => <Success />} />
 
         {/** Admin Routes */}

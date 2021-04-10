@@ -1,0 +1,51 @@
+.Survey-Container {
+    width: 100%;
+    height: fit-content;
+    margin: 0 auto;
+    padding: 30px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Shared-Text {
+    margin: 20px auto;
+    padding: 20px;
+    font-size: 16px;
+    font-family: 'Open sans', sans-serif;
+}
+
+.Text-Area-Container {
+    
+    position: relative;
+}
+
+.Text-Area-Container p {
+    margin: 0;
+    position: absolute;
+    right: 5px;
+    top: -5px;
+}
+
+
+.Survey-Submit-Button {
+    position: relative;
+    background-color: white;
+    border: 1px solid black;
+    margin: auto;
+
+    border-radius: 0.3rem;
+    font-size: 18px;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+}
+
+
+.Survey-Submit-Button:hover {
+    background-color: black;
+    color: white;
+}
+

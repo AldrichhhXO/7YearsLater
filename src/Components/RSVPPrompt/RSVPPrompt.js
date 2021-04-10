@@ -26,14 +26,25 @@ export default class RSVP_Prompt extends Component {
         const body = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
-            email: this.state.email
+            email: this.state.email,
+            users: []
         }
 
         Instance.post('/rsvp', body)
             .then(res => {
                 console.log(res.status)
                 if (res.status === 308) alert('error')
-                //if (res.data.length > 0 ) this.setState({verified: true})
+                if (res.data.length > 0 ) {
+                    let usersArray = []
+                    for (let i = 0; i < res.data.length; i++) {
+                        
+                        usersArray.push(res.data[i])
+                    }
+                    
+                    this.setState({users: usersArray})
+                    console.log("Users: ", this.state.users)
+                    this.setState({verified: true})
+                }
                 
                 
             })
@@ -46,8 +57,11 @@ export default class RSVP_Prompt extends Component {
     }
 
     render() {
-        
-        if (this.state.verified) return <Redirect  push to = {{pathname: '/rsvp/qa', state: {user: this.state.user}}} />
+        if (this.state.verified) return (
+            <Redirect  push to = {{ 
+                pathname: '/rsvp/qa', 
+                state: {users: this.state.users }}} 
+            />)
         else
         return (
             <div className = "RSVP-Prompt">

@@ -1,0 +1,79 @@
+.User-Modal-Container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    
+    z-index: 12;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Opacity-Container {
+    position: inherit;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.7;
+}
+
+.User-Modal {
+    position: relative;
+    border: 1px solid black;
+    width: 400px;
+    height: 500px;
+    opacity: 1;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.User-Modal p {
+    font-size: 18px;;
+}
+
+.User-Modal input {
+    font-size: 18px;
+    padding: 10px 20px;
+    width: 150px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.User-Modal input:hover {
+    background: black;
+    color: white;
+}
+
+.RSVP-Guest {
+    width: 60%;
+    max-width: 400px;
+    border: 1px solid black;
+    cursor: pointer;
+    margin: 0 auto;
+    text-align: center;
+    height: 40px;
+    border-radius: 0.8rem;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    transition: all 0.15s ease-in;
+    font-size: 18px;
+    padding: 25px 10px;
+    font-family: 'Open sans', sans-serif;
+}
+
+.RSVP-Guest:hover {
+    background-color: black;
+    color: white;
+}
+

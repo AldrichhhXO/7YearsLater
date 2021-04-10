@@ -22,10 +22,19 @@ function connectDatabase() {
  * 3. result[0] Isolates the first one
  * 4. result[0].FirstName Gets the first name of the first data entry
  */
-function retrieveGuestlist() {
+function retrieveGuestlist(res) {
     let guestlistQuery = "SELECT * from GuestList;"
+    let connection = connectDatabase();
     connection.query(guestlistQuery, (err, result, fields) =>{
-        
+        if (err) {
+            res.status(500).json({error: err})
+            connection.end()
+        }
+        else {
+            console.log('GuestList: ', result)
+            res.status(200).json({guestlist: result})
+            connection.end()
+        }
     })
 }
 
@@ -55,15 +64,22 @@ function retrieveSurveyQuestions(res) {
 
     let questionsQuery = "SELECT * FROM Question"
 
-    connection.query(questionsQuery, (err, result) => {
-        if (err) return 0
+    let test = "SELECT * FROM Question, Answer"
+
+    connection.query(test, (err, result) => {
+        if (err) {
+            //callback(err, null)
+            connection.end()
+        }
         else {
-            return 1
+            //callback(null, result)
+            console.log(result)
+            connection.end()
         }
     })
 }
 
-async function retreivePollQuestions(res) {
+function retreivePollQuestions(res) {
     let connection = connectDatabase();
     
     pollContainer = []
@@ -85,43 +101,13 @@ async function retreivePollQuestions(res) {
             
         }
     });
-
-    /*
-    firstQuery.on('result', (row) => {
-        let secondQuery = "SELECT * FROM Answer WHERE QuestionID = ?"
-        connection.query(secondQuery,[row.QuestionID], (err, result) => {
-
-            if (result.length > 0) {
-                let poll = []
-                for (let i = 0; i < result.length; i++) {
-
-                    let answer = {
-                        questionID: result[i].QuestionID,
-                        answer: result[i].ANSWER,
-                        answerID: result[i].answerID
-                    }
-
-                    poll.push(answer)
-                    console.log(poll)
-                }
-                
-            }
-        })
-    })
-    firstQuery.on('end', (res) => {
-        
-        connection.end()
-    })
-    */
-    // connection.end()
 }
-
 
 /**
  * addGuest query
  * 1. This will add a user to the guestlist
  */
-function addGuest() {
+ function addGuest() {
     connection.connect((err) => {
         if (err) {
             throw err;
@@ -133,11 +119,71 @@ function addGuest() {
     connection.end();
 }
 
+function retrieveQuestions(req, res) {
+    let connection = connectDatabase();
+    let questionsQuery = "SELECT * from Question;"
+
+    connection.query(questionsQuery, (err, result) => {
+        if (err) res.status(500).json({error: err})
+        else {
+        let questionsArray = []
+        for (let i = 0; i < result.length; i++) {
+            let question = {
+                questionID: result[i].QuestionID,
+                question: result[i].Question
+            }
+            questionsArray.push(question)
+        }
+        res.send(questionsArray)
+        connection.end()
+        }
+        
+    })
+}
+
+
+
+
+function retrieveAnswers(req, res) {
+    let connection = connectDatabase();
+    let answersQuery = "SELECT * from Answer WHERE QuestionID = ?;"
+
+    connection.query(answersQuery, [14], (err, result) => {
+        if (err) resi.status(500).json({error: err})
+        else {
+        let answersArray = []
+        for (let i = 0; i < result.length; i++) {
+            let answer = {
+                answerID: result[i].AnswerID,
+                answer: result[i].ANSWER
+            }
+            answersArray.push(answer)
+            
+            res.status(200).send(answersArray)
+        }
+        
+        connection.end()
+        }
+    })
+}
+
+
+/**
+ * Posts the poll results onto the DB.
+ * @param {} req 
+ * @param {*} res 
+ */
+function postPollResults (req, res) {
+    res.status(200).send('Yeet')
+}
 
 module.exports = {
     connectDatabase,
     retrieveGuestlist,
     checkRsvp,
     retreivePollQuestions,
-    retrieveSurveyQuestions
+    retrieveSurveyQuestions,
+    retrieveAnswers,
+    retrieveQuestions,
+    postPollResults
 }

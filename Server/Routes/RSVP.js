@@ -19,13 +19,19 @@ Router.post('/rsvp', (req, res, next) => {
 });
 
 
-Router.get('/rsvp/qa', (req, res) => {
-    //return mysql.retreivePollQuestions(res);
+Router.post('/rsvp/qa', (req, res) => {
+    let { answer1 , answer2, answer3, text } = req.body;
 
-    let test = mysql.retrieveSurveyQuestions();
-    res.send(test)
-    console.log(test)
-} )
+    let body = {
+        answer1,
+        answer2, 
+        answer3, 
+        text
+    }
+
+    return mysql.postPollResults(body, res);
+})
+
 
 
 

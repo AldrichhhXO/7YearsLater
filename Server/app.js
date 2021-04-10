@@ -14,7 +14,15 @@ let mysql = require('./db/MySQL');
 
 var app = express();
 
+/*
+
+  ******************* FOR SERVING ON EXPRESS *********************************************
+
 app.use(express.static("../build"));
+app.get('*', ( req , res ) => {
+  res.sendFile('..', 'build/index.html');
+});
+*/
 
 // Cors Initialization
 app.use(function(req, res, next) {
@@ -23,13 +31,11 @@ app.use(function(req, res, next) {
     next();
   });
 
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/',AdminRouter);
 app.use('/',RsvpRouter);
-
 
 module.exports = app;

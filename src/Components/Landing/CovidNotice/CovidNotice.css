@@ -4,11 +4,10 @@
     height: 120px;
     background-color: white;
     z-index: 20;
-    
+    box-shadow: 5px 10px 10px rgba(0,0,0,0.2);
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     animation: closeMenu 2s forwards;
     animation-delay: 11s;
 }
@@ -22,7 +21,7 @@
 }
 
 .Message-Hide {
-    animation: fadeOut2 1s forwards;
+    animation: fadeOut2 1s forwards; 
 }
 
 .Covid-Notice-Close {
@@ -45,5 +44,48 @@
     to {
         opacity: 0;
         height: 0px;
+    }
+}
+
+
+
+/*
+    Mobile Devices
+*/
+@media only screen and (min-width: 300px) {
+    .Covid-Notice {
+        height: 170px;
+    }
+
+    .Covid-Notice p {
+        font-size: 13px;
+        line-height: 22px;
+        text-align: left;
+        width: 75%;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .Covid-Notice {
+        height: 120px;
+    }
+
+
+    .Covid-Notice p {
+        font-size: 15px;
+        width: 85%;
+    }
+
+
+}
+
+
+
+@media only screen and (min-width: 1200px) {
+    .Covid-Notice p {
+        font-size: 17px;
+        width: 80%;
+        text-align: center;
+        line-height: 28px;
     }
 }
