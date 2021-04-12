@@ -39,8 +39,7 @@ export default function Landing() {
                 <div className ="About" id = "about">
                     <h1>About us</h1>
                     <hr />
-
-                    <p className = "General-Font" style = {{width: '80%', margin: '0 auto', marginTop: '50px', lineHeight: '28px'}}>{shoutoutText}</p>
+                    <p className = "General-Font" style = {{width: '80%', margin: '0 auto', marginTop: '50px', lineHeight: '28px', textIndent: '25px'}}>{shoutoutText}</p>
                     <div className = "Video-Placeholder">
                         <iframe 
                             width = "100%"
@@ -52,14 +51,13 @@ export default function Landing() {
                             allowFullScreen = "allowFullScreen">
                         </iframe>
                     </div>
-                    
                 </div>
                 <Schedule />
                 <Travel />
                 <br id = 'gifts'/>
                 <h1 className = "Section-Header">Gifts</h1>
                 <hr className = "Section-Border" />
-                <p style = {{width: '80%', lineHeight: '30px', fontFamily: 'Open sans, sans serif', textAlign: "left", textIndent: "20px"}}>Your love, laughter, & company on our wedding day is the greatest gift of all that you could give us.  No gifts are needed or expected.</p>
+                <p style = {{width: '80%', lineHeight: '30px', fontFamily: 'Open sans, sans serif',  textIndent: "20px", marginBottom: '100px'}}>Your love, laughter, & company on our wedding day is the greatest gift of all that you could give us.  No gifts are needed or expected.</p>
                 <CovidInformation />
                 <QA />               
             </div>

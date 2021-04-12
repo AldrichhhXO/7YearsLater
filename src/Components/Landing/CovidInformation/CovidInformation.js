@@ -14,7 +14,7 @@ export default function CovidInformation() {
             <p className = "Section-Text">For safety measures, we do <strong><u>recommend</u></strong> guests to be tested for COVID-19, 2 days prior to our wedding.  </p>
             <p className = "Section-Text">Masks will be required during our entire wedding celebration. </p>
             <p className = "Section-Text">COVID screenings & temperature checks will take place at the chapel & reception locations.</p>
-            <p className = "Section-Text">If you have or are experiencing one or more of the following symptoms, not due to a chronic condition, in the last 2 weeks - please DO NOT attend our wedding.</p>
+            <p className = "Section-Text" style = {{marginBottom: '50px'}}>If you have or are experiencing one or more of the following symptoms, not due to a chronic condition, in the last 2 weeks - please DO NOT attend our wedding.</p>
 
                 <ul style = {{width: '60%',lineHeight: '22px', marginTop: '-10px', marginBottom: '40px'}}>
                     <li>Fever greater than or equal to 37.8℃/100℉</li>
@@ -34,7 +34,7 @@ export default function CovidInformation() {
                 </ul>
             
             <p className = "Section-Text">We greatly appreciate your patience & understanding throughout this entire process!  Please feel free to contact us if you have any questions and/or concerns!</p>
-            <p className = "Section-Text">Lastly, this is a special time for all of us to celebrate love & enjoy the presence of those we care for the most.  No one will go around being COVID police, but we do ask for everyone’s consideration & team work during such a challenging time!  Thank you!   </p>
+            <p className = "Section-Text" style = {{marginBottom: '100px'}}>Lastly, this is a special time for all of us to celebrate love & enjoy the presence of those we care for the most.  No one will go around being COVID police, but we do ask for everyone’s consideration & team work during such a challenging time!  Thank you!   </p>
         </>
     )
 }

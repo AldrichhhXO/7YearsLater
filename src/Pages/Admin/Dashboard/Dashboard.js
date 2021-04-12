@@ -3,12 +3,15 @@ import './Dashboard.css'
 import Instance from '../../../API/Axios'
 import Guest from '../../../Components/Guest/Guest'
 import NotificationContainer from '../../../Containers/NotificationContainer/NotificationContainer'
+import { Link } from 'react-router-dom'
 
 export default class Dashboard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            guestlist: []
+            guestlist: [],
+            acceptedGuests: [],
+            needToRespond: []
         }
     }
 
@@ -18,6 +21,15 @@ export default class Dashboard extends React.Component {
         Instance.get('/dashboard')
             .then(res => {
                 this.setState({guestlist: res.data.guestlist})
+                let guests = this.state.guestlist
+                let accepted = []
+                let required = []
+                for (let i = 0; i < guests.length; i++) {
+                    if (guests[i].Rsvp === 0) required.push(guests[i])
+                    else accepted.push(guests[i])
+                }
+
+                this.setState({acceptedGuests: accepted, needToRespond: required})
             })
             .catch(err => {
 
@@ -27,47 +39,54 @@ export default class Dashboard extends React.Component {
     render() {
         document.title = "Reboja | Dorsey - Dashboard"
 
-        let guestlist = this.state.guestlist.map((guest) => {
-            return <Guest firstName = {guest.FirstName} lastName = {guest.LastName} />
-            })
-
-        let pendingGuests = this.state.guestlist.map((guest) => {   
-            if (guest.Rsvp == 0)
-            return <Guest key = {guest.UserID} firstName = {guest.FirstName} lastName = {guest.LastName} />
-            
-        })
+        let guestlist = this.state.guestlist.map((guest) => { return <Guest firstName = {guest.FirstName} lastName = {guest.LastName} /> })
+        let acceptedGuests = this.state.acceptedGuests.map((guest) => { return <Guest firstName = {guest.FirstName} lastName = {guest.LastName} /> })
+        let pendingGuests = this.state.needToRespond.map((guest) => { return <Guest firstName = {guest.FirstName} lastName = {guest.LastName} /> })
 
         return (
             <div className = "Dashboard"> 
-
-
-                <div className = "Left-Content">
                 <div className = "Dashboard-Options">
                     <h1 className = "Dashboard-Header">Welcome, Melissa and Anthony</h1>
-    
-                    <p>Currently {this.state.guestlist.length} guests attending</p>
+                    <nav className = "Navbar">
+                        <Link className = "Navbar-Link">Guest List</Link>
+                        <Link className = "Navbar-Link">RSVP</Link>
+                    </nav>
+                    <div className = "Dashboard-Sections-Container">
+                        <div className = "Guests-Container">
+                        <h1 className = "Guests-Container-Header">Accepted</h1>
+                        <p className = "Guests-Container-Counter">{this.state.acceptedGuests.length} guests</p>
+                            <div className = "Accepted-Guests">
+                                {guestlist}
+                            </div>
+                        </div>
 
-
-
-                    {guestlist}
-                    
-                    <h1>Guests who still need to RSVP</h1>
-                    
-                    <div className = "Dashboard-Stats-Container">
-                        {pendingGuests}
+                        <div className = "Guests-Container">
+                            <h1 className = "Guests-Container-Header">Need to respond</h1>
+                            <p className = "Guests-Container-Counter">{this.state.needToRespond.length} guests</p>
+                            <div className = "Accepted-Guests">
+                                {pendingGuests}
+                            </div>
+                        </div>
                     </div>
-    
-                    <div>
-                        <p>20 guests still need to reply</p>
-                    </div>
-                    
-                </div>
+
+
                 </div>
 
+                {/*
                 <div className = "Notification-Center">
                     <NotificationContainer />
                 </div>
-    
+
+
+                                        <h1>Guests who still need to RSVP</h1>
+                    <div className = "Dashboard-Stats-Container">
+                        {pendingGuests}
+                    </div>
+                    <div>
+                        <p>20 guests still need to reply</p>
+                    </div>
+
+                */}
             </div>
         )
     }

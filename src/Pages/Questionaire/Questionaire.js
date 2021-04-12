@@ -75,9 +75,9 @@ export default class Questionaire extends Component {
         if (this.state.success) return <Redirect to = {{pathname: '/rsvp/success'}}/>
         return (
             <div className = "Questionaire-Container">
-                {/*
+                
                 <UserModal />
-                */}
+                
                 <div className = "Left-Image"></div>
                 <div className = "Right-Content">
                     <h1>Welcome, {this.state.userName}!</h1>

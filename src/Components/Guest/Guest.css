@@ -1,10 +1,12 @@
 .Guest {
-    width: 100%;
-    margin: 10px 0px;
+    width: 95%;
+    margin: 10px auto;
     border: 1px solid black;
+    border-radius: 0.5rem;
 
+    cursor: pointer;
 }
 
 .Guest-Name {
-    margin-left: 20px;;
+    margin-left: 20px;
 }

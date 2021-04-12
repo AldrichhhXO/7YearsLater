@@ -1,6 +1,7 @@
 .Schedule-Container {
     width: 100%;
     height: fit-content;
+    margin-bottom: 100px;
 }
 
 
@@ -19,6 +20,7 @@
 .Event-Container {
     width: 80%;
     margin: 0 auto;
+    margin-top: 50px;
     height: fit-content;
 }
 
@@ -66,9 +68,8 @@
 
 .Schedule-Grid {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 40% 60%;
     grid-template-rows: fit-content;
-   
     font-family: 'Open sans', sans-serif;
 }
 
@@ -79,10 +80,23 @@
 }
 
 .Right {
-    text-align: left;
-    float: right;
+    margin: 10px;
 }
 
 .Right p {
-    text-align: left;
+    text-align: center;
+    margin: 0px;
+}
+
+.Right p:nth-child(2) {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+
+
+.Right p:last-child {
+    margin-top: 10px;
+    margin-bottom: 20px;
+   
 }

@@ -10,9 +10,10 @@
 }
 
 .Dashboard-Options {
-    width: 70%;
-    height: 100vh;
+    width: 100%;
+    height: 99vh;
     float: left;
+    
 }
 
 .Dashboard-Buttons {
@@ -23,6 +24,15 @@
     display: flex;
     justify-content: center;
 }
+
+.Dashboard-Sections-Container {
+    width: 100%;
+    height: 70%;
+    
+    display: flex;
+    justify-content: center;
+}
+
 
 .Notification-Center {
     width: 30%;
@@ -37,3 +47,84 @@
     justify-content: space-around;
     align-items: center;
 }
+
+
+.Guests-Container {
+    width: 35%;
+    margin: 30px 100px;
+    position: relative;
+}
+
+.Guests-Container-Header {
+    position: absolute;
+    left: 0px;
+    top: -20px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.Guests-Container-Counter {
+    padding-right: 5px;
+    right: 0px;
+    top: -20px;
+    text-align: right;
+    font-family: 'Open sans', sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
+  }
+
+.Accepted-Guests {
+    height: 410px;
+    overflow-y: scroll;
+    border: 1px solid black;
+    border-radius: 0.3rem;
+}
+
+
+
+/* **************************** Navbar ********************* */
+
+.Navbar {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+.Navbar-Link {
+    font-size: 22px;
+    margin: 10px 35px;
+    text-decoration: none;
+    font-family: 'Open sans', sans-serif;
+    color: black;
+    font-weight: bold;
+}
+
+
+.Navbar-Link::after {
+    width: 0%;
+    height: 2px;
+    margin: 3px auto;
+    content: '';
+    display: block;
+    background-color: black;
+    transition: all 0.4s ease-out;
+}
+
+.Navbar-Link:hover::after {
+    width: 70%;
+}
+

@@ -39,16 +39,16 @@ let foodies = [
         <div className = "Travel-Section" id = 'travel'>
             <h1 className = "Section-Header">Travel</h1>
             <hr className = "Section-Border"/>
-            <p className = "Travel-Step"><h3><u>Getting in</u></h3></p>
+            <p className = "Travel-Step" style = {{marginTop: '50px'}}><h3>Getting in</h3></p>
             <p className = "Section-Text">We recommend flying into LAX!</p>
-            <p className = "Section-Text">LAX to Wayfarers Chapel is about 35 mins (18mi) & about 25 mins (22mi) to Hotel Maya - all on a good day at least. </p>
-            <p className = "Travel-Step"><h3><u>Where to stay</u></h3></p>
+            <p className = "Section-Text" style = {{marginBottom: '50px'}}>LAX to Wayfarers Chapel is about 35 mins (18mi) & about 25 mins (22mi) to Hotel Maya - all on a good day at least. </p>
+            <p className = "Travel-Step"><h3>Where to stay</h3></p>
             <p className = "Section-Text">{stay1}</p>
             <p className = "Section-Text">{stay2}</p>
             <p className = "Section-Text">Please use our discount code <strong>'MAW'</strong> to book. 
                 <a target = "_blank"  rel="noreferrer" href = "https://doubletree.hilton.com/en/dt/groups/personalized/L/LGBMYDT-MAW-20210729/index.jhtml?WT.mc_id=POG">Link</a>
             </p>
-            <p className = "Section-Text">LA is the ultimate tourist destination!  But skip the crowds & check out these spots locals recommend!</p>
+            <p className = "Section-Text" style = {{marginBottom: '50px'}}>LA is the ultimate tourist destination!  But skip the crowds & check out these spots locals recommend!</p>
             <TravelList title = "Downtown LA" travelItems = {hollywood} />
             <TravelList title = "Beaches" travelItems = {beaches} />
             <TravelList title = "For all my foodies :)" travelItems = {foodies} />
