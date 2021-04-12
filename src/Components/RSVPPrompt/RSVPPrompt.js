@@ -4,7 +4,6 @@ import Instance from '../../API/Axios'
 import './RSVPPrompt.css'
 
 export default function RSVP_Prompt(props)  {
-
         return (
             <div className = "RSVP-Prompt">
                 <h1 className = "RSVP-Title">Melissa & Anthony</h1>

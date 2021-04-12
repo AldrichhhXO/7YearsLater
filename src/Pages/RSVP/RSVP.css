@@ -1,0 +1,46 @@
+.Right {
+    width: 38.7%;
+    float: right;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Left {
+    float: left;
+    width: 61%;
+    height: 100vh;
+    background: url(../../images/look.jpeg);
+    background-size: cover;
+    background-position: -180px 0px;
+}
+
+
+@media only screen and (min-width: 300px) {
+    .Right {
+        width: 100%;
+        background: url(../../images/look.jpeg);
+        background-size: cover;
+        background-position: -100px 0px;
+        opacity: 0.8;
+    }
+
+    .Left {
+        width: 0%;
+    }
+}
+
+
+@media only screen and (min-width: 1250px) {
+    .Right {
+        width: 38.7%;
+        background: white;
+    }
+
+    .Left {
+        width: 61%;
+    }
+}

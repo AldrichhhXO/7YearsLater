@@ -4,8 +4,8 @@ import "./TravelList.css"
 export default function TravelList(props) {
 
 
-    let travelItems = props.travelItems.map((item => {
-       return <li>{item}</li>
+    let travelItems = props.travelItems.map(((item, index) => {
+       return <li key = {index}>{item}</li>
     }))
 
     return (

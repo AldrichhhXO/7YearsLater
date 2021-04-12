@@ -1,19 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./CovidNotice.css"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 export default function CovidNotice() {
-
-    setTimeout(() => { document.getElementsByClassName("Covid-Notice")[0].getElementsByTagName("p")[0].classList.add("Message-Hide"); }, 10000);
+    useEffect(() => {
+        let timer = setTimeout(() => { document.getElementsByClassName("Covid-Notice")[0].getElementsByTagName("p")[0].classList.add("Message-Hide"); }, 10000);
+        return function cleanup() {
+            clearTimeout(timer)
+        }
+    })
 
     function closeCovidNotice(e) {
         document.getElementsByClassName("Covid-Notice")[0].getElementsByTagName("p")[0].classList.toggle("Message-Hide")
         document.getElementsByClassName("Covid-Notice")[0].classList.toggle("Covid-Notice-Hide")
-
+        
     }
-
 
     return (
         <div className = "Covid-Notice">

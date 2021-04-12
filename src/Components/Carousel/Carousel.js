@@ -17,8 +17,6 @@ export default function Carousel() {
             speed = {1725}
             style = {{transitionDelay: '5000ms', position: 'relative'}}
 >
-            
-
             <SwiperSlide><div className = "Slide-Image Image1"></div></SwiperSlide>
             <SwiperSlide><div className = "Slide-Image Image2"></div></SwiperSlide>
             <SwiperSlide><div className = "Slide-Image Image3"></div></SwiperSlide>

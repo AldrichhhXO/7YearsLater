@@ -15,6 +15,7 @@ export default function Story() {
             <p className = "Story-Text">{storyText2}</p>
             <br />
             <p className = "Story-Text">{storyText3}</p>
+            <div className = "Story-Image"></div>
         </div>
     )
 }

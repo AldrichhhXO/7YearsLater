@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import CovidNotice from '../../Components/Landing/CovidNotice/CovidNotice'
 import './Landing.css'
@@ -14,27 +14,47 @@ import Schedule from '../../Components/Landing/Schedule/Schedule'
 import Travel from '../../Components/Landing/Travel/Travel'
 import CovidInformation from '../../Components/Landing/CovidInformation/CovidInformation'
 import QA from '../../Components/Landing/QA/QA'
+import Credits from '../../Components/Credits/Credits'
 
 
 import MenuBar from '../../Components/Landing/MenuBar/MenuBar'
 import MenuOptions from '../../Components/Landing/MenuOptions/MenuOptions'
 
 export default function Landing() {
-    document.title = "Reboja | Dorsey"
+    let tester
+    function calculateTime() {
+        let countdown = new Date("Jul 29, 2021 16:00:00").getTime();
+        let now = new Date().getTime();
+        let amount = countdown - now;
+        let days = Math.floor(amount/ (1000 * 60 * 60 * 24))
+        let hours = Math.floor((amount % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((amount % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((amount % (1000 * 60)) / 1000);
+        document.getElementsByClassName("Time")[0].innerHTML  = days  + " Days " + hours + " Hrs " + minutes + " Mins " + seconds + " Secs"
+    }
+
+    useEffect(() => {
+        document.title = "7YearsLater | Welcome"
+        tester = setInterval(() => calculateTime())
+        // return () => { clearInterval(tester)}   *** This didnt work because Link from 'React-Router-Dom' called first
+    })  
+
+    function closeTimer() {
+        clearInterval(tester)
+        window.location = "/rsvp"
+    }
     let shoutoutText = "Enjoy this awesome video created for us by our talented homie, Ian, and his assistant (and wifey!), Elizabeth. Words can’t express the gratitude we have for you capturing our words, our history...7 years later in the making. Love you both!"
     
     return (
         <div style = {{position: 'relative'}}>
-
             <CovidNotice />
-
             <div className = "Carousel">
                 <MenuOptions />
                 <MenuBar />
                 <Carousel />
             </div>
             <div className = "Right-Section">
-                <EventSummary />
+                <EventSummary handler = {closeTimer}/>
                 <Story />
                 <div className ="About" id = "about">
                     <h1>About us</h1>
@@ -59,7 +79,8 @@ export default function Landing() {
                 <hr className = "Section-Border" />
                 <p style = {{width: '80%', lineHeight: '30px', fontFamily: 'Open sans, sans serif',  textIndent: "20px", marginBottom: '100px'}}>Your love, laughter, & company on our wedding day is the greatest gift of all that you could give us.  No gifts are needed or expected.</p>
                 <CovidInformation />
-                <QA />               
+                <QA />  
+                <Credits />             
             </div>
         </div>
     )

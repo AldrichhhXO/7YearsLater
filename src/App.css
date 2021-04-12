@@ -16,6 +16,14 @@ html {
 }
 
 
+.Left-Content {
+    width: 61%;
+    height: 100vh;
+    border: 1px solid black;
+    float: left;
+}
+
+
 .Header-Text {
     font-family: 'Alegreya Sans SC', sans-serif;
 }

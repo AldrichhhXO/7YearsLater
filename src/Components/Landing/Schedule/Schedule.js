@@ -14,8 +14,8 @@ export default function Schedule() {
             <div className = "Event-Container">
                 <h2 className = "Event-Date">Thursday, July 29, 2021</h2>
                 <div className = "Schedule-Grid">
-                    <p className = "Left"><strong>4pm</strong></p>
-                    <div className = "Right">
+                    <p className = "Time-Section"><strong>4pm</strong></p>
+                    <div className = "Right-Details">
                         <p><strong><u>Ceremony</u></strong></p>
                         <p style = {{fontSize: '22px'}}><strong><i>Wayfarers Chapel</i></strong></p>
                         <p style = {{margin: '0px'}}>5755 Palos Verdes Dr.</p>
@@ -25,8 +25,8 @@ export default function Schedule() {
                 </div>
 
                 <div className = "Schedule-Grid">
-                    <p className = "Left"><strong>6pm</strong></p>
-                    <div className = "Right">
+                    <p className = "Time-Section"><strong>6pm</strong></p>
+                    <div className = "Right-Details">
                         <p><strong><u>Reception</u></strong></p>
                         <p style = {{fontSize: '22px'}}><strong><i>Hotel Maya, Jardín de Palmeras</i></strong></p>
                        

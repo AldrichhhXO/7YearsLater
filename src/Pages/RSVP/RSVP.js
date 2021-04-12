@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import CenteredLayout from  '../../Layout/CenteredLayout/CenteredLayout'
 import RsvpPrompt from '../../Components/RSVPPrompt/RSVPPrompt'
 import Instance from '../../API/Axios'
 import { Redirect } from 'react-router-dom'
+
+import './RSVP.css'
 
 export default class RSVP extends Component {
     constructor(props) {
@@ -18,7 +19,6 @@ export default class RSVP extends Component {
             errorMessage: ''
         }
     }
-
     updateFirstName = (e) => this.setState({firstName: e.target.value})
     updateLastName = (e) => this.setState({lastName: e.target.value})
     updateEmail = (e) => this.setState({email: e.target.value})
@@ -58,17 +58,25 @@ export default class RSVP extends Component {
                 state: {users: this.state.users }}} 
             />)
         return (
-            <CenteredLayout>
-                <RsvpPrompt 
-                    firstName = {this.state.firstName} 
-                    lastName = {this.state.lastName}
-                    email = {this.state.email} 
-                    handleFirstName = {this.updateFirstName}
-                    handleLastName = {this.updateLastName} 
-                    handleEmail = {this.updateEmail} 
-                    handleSubmit = {this.handleNext} 
-                    errorMessage = {this.state.error ? this.state.errorMessage : null}/>
-            </CenteredLayout>
+            <div style = {{position: 'relative'}}>
+
+                <div className = "Left"></div>
+
+                <div className = "Right">
+                    <RsvpPrompt 
+                        firstName = {this.state.firstName} 
+                        lastName = {this.state.lastName}
+                        email = {this.state.email} 
+                        handleFirstName = {this.updateFirstName}
+                        handleLastName = {this.updateLastName} 
+                        handleEmail = {this.updateEmail} 
+                        handleSubmit = {this.handleNext} 
+                        errorMessage = {this.state.error ? this.state.errorMessage : null} 
+                    />   
+                </div>
+
+
+            </div>
         )
     }
 }

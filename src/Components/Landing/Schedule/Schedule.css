@@ -73,29 +73,29 @@
     font-family: 'Open sans', sans-serif;
 }
 
-.Left  {
+.Time-Section {
     grid-row: 0;
     text-align: center;
     text-indent: 30px;
 }
 
-.Right {
+.Right-Details {
     margin: 10px;
 }
 
-.Right p {
+.Right-Details p {
     text-align: center;
     margin: 0px;
 }
 
-.Right p:nth-child(2) {
+.Right-Details p:nth-child(2) {
     margin-top: 30px;
     margin-bottom: 20px;
 }
 
 
 
-.Right p:last-child {
+.Right-Details p:last-child {
     margin-top: 10px;
     margin-bottom: 20px;
    

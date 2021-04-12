@@ -1,11 +1,15 @@
 .RSVP-Prompt {
-    width: 550px;
-    height: 500px;
+    width: 80%;
+    min-width: 480px;
+    max-width: 550px;
+    height: 600px;
     box-shadow: 5px 10px 10px rgba(0,0,0,0.17), -5px -10px 10px rgba(0,0,0,0.14);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    float: right;
+    background-color: white;
 }
 
 .RSVP-Form {
@@ -26,10 +30,12 @@
     font-size: 17px;
     padding: 5px 0px;
     font-family: 'Open sans', sans-serif;
+    border: 1px solid black;
+    border-radius: 0.3rem;
 }
 
 .RSVP-Prompt input[type=text]:first-child {
-    margin-right: 25px;
+    margin-right: 20px;
 }
 
 .Input-Container {
@@ -45,6 +51,7 @@
 .RSVP-Form input[type=email] {
     width: 50%;
     margin-bottom: 30px;
+    margin-top: 10px;
 }
 
 
@@ -71,6 +78,8 @@
     margin: 10px;
 }
 
+
+
 .RSVP-Text:nth-child(4) {
     margin-bottom: 40px;
 }
@@ -81,8 +90,10 @@
     padding: 7px;
     background-color: white;
     border: 1px solid black;
+    border-radius: 0.3rem;
     cursor: pointer;
     transition: all 0.125s;
+    margin-top: 10px;
 }
 
 .Next-Button:hover {
