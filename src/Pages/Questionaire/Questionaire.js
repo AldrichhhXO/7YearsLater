@@ -8,18 +8,21 @@ import { Redirect } from 'react-router-dom'
 export default class Questionaire extends Component {
     constructor(props) {
         super(props);
-
         let userIDs = []
-        for (let i =0; i < props.location.state.users.length; i++) {
-            userIDs.push(props.location.state.users[i].UserID)
-            
+        try {
+            for (let i =0; i < props.location.state.users.length; i++) {
+                userIDs.push(props.location.state.users[i].UserID)
+            }
+        }
+        catch {
+            window.location = "/rsvp"
         }
 
         this.state = {
             users: props.location.state.users,
-            userName: props.location.state.users[0].FirstName,
-            userID: [14,24], 
-            chosen: false,
+            userName: props.location.state.users[0].FirstName, // User's first name
+            userID: props.location.state.users[0].UserID, 
+            chosen: false, // For the userModal
             answer1: '',
             answer2: '',
             answer3: '',
@@ -27,17 +30,12 @@ export default class Questionaire extends Component {
             success: false,
             num: 0
         }
-        console.log(this.state.userID)
-        
     }
 
     componentDidMount() {
         document.title = "Reboja | Dorsey - RSVP Questions"
-        this.setState({totalGuests:document.getElementsByClassName('RSVP-Guest').length})
     }
 
-
-    
     handlePollAnswers = (e) => {
         e.preventDefault()
 
@@ -51,8 +49,6 @@ export default class Questionaire extends Component {
         }
         Instance.post('/rsvp/qa', body)
             .then(res => {
-
-                alert('yeet')
                 //this.setState({success: true})
             })
             .catch(err => {
@@ -61,6 +57,16 @@ export default class Questionaire extends Component {
 
     }
     
+    selectGuest = (e) => {
+        e.preventDefault()
+        let button = e.target.classList.toggle("Selected-Guest")
+        
+    }
+
+    modalHandler = (e) => {
+        e.preventDefault()
+        this.setState({chosen: true})
+    }
 
     updateAnswer1 = (input) => this.setState({answer1: input}) 
     updateAnswer2 = (input) => this.setState({answer2: input})
@@ -72,12 +78,13 @@ export default class Questionaire extends Component {
     }
 
     render() { 
+
+
+
         if (this.state.success) return <Redirect to = {{pathname: '/rsvp/success'}}/>
         return (
             <div className = "Questionaire-Container">
-                
-                <UserModal />
-                
+                {this.state.chosen ? null : <UserModal mainUser = {this.state.userName} buttonHandler = {this.selectGuest} modalHandler = {this.modalHandler} users = {this.state.users} /> }
                 <div className = "Left-Image"></div>
                 <div className = "Right-Content">
                     <h1>Welcome, {this.state.userName}!</h1>
@@ -92,7 +99,8 @@ export default class Questionaire extends Component {
                         handleAnswer2 = {this.updateAnswer2}
                         handleAnswer3 = {this.updateAnswer3}
                         handleText = {this.updateText}
-                        handleAnswers = {this.handlePollAnswers}/> 
+                        handleAnswers = {this.handlePollAnswers}
+                        /> 
                 </div>
             </div>
         )

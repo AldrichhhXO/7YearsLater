@@ -22,9 +22,9 @@ export default function SurveyContainer(props) {
 
     return (
         <div className = "Survey-Container"> 
-            <AnswerContainer container-id = {1} answers = {answers1} handler = {props.handleAnswer1}/>
-            <AnswerContainer container-id = {2} question = {question2}  answers = {answers2} handler = {props.handleAnswer2}/>
-            <AnswerContainer container-id = {3} question = {question3} answers = {answers3} handler = {props.handleAnswer3}/> 
+            <AnswerContainer containerId = {1} answers = {answers1} handler = {props.handleAnswer1}/>
+            <AnswerContainer containerId = {2} question = {question2}  answers = {answers2} handler = {props.handleAnswer2}/>
+            <AnswerContainer containerId = {3} question = {question3} answers = {answers3} handler = {props.handleAnswer3}/> 
             <p className = "Question-Font">Share how you know the couple & fun experiences you’ve all shared!</p>
 
             <div className = "Text-Area-Container">

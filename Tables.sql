@@ -11,7 +11,9 @@ CREATE TABLE `GuestList` (
 # Insert Query (GuestList) 
 
 
+# Searching for user AND plus One (? is the user that put in the information at RSVP).
 
+select * from GuestList Where UserID = ? OR PlusOne = ?;
 
 # Address Table
 

@@ -53,6 +53,10 @@
     color: white;
 }
 
+.Modal-Header {
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
 .RSVP-Guest {
     width: 60%;
     max-width: 400px;
@@ -70,6 +74,7 @@
     font-size: 18px;
     padding: 25px 10px;
     font-family: 'Open sans', sans-serif;
+    outline: none;
 }
 
 .RSVP-Guest:hover {

@@ -29,7 +29,6 @@ Router.post('/rsvp/qa', (req, res) => {
         answer3, 
         text
     }
-
     return mysql.postPollResults(body, res);
 })
 

@@ -10,13 +10,16 @@ export default class AnswerContainer extends Component {
             answers: props.answers,
             question: props.question,
             handler: props.handler,
+            containerID: props.containerId
         }
     }
 
     handleInputChange(answer) {
         this.props.handler(answer.target.value)
         answer.target.classList.toggle("Selected")
-        
+        let buttons = document.getElementById(this.state.containerID).getElementsByClassName("Answer-Choice")
+
+
     }
 
     render() {
@@ -25,7 +28,7 @@ export default class AnswerContainer extends Component {
         })
 
         return (
-            <div className = "Answer-Container">
+            <div className = "Answer-Container" id = {this.state.containerID}>
                 <p className = "Question-Font">{this.state.question}</p>
                 {answersList}
             </div>

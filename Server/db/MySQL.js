@@ -43,15 +43,22 @@ function retrieveGuestlist(res) {
 function checkRsvp(req, res) {
     let connection = connectDatabase();
     let checkQuery = "SELECT * FROM GuestList WHERE FirstName = ? AND LastName = ? AND Email = ?;"
-
+    let secondQuery = "SELECT * FROM GuestList WHERE UserID = ? OR PlusOne = ?;"
     connection.query(checkQuery, [req.firstName, req.lastName, req.email], (error, result, fields) => {
-        if (error) console.group(error.message);
+        if (error) console.log(error.message);
         else {
             if (result.length === 0) {
                 res.status(308).json({message: "Invalid Credentials"});
             }
             else {
-                res.status(201).json(result)
+                connection.query(secondQuery, [result[0].UserID, result[0].UserID], (err, result, fields) => {
+                    if (err) console.log(err.message)
+                    else {
+                        console.log(result)
+                        res.status(201).json(result)
+                    }
+                })
+                
                 
             }
             connection.end()

@@ -7,20 +7,18 @@ import './UserModal.css'
  * @returns 
  */
 export default function UserModal(props) {
+    let guests = props.users.map((user) => { return (<button key = {user.UserID} onClick = {props.buttonHandler} className = "RSVP-Guest">{user.FirstName} {user.LastName}</button>)})
     return (
         <div className = "User-Modal-Container">
             <div className = "Opacity-Container"></div>
             <div className = "User-Modal">
-                    <h2>Hello "Insert User Here"</h2>
+                    <h2 className = "Modal-Header">Hello {props.mainUser}</h2>
                     <p className = "General-Font">Who will you be reserving for today</p>
                     <div style = {{width: '100%', margin: '30px'}}>
-                        <button className = "RSVP-Guest">Aldrich Reboja</button>
-                        <button className = "RSVP-Guest">Stephanie Chavez</button>
+                        {guests}
                     </div>
-                    
-                    <input type = "Submit" />
+                    <input type = "Submit" onClick = {props.modalHandler}/>
                 </div>
-
         </div>
     )
 }

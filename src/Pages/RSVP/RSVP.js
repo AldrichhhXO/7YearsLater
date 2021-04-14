@@ -27,10 +27,11 @@ export default class RSVP extends Component {
         Instance.post('/rsvp', body)
         .then(res => {
             let usersArray = []
+           
             for (let i = 0; i < res.data.length; i++) {
                 usersArray.push(res.data[i])
             }
-            this.setState({users: usersArray, verified: true})
+             this.setState({users: usersArray, verified: true})
         })
         .catch(err => {
             this.setState({error: true, errorMessage: "Invalid Credentials"})
@@ -59,9 +60,7 @@ export default class RSVP extends Component {
             />)
         return (
             <div style = {{position: 'relative'}}>
-
                 <div className = "Left"></div>
-
                 <div className = "Right">
                     <RsvpPrompt 
                         firstName = {this.state.firstName} 
@@ -74,18 +73,8 @@ export default class RSVP extends Component {
                         errorMessage = {this.state.error ? this.state.errorMessage : null} 
                     />   
                 </div>
-
-
             </div>
         )
     }
 }
 
-/*
-if (this.state.verified) return (
-    <Redirect  push to = {{ 
-        pathname: '/rsvp/qa', 
-        state: {users: this.state.users }}} 
-    />)
-else
-*/
