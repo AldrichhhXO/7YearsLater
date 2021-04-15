@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import Spinner from '../Spinner/Spinner'
 
 import CovidNotice from '../../Components/Landing/CovidNotice/CovidNotice'
 import './Landing.css'
@@ -21,6 +22,7 @@ import MenuBar from '../../Components/Landing/MenuBar/MenuBar'
 import MenuOptions from '../../Components/Landing/MenuOptions/MenuOptions'
 
 export default function Landing() {
+
     let tester
     function calculateTime() {
         let countdown = new Date("Jul 29, 2021 16:00:00").getTime();
@@ -36,6 +38,7 @@ export default function Landing() {
     useEffect(() => {
         document.title = "7YearsLater | Welcome"
         tester = setInterval(() => calculateTime())
+
         // return () => { clearInterval(tester)}   *** This didnt work because Link from 'React-Router-Dom' called first
     })  
 
@@ -44,9 +47,12 @@ export default function Landing() {
         window.location = "/rsvp"
     }
     let shoutoutText = "Enjoy this awesome video created for us by our talented homie, Ian, and his assistant (and wifey!), Elizabeth. Words can’t express the gratitude we have for you capturing our words, our history...7 years later in the making. Love you both!"
-    
+
     return (
         <div style = {{position: 'relative'}}>
+
+            <Spinner welcome = "Welcome"/>
+
             <CovidNotice />
             <div className = "Carousel">
                 <MenuOptions />

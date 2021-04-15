@@ -12,6 +12,7 @@ import Questionaire from './Pages/Questionaire/Questionaire'
 import Success from './Pages/Success/Success'
 import Error from './Pages/Error/Error'
 
+import Spinner from './Pages/Spinner/Spinner'
 
 function App(props) {
   return (
@@ -22,13 +23,14 @@ function App(props) {
         {/** RSVP Route */}
         <Route exact path = "/rsvp" render = {(props) => <RSVP {...props} /> } />
         <Route exact path = "/rsvp/qa" render = {(props) => <Questionaire {...props}/> } />
-        <Route exact path = "/rsvp/success" render = {() => <Success />} />
+        <Route exact path = "/rsvp/success" render = {(props) => <Success {...props}/>} />
 
         {/** Admin Routes */}
         <Route exact path = "/admin" render = {() => <Admin />}/>
-        <Route exact path = "/dashboard" render  = {() => <Dashboard />} />
+        <Route exact path = "/dashboard" render  = {() => <Dashboard />} />     
 
-        
+        <Route exact path = "/spinner" render = {() => <Spinner welcome = "Ready the shot glasses"/>} />   
+        <Route exact path = "/spinners" render = {() => <Spinner welcome = "Choose your liquor"/>} />   
         <Route path = "*" render  ={() => <Error />} />
       </Switch>
     </Router>

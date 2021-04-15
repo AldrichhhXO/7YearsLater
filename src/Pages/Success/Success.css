@@ -1,15 +1,11 @@
 .Activity-Container {
-    width: 30%;
-    
+    width: 50%;
     margin-top: 50px;
     display: flex;
     justify-content: space-around;
 
 }
 
-.Activity-Icon {
-    
-}
 
 .Activity-Component {
     display: flex;
@@ -23,4 +19,15 @@
     font-size: 18px;
     margin: 5px;
     text-emphasis: bold;
+}
+
+.Success-Header {
+    text-align: center;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    width: 75%;
+}
+
+.Success-Message {
+    width: 70%;
+    font-family: 20px;
 }

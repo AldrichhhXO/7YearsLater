@@ -22,16 +22,14 @@ export default function SurveyContainer(props) {
 
     return (
         <div className = "Survey-Container"> 
-            <AnswerContainer containerId = {1} answers = {answers1} handler = {props.handleAnswer1}/>
-            <AnswerContainer containerId = {2} question = {question2}  answers = {answers2} handler = {props.handleAnswer2}/>
-            <AnswerContainer containerId = {3} question = {question3} answers = {answers3} handler = {props.handleAnswer3}/> 
+            <AnswerContainer containerId = {0} answers = {answers1} handler = {props.handleAnswer1}/>
+            <AnswerContainer containerId = {1} question = {question2}  answers = {answers2} handler = {props.handleAnswer2}/>
+            <input style ={{margin: '0'}} type = "checkbox" /><label  className = "General-Font">Check if you have different preferences</label>
             <p className = "Question-Font">Share how you know the couple & fun experiences you’ve all shared!</p>
-
             <div className = "Text-Area-Container">
                 <p>{ props.stringLength } / 200</p>
                 <textarea onChange = {props.handleText} value = {props.text} cols = {50} rows = {5} className = "Shared-Text"/>
             </div>
-
             <button onClick = {props.handleAnswers} className = "Survey-Submit-Button">Submit</button>
         </div>
     )

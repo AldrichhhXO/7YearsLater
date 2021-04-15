@@ -3,6 +3,8 @@ import RsvpPrompt from '../../Components/RSVPPrompt/RSVPPrompt'
 import Instance from '../../API/Axios'
 import { Redirect } from 'react-router-dom'
 
+import Spinner from '../Spinner/Spinner'
+
 import './RSVP.css'
 
 export default class RSVP extends Component {
@@ -15,8 +17,8 @@ export default class RSVP extends Component {
             email: '',
             verified: false,
             users: [],
-            error:  false, 
-            errorMessage: ''
+            error: false, 
+            
         }
     }
     updateFirstName = (e) => this.setState({firstName: e.target.value})
@@ -27,14 +29,14 @@ export default class RSVP extends Component {
         Instance.post('/rsvp', body)
         .then(res => {
             let usersArray = []
-           
             for (let i = 0; i < res.data.length; i++) {
                 usersArray.push(res.data[i])
             }
              this.setState({users: usersArray, verified: true})
         })
         .catch(err => {
-            this.setState({error: true, errorMessage: "Invalid Credentials"})
+            alert('error')
+            this.setState({error: true})
         })
     }
 
@@ -58,8 +60,28 @@ export default class RSVP extends Component {
                 pathname: '/rsvp/qa', 
                 state: {users: this.state.users }}} 
             />)
+        else if (this.state.error) return (
+        <div style = {{position: 'relative'}}>
+            
+            <div className = "Left"></div>
+            <div className = "Right">
+                <RsvpPrompt 
+                    test = {this.state.firstName} 
+                    firstName = {this.state.firstName} 
+                    lastName = {this.state.lastName}
+                    email = {this.state.email} 
+                    handleFirstName = {this.updateFirstName}
+                    handleLastName = {this.updateLastName} 
+                    handleEmail = {this.updateEmail} 
+                    handleSubmit = {this.handleNext} 
+                    error = {this.state.error}
+                />   
+            </div>
+    </div>)
+        else
         return (
             <div style = {{position: 'relative'}}>
+                <Spinner welcome = "Ready the shot glasses"/>
                 <div className = "Left"></div>
                 <div className = "Right">
                     <RsvpPrompt 
@@ -70,7 +92,6 @@ export default class RSVP extends Component {
                         handleLastName = {this.updateLastName} 
                         handleEmail = {this.updateEmail} 
                         handleSubmit = {this.handleNext} 
-                        errorMessage = {this.state.error ? this.state.errorMessage : null} 
                     />   
                 </div>
             </div>

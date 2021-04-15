@@ -43,7 +43,7 @@ function retrieveGuestlist(res) {
 function checkRsvp(req, res) {
     let connection = connectDatabase();
     let checkQuery = "SELECT * FROM GuestList WHERE FirstName = ? AND LastName = ? AND Email = ?;"
-    let secondQuery = "SELECT * FROM GuestList WHERE UserID = ? OR PlusOne = ?;"
+    let secondQuery = "SELECT * FROM GuestList WHERE (UserID = ? OR PlusOne = ?) AND Rsvp = 0;"
     connection.query(checkQuery, [req.firstName, req.lastName, req.email], (error, result, fields) => {
         if (error) console.log(error.message);
         else {
@@ -58,8 +58,6 @@ function checkRsvp(req, res) {
                         res.status(201).json(result)
                     }
                 })
-                
-                
             }
             connection.end()
         }
@@ -135,18 +133,22 @@ function retrieveQuestions(req, res) {
  * @param {*} res 
  */
 function postPollResults (req, res) {
-    let {userID, answer1, answer2, answer3, text} = req
+    let {userID, answer1, answer2, text} = req
     let connection = connectDatabase();
 
-
+    
     let guests = []
     for (let i = 0; i < userID.length; i++) {
         let user = []
-        user.push(userID[i], answer1, answer2, answer3, text)
+        user.push(userID[i], answer1, answer2, text)
         guests.push(user)
     }
+
+
+
+    console.log(guests)
     
-    let pollQuery = "INSERT INTO Poll (UserID, Question1, Question2, Question3, Question4) VALUES (?,?,?,?,?); "
+    let pollQuery = "INSERT INTO Poll (`UserID`, `Question1`, `Question2`, `Question4`) VALUES ?; "
     connection.query(pollQuery, [guests], (err, result) => {
         if (err) {
             console.log(err)
@@ -157,9 +159,6 @@ function postPollResults (req, res) {
             connection.end()
         }
     })
-    
-    
-
 }
 
 module.exports = {

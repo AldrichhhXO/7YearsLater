@@ -14,6 +14,7 @@
     padding: 20px;
     font-size: 16px;
     font-family: 'Open sans', sans-serif;
+    resize: none;
 }
 
 .Text-Area-Container {

@@ -16,10 +16,12 @@ export default class AnswerContainer extends Component {
 
     handleInputChange(answer) {
         this.props.handler(answer.target.value)
-        answer.target.classList.toggle("Selected")
+        
         let buttons = document.getElementById(this.state.containerID).getElementsByClassName("Answer-Choice")
-
-
+        for (let i = 0; i < buttons.length; i++) {
+            if (buttons[i].classList.contains('Selected')) buttons[i].classList.toggle("Selected")
+        }
+        answer.target.classList.toggle("Selected")
     }
 
     render() {

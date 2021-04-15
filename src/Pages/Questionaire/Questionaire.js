@@ -1,31 +1,22 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import './Questionaire.css'
 import UserModal from '../../Components/UserModal/UserModal'
 import SurveyContainer from '../../Containers/SurveyContainer/SurveyContainer'
 import Instance from '../../API/Axios'
 import { Redirect } from 'react-router-dom'
+import Spinner from '../Spinner/Spinner'
 
 export default class Questionaire extends Component {
     constructor(props) {
         super(props);
-        let userIDs = []
-        try {
-            for (let i =0; i < props.location.state.users.length; i++) {
-                userIDs.push(props.location.state.users[i].UserID)
-            }
-        }
-        catch {
-            window.location = "/rsvp"
-        }
 
         this.state = {
-            users: props.location.state.users,
+            users: props.location.state.users, // The users that result from the POST /rsvp call    
             userName: props.location.state.users[0].FirstName, // User's first name
-            userID: props.location.state.users[0].UserID, 
+            userID: [props.location.state.users[0].UserID ], 
             chosen: false, // For the userModal
             answer1: '',
             answer2: '',
-            answer3: '',
             text: '',
             success: false,
             num: 0
@@ -38,15 +29,13 @@ export default class Questionaire extends Component {
 
     handlePollAnswers = (e) => {
         e.preventDefault()
-
-        e.preventDefault()
         let body = {
             userID: this.state.userID, 
             answer1: this.state.answer1,
             answer2: this.state.answer2,
-            answer3: this.state.answer3,
             text: this.state.text,
         }
+        
         Instance.post('/rsvp/qa', body)
             .then(res => {
                 //this.setState({success: true})
@@ -54,13 +43,22 @@ export default class Questionaire extends Component {
             .catch(err => {
 
             })
-
     }
     
     selectGuest = (e) => {
         e.preventDefault()
-        let button = e.target.classList.toggle("Selected-Guest")
-        
+        let button = e.target.classList.toggle("Selected")
+        let array = this.state.userID
+        let contains = false;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] == e.target.id) contains = true;
+        }
+        if (contains) {
+            array.pop()
+        }
+        else {
+            (array.push(Number(e.target.id) ))
+        }
     }
 
     modalHandler = (e) => {
@@ -78,17 +76,15 @@ export default class Questionaire extends Component {
     }
 
     render() { 
-
-
-
-        if (this.state.success) return <Redirect to = {{pathname: '/rsvp/success'}}/>
+        if (this.state.success) return <Redirect to = {{pathname: '/rsvp/success', state: {name: this.state.userName }}}/>
         return (
             <div className = "Questionaire-Container">
-                {this.state.chosen ? null : <UserModal mainUser = {this.state.userName} buttonHandler = {this.selectGuest} modalHandler = {this.modalHandler} users = {this.state.users} /> }
+                <Spinner welcome = "Choose your Liquor" />
+                {this.state.chosen || this.state.users.length < 2 ? null : <UserModal mainUser = {this.state.userName} buttonHandler = {this.selectGuest} modalHandler = {this.modalHandler} users = {this.state.users} /> }
                 <div className = "Left-Image"></div>
                 <div className = "Right-Content">
-                    <h1>Welcome, {this.state.userName}!</h1>
-                    <h1 className = "Questionaire-Header">RSVP Questions</h1>
+                    <h1 className = "Questionaire-Greeting">Welcome, {this.state.userName}!</h1>
+                    <p>Please answer the questions below</p>
                     <SurveyContainer 
                         answer1 = {this.state.answer1}
                         answer2 = {this.state.answer2}
@@ -97,7 +93,6 @@ export default class Questionaire extends Component {
                         stringLength = {this.state.num} 
                         handleAnswer1  = {this.updateAnswer1}
                         handleAnswer2 = {this.updateAnswer2}
-                        handleAnswer3 = {this.updateAnswer3}
                         handleText = {this.updateText}
                         handleAnswers = {this.handlePollAnswers}
                         /> 
@@ -108,27 +103,3 @@ export default class Questionaire extends Component {
         
     }
 }
-
-
-    /*
-    toggleGuest = (e) => {
-        e.preventDefault()
-        let target = e.target
-         let test = String( e.target.className)
-        if (test.includes('Selected-Guest')) {
-            target.classList.remove('Selected-Guest')
-            this.setState(prevState => {
-                return {selectedGuests: prevState.selectedGuests - 1}
-            })
-            console.log(target)
-        }
-        else  {
-            target.classList.add('Selected-Guest')
-            this.setState(prevState => {
-                return {selectedGuests: prevState.selectedGuests + 1}
-            })
-            console.log(target)
-        }
-        
-    }
-    */

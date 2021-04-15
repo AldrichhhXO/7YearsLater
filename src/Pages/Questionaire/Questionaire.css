@@ -2,6 +2,8 @@
   
 }
 
+
+
 .Left-Image {
     width: 59%;
     height: 100vh;
@@ -33,7 +35,11 @@
 
 
 
-
+.Questionaire-Greeting {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    text-align: center;
+    margin-top: 30px;
+}
 
 .Questionaire-Header {
     text-align: center;
@@ -52,10 +58,7 @@
     font-family: 'Open sans', sans-serif;
 }
 
-.Selected-Guest {
-    background-color: black;
-    color: white;
-}
+
 
 
 /*

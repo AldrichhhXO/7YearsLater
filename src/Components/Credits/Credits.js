@@ -8,8 +8,7 @@ import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
 export default function Credits() {
     return (
         <div className = "Credits">
-            
-            <h1 className = "Credits-User">&#169; Aldrich Reboja</h1>
+            <h1 className = "Credits-User">Aldrich Reboja</h1>
             <hr style = {{marginBottom: '50px', width: '50%', maxWidth: '300px'}}/>
             <div className = "Credits-Contacts">
                 <a className = "Contact" href = "https://www.linkedin.com/in/aktreboja/" target = "_blank" rel = "noopener noreferrer"><FontAwesomeIcon icon = {faLinkedin} size = "3x"/></a>

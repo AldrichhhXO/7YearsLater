@@ -2,9 +2,7 @@
     position: fixed;
     width: 100vw;
     height: 100vh;
-    
     z-index: 12;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,12 +18,11 @@
 
 .User-Modal {
     position: relative;
-    border: 1px solid black;
     width: 400px;
     height: 500px;
     opacity: 1;
     background-color: white;
-
+    border-radius: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,6 +72,8 @@
     padding: 25px 10px;
     font-family: 'Open sans', sans-serif;
     outline: none;
+    background-color: white;
+    
 }
 
 .RSVP-Guest:hover {
