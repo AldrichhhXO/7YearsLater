@@ -65,86 +65,32 @@ function checkRsvp(req, res) {
 }
 
 
-
-function retrieveSurveyQuestions(res) {
-    let connection = connectDatabase();
-
-    let questionsQuery = "SELECT * FROM Question"
-
-    let test = "SELECT * FROM Question, Answer"
-
-    connection.query(test, (err, result) => {
-        if (err) {
-            //callback(err, null)
-            connection.end()
-        }
-        else {
-            //callback(null, result)
-            console.log(result)
-            connection.end()
-        }
-    })
-}
-
-
-/**
- * addGuest query
- * 1. This will add a user to the guestlist
- */
- function addGuest() {
-    connection.connect((err) => {
-        if (err) {
-            throw err;
-        }
-    });
-
-    let insertQuery = "INSERT INTO T "
-
-    connection.end();
-}
-
-function retrieveQuestions(req, res) {
-    let connection = connectDatabase();
-    let questionsQuery = "SELECT * from Question;"
-
-    connection.query(questionsQuery, (err, result) => {
-        if (err) res.status(500).json({error: err})
-        else {
-        let questionsArray = []
-        for (let i = 0; i < result.length; i++) {
-            let question = {
-                questionID: result[i].QuestionID,
-                question: result[i].Question
-            }
-            questionsArray.push(question)
-        }
-        res.send(questionsArray)
-        connection.end()
-        }
-        
-    })
-}
-
-
-
 /**
  * Posts the poll results onto the DB.
  * @param {} req 
  * @param {*} res 
  */
 function postPollResults (req, res) {
-    let {userID, answer1, answer2, text} = req
+    let {userID, answer1, answer2, answer3,  text} = req
     let connection = connectDatabase();
 
-    
+    let userIDs = []
     let guests = []
     for (let i = 0; i < userID.length; i++) {
         let user = []
-        user.push(userID[i], answer1, answer2, text)
+        if ( i == 1) {
+            user.push(userID[i], answer1, answer3, text)
+        }
+        else {
+            user.push(userID[i], answer1, answer2, text)
+        }
+        userIDs.push(userID[i])
         guests.push(user)
     }
 
-
+    let RsvpQuery = "Update GuestList SET RSVP = 1 WHERE UserID = ?"
+    
+    connection.query(RsvpQuery, [userIDs])
 
     console.log(guests)
     
@@ -165,7 +111,5 @@ module.exports = {
     connectDatabase,
     retrieveGuestlist,
     checkRsvp,
-    retrieveSurveyQuestions,
-    retrieveQuestions,
     postPollResults
 }

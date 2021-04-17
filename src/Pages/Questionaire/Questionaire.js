@@ -11,12 +11,15 @@ export default class Questionaire extends Component {
         super(props);
 
         this.state = {
-            users: props.location.state.users, // The users that result from the POST /rsvp call    
-            userName: props.location.state.users[0].FirstName, // User's first name
-            userID: [props.location.state.users[0].UserID ], 
+            users: props.location.state.users,
+            secondUser: false,
+            userName: props.location.state.users[0].FirstName, 
+            userName2: props.location.state.users[1].FirstName || null,
+            userID: [ props.location.state.users[0].UserID ], 
             chosen: false, // For the userModal
             answer1: '',
             answer2: '',
+            answer3: '',
             text: '',
             success: false,
             num: 0
@@ -33,12 +36,13 @@ export default class Questionaire extends Component {
             userID: this.state.userID, 
             answer1: this.state.answer1,
             answer2: this.state.answer2,
+            answer3: this.state.answer3,
             text: this.state.text,
         }
         
         Instance.post('/rsvp/qa', body)
             .then(res => {
-                //this.setState({success: true})
+                this.setState({success: true})
             })
             .catch(err => {
 
@@ -64,6 +68,8 @@ export default class Questionaire extends Component {
     modalHandler = (e) => {
         e.preventDefault()
         this.setState({chosen: true})
+        if (this.state.userID.length > 1) this.setState({secondUser: true})
+        
     }
 
     updateAnswer1 = (input) => this.setState({answer1: input}) 
@@ -89,10 +95,14 @@ export default class Questionaire extends Component {
                         answer1 = {this.state.answer1}
                         answer2 = {this.state.answer2}
                         answer3 = {this.state.answer3}
+                        user1 = {this.state.userName}
+                        secondUser = {this.state.secondUser}
+                        user2 = {this.state.userName2}
                         text = {this.state.text} 
                         stringLength = {this.state.num} 
                         handleAnswer1  = {this.updateAnswer1}
                         handleAnswer2 = {this.updateAnswer2}
+                        handleAnswer3= {this.updateAnswer3}
                         handleText = {this.updateText}
                         handleAnswers = {this.handlePollAnswers}
                         /> 
@@ -103,3 +113,7 @@ export default class Questionaire extends Component {
         
     }
 }
+
+/*
+
+*/

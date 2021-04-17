@@ -8,17 +8,18 @@ let dotenv = require('dotenv').config();
 // Routes initialization
 let AdminRouter= require('./Routes/Admin');
 let RsvpRouter = require('./Routes/RSVP');
-
 let mysql = require('./db/MySQL');
-
 
 var app = express();
 
-app.use(express.static("../build"));
-app.get('/', ( req , res ) => {
-  res.sendFile('build/index.html');
-});
+const buildPath = path.join(__dirname, "..", "build")
+app.use(express.static(buildPath))
 
+/*
+app.get('/*', ( req , res ) => {
+  res.sendFile(path.join(buildPath, "index.html"));
+});
+*/
 
 
 // Cors Initialization
@@ -28,11 +29,15 @@ app.use(function(req, res, next) {
     next();
   });
 
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+  
 app.use('/',AdminRouter);
 app.use('/',RsvpRouter);
+  
 
 module.exports = app;

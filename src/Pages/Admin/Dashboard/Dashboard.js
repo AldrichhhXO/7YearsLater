@@ -15,7 +15,6 @@ export default class Dashboard extends React.Component {
         }
     }
 
-    
 
     componentDidMount() {
         Instance.get('/dashboard')
@@ -56,7 +55,7 @@ export default class Dashboard extends React.Component {
                         <h1 className = "Guests-Container-Header">Accepted</h1>
                         <p className = "Guests-Container-Counter">{this.state.acceptedGuests.length} guests</p>
                             <div className = "Accepted-Guests">
-                                {guestlist}
+                                {Accepptedlist}
                             </div>
                         </div>
 
