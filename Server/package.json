@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "start": "pm2 start ./bin/www  --watch",
-    
     "dev": "nodemon ./bin/www"
   },
   "dependencies": {

@@ -36,7 +36,8 @@
     "devserv": "cd server && npm run dev",
     "production": "concurrently npm:build  npm:devserv",
     "test_prod": "concurrently npm:devserv npm:start",
-    "prod": "cd Server && npm start"
+    "prod": "cd Server && npm start",
+    "reset": ""
   },
   "eslintConfig": {
     "extends": [
