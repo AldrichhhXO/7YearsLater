@@ -38,7 +38,6 @@
     "test_prod": "concurrently npm:devserv npm:start",
     "prod": "cd Server && npm start",
     "backinstall": "cd Server && npm i"
-    "reset": ""
   },
   "eslintConfig": {
     "extends": [
