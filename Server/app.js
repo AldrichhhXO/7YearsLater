@@ -15,6 +15,7 @@ var app = express();
 const buildPath = path.join(__dirname, "..", "build")
 app.use(express.static(buildPath))
 
+console.log(buildPath)
 
 app.get('/*', ( req , res ) => {
   res.sendFile(path.join(buildPath, "index.html"));

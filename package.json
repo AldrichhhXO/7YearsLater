@@ -32,7 +32,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "devserv": "cd server && npm run dev",
-    "prod": "cd Server && npm start"
+    "prod": "cd Server && npm start",
+    "frontend": "react-scripts start"
   },
   "eslintConfig": {
     "extends": [
