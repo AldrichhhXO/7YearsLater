@@ -1,8 +1,8 @@
 .Answer-Container {
     position: relative;
-    width: 60%;
+    width: 80%;
     height: fit-content;
-    margin: 40px auto;
+    margin: 20px auto;
 }
 
 
@@ -37,4 +37,33 @@
 .Question-Font {
     font-size: 20px;
     font-family: 'Open sans', sans-serif;
+}
+
+
+.Answer-Container:nth-child(2) {
+   
+    margin-bottom: 75px;
+}
+
+@media only screen and (min-width: 250px) {
+    .Answer-Choice {
+        width: 70%;
+        max-width: 300px;
+        font-size: 14px;
+        padding: 10px;
+        height: 40px;
+    }
+
+    .Question-Font {
+        font-size: 14px;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+}
+
+
+@media only screen and (min-width: 700px) {
+    .Answer-Choice {
+        min-width: 300px;
+    }
 }

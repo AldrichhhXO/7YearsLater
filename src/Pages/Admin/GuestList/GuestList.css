@@ -1,0 +1,93 @@
+.GuestList-Container {
+    
+    height: 84vh;
+    width: 100%;
+}
+
+.Filters-Container {
+    width: 100%;
+    border: 1px solid red;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.Filters-Header {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    text-align: center;
+}
+
+.Name-Search {
+    text-indent: 20px;
+    text-align: center;
+    height: 33px;
+    font-size: 19px;
+    width: 400px;
+    margin-top: 20px;
+    border-radius: 0.2rem;
+    border: 1px solid black;
+    padding: 20px 0px;
+}
+
+.Filters {
+    display: flex;
+    width: 80%;
+}
+
+.Filter {
+    border: 1px solid black;
+    border-radius: 0.3rem;
+    font-size: 20px;
+    width: 220px;
+    margin: 20px auto;
+    text-align: center;
+    cursor: pointer;
+    padding: 8px 0px;
+    transition: all 0.2s ease;
+}
+
+
+
+.GuestList-Grid {
+    width: 70%;
+    height: 80%;
+    margin: auto;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-auto-rows: 42px;
+
+    overflow: scroll;
+}
+
+.GuestList-Header {
+    font-size: 25px;
+}
+
+.GuestList-Guest {
+    grid-column: 1 / 4;
+    border: 1px solid black;
+    
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    margin: 20px 0px;
+}
+
+.GuestList-Guest div {
+    margin-left: 10px;
+    font-size: 22px;
+
+}
+
+.Filter:hover {
+    background-color: rgba(30,30,30,0.9);
+    color: white;
+}
+
+.Selected-Filter {
+    background-color: rgba(15,15,15.9);
+    color: white;
+}

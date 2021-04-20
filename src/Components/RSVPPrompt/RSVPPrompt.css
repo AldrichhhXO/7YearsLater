@@ -1,6 +1,5 @@
 .RSVP-Prompt {
     width: 80%;
-    min-width: 480px;
     max-width: 550px;
     height: 600px;
     box-shadow: 5px 10px 10px rgba(0,0,0,0.17), -5px -10px 10px rgba(0,0,0,0.14);
@@ -16,7 +15,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-   justify-content: space-between;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .RSVP-Prompt h1, p {
@@ -40,7 +40,6 @@
 
 .Input-Container {
     position: relative;
-    
     width: fit-content;
     height: fit-content;
 }
@@ -56,7 +55,7 @@
 .Error-Message {
     border: 1.5px solid red;
     background-color: rgba(255,0,0,0.2);
-    margin-top: -25px;
+    margin-top: -15px;
     color: red;
     font-size: 17px;
     padding: 10px 15px;
@@ -98,4 +97,86 @@
 .Next-Button:hover {
     background-color: black;
     color: white;
+}
+
+@media only screen and (min-width: 250px) {
+    .RSVP-Title {
+        font-size: 24px;
+    }
+
+    .RSVP-Text {
+        font-size: 15px;
+    }
+
+    .RSVP-Prompt {
+        width: 90%;
+        height: 520px;
+       
+    }
+
+    .RSVP-Prompt input {
+        height: 20px;
+        font-size: 13px;
+    }
+
+    .Name-Inputs {
+        margin: auto;
+        width: fit-content;
+        width: 50%;
+        
+    }
+
+    .Name-Inputs input {
+        width: 100%;
+        display: block;
+    }
+
+    .RSVP-Text:nth-child(4) {
+        margin-bottom: 30px;
+    }
+
+
+
+    .RSVP-Form input[type=email] {
+        width: 50%; 
+    }
+
+    .Next-Button {
+        font-size: 14px;
+        width: 120px;
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .RSVP-Prompt {
+        width: 90%;
+        height: 520px;
+        max-width: 500px;
+    }
+    
+
+    .Name-Inputs {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .Name-Inputs input {
+        width: 40%;
+        max-width: 150px;
+        display: inline;
+        font-size: 16px;
+        height: 25px;
+    }
+
+    .RSVP-Form input[type=email] {
+        width: 40%; 
+    }
+
+    .RSVP-Form input[type=email] {
+       font-size: 16px;
+       height: 25px;
+    }
 }

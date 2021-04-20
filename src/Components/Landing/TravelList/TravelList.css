@@ -6,3 +6,17 @@
     line-height: 28px;
     font-size: 17px;
 }
+
+
+@media only screen and (min-width: 250px) {
+    .Travel-Item li {
+        font-size: 14px;
+    }
+}
+
+
+@media only screen and (min-width: 700px) {
+    .Travel-Item li {
+        font-size: 17px;
+    }
+}

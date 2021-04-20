@@ -38,8 +38,6 @@ export default function Landing() {
     useEffect(() => {
         document.title = "7YearsLater | Welcome"
         tester = setInterval(() => calculateTime())
-
-        // return () => { clearInterval(tester)}   *** This didnt work because Link from 'React-Router-Dom' called first
     })  
 
     function closeTimer() {
@@ -50,9 +48,7 @@ export default function Landing() {
 
     return (
         <div style = {{position: 'relative'}}>
-
             <Spinner welcome = "Welcome"/>
-
             <CovidNotice />
             <div className = "Carousel">
                 <MenuOptions />

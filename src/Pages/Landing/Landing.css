@@ -1,10 +1,7 @@
 .Carousel {
-    width: 61%;
+    
     height: 100vh;
-    float: left;
 
-    /* Sticky so  that only the right moves */
-    position: fixed;
     top: 0px;
 }
 
@@ -25,19 +22,9 @@
     justify-content: center;
 }
 
-/*
-.Event-Summary-Container {
-
-}
-*/
-
 
 .Location {
 
-    /* 
-        Mobile Sizings 
-        font-size: 28px;
-    */
     font-size: 32px;
     width: 80%;
     margin: 0 auto;
@@ -105,7 +92,7 @@
 
 @media only screen and (min-width: 300px) {
     .Carousel {
-        display: none;
+        width: 100%;
     }
 
     .Right-Section {
@@ -113,7 +100,15 @@
     }
 
     .Video-Placeholder {
-        width: 60%;
+        width: 75%;
+        height: fit-content;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .Video-Placeholder {
+        max-width: 400px;
+        height: 220px;
     }
 }
 
@@ -121,7 +116,9 @@
 @media only screen and (min-width: 1200px) {
     .Carousel {
         display: block;
-        
+        position: fixed;
+        float: left;
+        width: 61%;
     }
 
     .Right-Section {

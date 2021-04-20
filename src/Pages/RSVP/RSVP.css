@@ -19,7 +19,7 @@
 }
 
 
-@media only screen and (min-width: 300px) {
+@media only screen and (min-width: 250px) {
     .Right {
         width: 100%;
         background: url(../../images/look.jpeg);

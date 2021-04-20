@@ -9,25 +9,30 @@ import Spinner from '../Spinner/Spinner'
 export default class Questionaire extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            users: props.location.state.users,
-            secondUser: false,
-            userName: props.location.state.users[0].FirstName, 
-            userName2: props.location.state.users[1].FirstName || null,
-            userID: [ props.location.state.users[0].UserID ], 
-            chosen: false, // For the userModal
-            answer1: '',
-            answer2: '',
-            answer3: '',
-            text: '',
-            success: false,
-            num: 0
+        try {
+            this.state = {
+                users: props.location.state.users,
+                secondUser: false,
+                userName: props.location.state.users[0].FirstName, 
+                userName2: props.location.state.users[1].FirstName || null,
+                userID: [ props.location.state.users[0].UserID ], 
+                chosen: false, // For the userModal
+                answer1: '',
+                answer2: '',
+                answer3: '',
+                text: '',
+                success: false,
+                num: 0
+            }
         }
+        catch {
+            window.location = "/rsvp"
+        }
+
     }
 
     componentDidMount() {
-        document.title = "Reboja | Dorsey - RSVP Questions"
+        document.title = "7YearsLater | Questions before Party time!"
     }
 
     handlePollAnswers = (e) => {
@@ -69,7 +74,6 @@ export default class Questionaire extends Component {
         e.preventDefault()
         this.setState({chosen: true})
         if (this.state.userID.length > 1) this.setState({secondUser: true})
-        
     }
 
     updateAnswer1 = (input) => this.setState({answer1: input}) 
@@ -90,7 +94,7 @@ export default class Questionaire extends Component {
                 <div className = "Left-Image"></div>
                 <div className = "Right-Content">
                     <h1 className = "Questionaire-Greeting">Welcome, {this.state.userName}!</h1>
-                    <p>Please answer the questions below</p>
+                    
                     <SurveyContainer 
                         answer1 = {this.state.answer1}
                         answer2 = {this.state.answer2}
@@ -108,12 +112,9 @@ export default class Questionaire extends Component {
                         /> 
                 </div>
             </div>
-        )
-
-        
+        )   
     }
 }
-
 /*
 
 */

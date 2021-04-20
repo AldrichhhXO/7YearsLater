@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 import Instance from '../../API/Axios'
 import './RSVPPrompt.css'
@@ -12,7 +12,7 @@ export default function RSVP_Prompt(props) {
                 <p className = "RSVP-Text">Enter your information to RSVP.</p>
                 {props.error ? <p className = "Error-Message">Invalid Credentials</p> : null}
                 <form onSubmit = {props.handleSubmit} className  ="RSVP-Form">
-                    <div>
+                    <div className = "Name-Inputs">
                         <input type = "text" placeholder = "First Name"  value = {props.firstName} required = {true} onChange = {props.handleFirstName} />
                         <input type = "text" placeholder = "Last Name" value = {props.lastName} required = {true} onChange = {props.handleLastName}/>
                     </div>

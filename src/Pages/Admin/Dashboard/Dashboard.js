@@ -2,7 +2,7 @@ import React from 'react'
 import './Dashboard.css'
 import Instance from '../../../API/Axios'
 import Guest from '../../../Components/Guest/Guest'
-import NotificationContainer from '../../../Containers/NotificationContainer/NotificationContainer'
+import Navbar from '../../../Components/Navbar/Navbar'
 import { Link } from 'react-router-dom'
 
 export default class Dashboard extends React.Component {
@@ -44,32 +44,32 @@ export default class Dashboard extends React.Component {
 
         return (
             <div className = "Dashboard"> 
-                <div className = "Dashboard-Options">
+                <div className = "Dashboard-Left"></div>
+                <div className = "Dashboard-Right">
                     <h1 className = "Dashboard-Header">Welcome, Melissa and Anthony</h1>
-                    <nav className = "Navbar">
-                        <Link className = "Navbar-Link">Guest List</Link>
-                        <Link className = "Navbar-Link">RSVP</Link>
-                    </nav>
-                    <div className = "Dashboard-Sections-Container">
-                        <div className = "Guests-Container">
+                    <Navbar />
+                    <div className = "Guests-Container">
                         <h1 className = "Guests-Container-Header">Accepted</h1>
                         <p className = "Guests-Container-Counter">{this.state.acceptedGuests.length} guests</p>
-                            <div className = "Accepted-Guests">
-                                {Accepptedlist}
-                            </div>
+                        <div className = "Accepted-Guests">
+                            {acceptedGuests}
                         </div>
+                    </div>
 
-                        <div className = "Guests-Container">
-                            <h1 className = "Guests-Container-Header">Need to respond</h1>
-                            <p className = "Guests-Container-Counter">{this.state.needToRespond.length} guests</p>
-                            <div className = "Accepted-Guests">
-                                {pendingGuests}
-                            </div>
+                    <div className = "Guests-Container">
+                        <h1 className = "Guests-Container-Header">Need to respond</h1>
+                        <p className = "Guests-Container-Counter">{this.state.needToRespond.length} guests</p>
+                        <div className = "Accepted-Guests">
+                            {pendingGuests}
                         </div>
                     </div>
 
 
                 </div>
+
+
+
+
 
                 {/*
                 <div className = "Notification-Center">

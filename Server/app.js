@@ -3,6 +3,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 let dotenv = require('dotenv').config();
+let bcrypt = require('bcrypt');
 
 
 // Routes initialization
@@ -15,11 +16,11 @@ var app = express();
 const buildPath = path.join(__dirname, "..", "build")
 app.use(express.static(buildPath))
 
-/*
+
 app.get('/*', ( req , res ) => {
   res.sendFile(path.join(buildPath, "index.html"));
 });
-*/
+
 
 
 // Cors Initialization
@@ -38,6 +39,8 @@ app.use(cookieParser());
   
 app.use('/',AdminRouter);
 app.use('/',RsvpRouter);
+
+
   
 
 module.exports = app;

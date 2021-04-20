@@ -15,8 +15,8 @@ export default function UserModal(props) {
         <div className = "User-Modal-Container">
             <div className = "Opacity-Container"></div>
             <div className = "User-Modal">
-                    <h2 className = "Modal-Header">Hello {props.mainUser}</h2>
-                    <p className = "General-Font">Who will you be reserving for today</p>
+                    <h2 className = "Modal-Header">Hello, {props.mainUser}!</h2>
+                    <p className = "General-Font">Who will you be reserving for today?</p>
                     <div style = {{width: '100%', margin: '30px'}}>
                         {guests}
                     </div>

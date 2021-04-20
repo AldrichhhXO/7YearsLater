@@ -35,7 +35,6 @@ export default class RSVP extends Component {
              this.setState({users: usersArray, verified: true})
         })
         .catch(err => {
-            alert('error')
             this.setState({error: true})
         })
     }
@@ -54,7 +53,7 @@ export default class RSVP extends Component {
 
     // Conditions: IF user is verified render redirect, if error re-
     render() {
-        document.title = "RSVP here"
+        document.title = "7YearsLater | RSVP"
         if (this.state.verified) return (
             <Redirect  push to = {{ 
                 pathname: '/rsvp/qa', 

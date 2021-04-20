@@ -58,3 +58,36 @@
     margin-bottom: 50px;
     font-family: 'Open sans',  sans-serif;
 }
+
+
+@media only screen and (min-width: 250px) {
+
+    .QA-Message {
+        font-size: 14px;
+    }
+
+    .QA-Question {
+        font-size: 14px;
+    }
+
+    .QA-Response {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+
+    .QA-Message {
+        font-size: 17px;
+    }
+
+    .QA-Question {
+        font-size: 18px;
+    }
+
+    .QA-Response {
+        font-size: 16px;
+    }
+}
+
+

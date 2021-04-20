@@ -1,0 +1,87 @@
+.Error-Container {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    z-index: 20;
+    padding: 10px;
+}
+
+.Error-Title {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 40px;
+    
+    text-align: center;
+}
+
+.Error-msg {
+    font-size: 23px;
+    width: 70%;
+    text-align: center; 
+    margin: auto;
+    font-family: 'Open sans', sans-serif;
+    margin-top: 20px;
+    line-height: 30px;
+}
+
+.Action-Buttons {
+    width: 40%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.Action-Button {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.Action-Button p {
+    font-family: 'Open sans', sans-serif;
+    font-size: 18px;
+}
+
+.Action-Button:hover {
+    box-shadow: 5px 10px 10px rgba(0,0,0,0.2);
+}
+
+@media only screen and (min-width: 250px) {
+    .Error-Container {
+        width: 80%;
+        height: 400px;
+    }
+
+    .Error-Title { 
+        font-size: 20px;;
+    }
+
+    .Error-msg {
+        font-size: 14px;
+    }
+
+    .Action-Button p {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .Error-Title {
+        font-size: 40px;
+    }
+    .Error-msg {
+        font-size: 22px;
+    }
+}

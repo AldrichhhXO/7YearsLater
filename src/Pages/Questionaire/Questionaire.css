@@ -38,7 +38,8 @@
 .Questionaire-Greeting {
     font-family: 'Alegreya Sans SC', sans-serif;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 70px;
+    margin-bottom: 0px;
 }
 
 .Questionaire-Header {
@@ -65,13 +66,14 @@
     Media Queries
 */
 
-@media only screen and (min-width: 300px) {
+@media only screen and (min-width: 250px) {
     .Left-Image {
-        display: none;
+        width: 0%;
     }
 
     .Right-Content {
         width: 100%;
+        
     }
 
     .Questionaire {
@@ -84,7 +86,7 @@
 @media only screen and (min-width: 1100px) {
     .Left-Image {
         display: block;
-       
+        width: 59%;
     }
 
     .Right-Content {

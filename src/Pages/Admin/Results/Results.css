@@ -1,0 +1,36 @@
+.Results-Container {
+    width: 80%;
+    height: 500px;
+    border: 1px solid black;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 40%;
+    grid-auto-rows: 50px;
+    overflow: scroll;
+}
+
+.Results-Container h1 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    margin-top: 5px;
+}
+
+.Results-Container p {
+    text-align: left;
+}
+
+
+
+.Result {
+    grid-column: 1 / 5;
+    border: 1px solid black;
+  
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+}
+
+.Result p {
+    display: inline-block;
+   
+}

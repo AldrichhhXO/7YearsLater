@@ -30,12 +30,12 @@
 }
 
 .User-Modal p {
-    font-size: 18px;;
+    font-size: 18px;
 }
 
 .User-Modal input {
     font-size: 18px;
-    padding: 10px 20px;
+    
     width: 150px;
     background-color: white;
     color: black;
@@ -62,7 +62,7 @@
     margin: 0 auto;
     text-align: center;
     height: 40px;
-    border-radius: 0.8rem;
+    border-radius: 0.3rem;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -81,3 +81,32 @@
     color: white;
 }
 
+@media only screen and (min-width: 250px) {
+    .User-Modal {
+        width: 80%;
+        max-width: 400px;
+        height: 450px;
+    }
+
+    .RSVP-Guest {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .User-Modal p {
+        font-size: 15px;
+    }
+
+    .User-Modal input {
+        padding: 7px 5px;
+        width: 150px;
+        font-size: 14px;
+    }
+}
+
+
+
+
+@media only screen and (min-width: 800px) {
+    
+}

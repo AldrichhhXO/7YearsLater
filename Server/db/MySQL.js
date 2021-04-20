@@ -88,11 +88,19 @@ function postPollResults (req, res) {
         guests.push(user)
     }
 
-    let RsvpQuery = "Update GuestList SET RSVP = 1 WHERE UserID = ?"
-    
-    connection.query(RsvpQuery, [userIDs])
 
-    console.log(guests)
+    let RsvpQuery = "Update GuestList SET RSVP = 1 WHERE UserID = ?;"   
+    let bulkRsvp = "UPDATE guestlist Set RSVP = 1 WHERE UserID = ? OR UserID = ?;"
+    
+    if (userIDs.length > 1) {
+        connection.query(bulkRsvp, [userIDs[0], userIDs[1]], (err, res) => {
+        })
+    }
+    else {
+        connection.query(RsvpQuery, [userIDs], (err, res) => {
+           
+        })
+    }
     
     let pollQuery = "INSERT INTO Poll (`UserID`, `Question1`, `Question2`, `Question4`) VALUES ?; "
     connection.query(pollQuery, [guests], (err, result) => {
@@ -107,9 +115,27 @@ function postPollResults (req, res) {
     })
 }
 
+
+function getPollResults(res) {
+    let pollQuery = "SELECT GuestList.UserID, GuestList.FirstName, GuestList.LastName , Poll.PollID, Poll.Question1, Poll.Question2, Poll.Question4 From GuestList INNER JOIN Poll ON GuestList.UserID = Poll.UserID LIMIT 0, 1000"
+    let connection = connectDatabase();
+    connection.query(pollQuery, (err, result) => {
+        if (err) {
+            res.status(500).json({error: "Server Error"})
+            connection.end()
+        }
+        else {
+            res.status(200).json({polls: result})
+            connection.end()
+        }
+    })
+}
+
+
 module.exports = {
     connectDatabase,
     retrieveGuestlist,
     checkRsvp,
-    postPollResults
+    postPollResults,
+    getPollResults
 }

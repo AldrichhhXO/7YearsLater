@@ -54,11 +54,11 @@
 */
 @media only screen and (min-width: 300px) {
     .Covid-Notice {
-        height: 170px;
+        height: fit-content;
     }
 
     .Covid-Notice p {
-        font-size: 13px;
+        font-size: 10px;
         line-height: 22px;
         text-align: left;
         width: 75%;

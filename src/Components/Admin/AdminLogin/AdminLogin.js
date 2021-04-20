@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 import './AdminLogin.css'
-import instance from '../../../API/Axios'
+import Instance from '../../../API/Axios'
 
 export default class AdminLogin extends Component {
     constructor(props) {
@@ -8,24 +9,42 @@ export default class AdminLogin extends Component {
         this.state = {
             userName: '',
             password: '',
-            message: ''
+            message: '',
+            auth: false,
+            user: []
         }
     }
 
     componentDidMount() {
         document.title = "Reboja | Dorsey - ADMIN"
-        instance.get('/admin')
-            .then(res => this.setState({message: res.data}))
+
     }
 
     updateUserName = (e) => this.setState({userName: e.target.value})
     updatePasswod = (e) => this.setState({password: e.target.value})
     
     handleSubmit() {
-        window.location = "/dashboard"
+        let login = {
+            UserName: this.state.userName,
+            password: this.state.password
+        }
+
+        Instance.post('/admin', login)
+            .then(res => {
+                console.log(res.data)
+                this.setState({auth: true})
+            })
+            .catch(err => console.log(err))
+        
+
     }
 
     render() {
+        if (this.state.auth) return (<Redirect to = {{
+            pathname: '/dashboard',
+            state: {user: this.state.user}
+        }}/>)
+
         return (
             <form className = "Admin-Login-Form" onSubmit = {this.handleSubmit}>
                 <h1>{this.state.message}</h1>

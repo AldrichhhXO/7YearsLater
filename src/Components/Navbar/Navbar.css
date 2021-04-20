@@ -1,0 +1,33 @@
+/* **************************** Navbar ********************* */
+
+.Navbar {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+.Navbar-Link {
+    font-size: 22px;
+    margin: 10px 35px;
+    text-decoration: none;
+    font-family: 'Open sans', sans-serif;
+    color: black;
+    font-weight: bold;
+}
+
+
+.Navbar-Link::after {
+    width: 0%;
+    height: 2px;
+    margin: 3px auto;
+    content: '';
+    display: block;
+    background-color: black;
+    transition: all 0.4s ease-out;
+}
+
+.Navbar-Link:hover::after {
+    width: 70%;
+}
+
