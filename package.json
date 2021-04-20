@@ -1,6 +1,6 @@
 {
   "name": "wedding-app",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "private": true,
   "dependencies": {
     "@emotion/core": "^10.1.1",
@@ -27,7 +27,7 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "pm2 start ecosystem.config.js ",
+    "start": "concurrently npm:build npm:prod",
     "frontend": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -36,7 +36,7 @@
     "devserv": "cd server && npm run dev",
     "production": "concurrently npm:build  npm:devserv",
     "test_prod": "concurrently npm:devserv npm:start",
-    "ree": "cd server && npm run devserv"
+    "prod": "cd Server && npm start"
   },
   "eslintConfig": {
     "extends": [
