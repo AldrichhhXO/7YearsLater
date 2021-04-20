@@ -27,7 +27,8 @@
   },
   "scripts": {
     "start": "npm run prod",
-    "heroku-postbuild": "cd Server && npm install",
+    "heroku-postbuild": " concurrently npm:build npm:backenddeps",
+    "backenddeps": "cd Server && npm install",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
