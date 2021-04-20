@@ -27,7 +27,7 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "npm:prod",
+    "start": "npm run prod",
     "frontend": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
