@@ -9,13 +9,13 @@ import Spinner from '../Spinner/Spinner'
 export default class Questionaire extends Component {
     constructor(props) {
         super(props);
-        try {
+            console.log(props.location.state.users)
             this.state = {
-                users: props.location.state.users,
+                users: props.location.state.users || '',
                 secondUser: false,
-                userName: props.location.state.users[0].FirstName, 
-                userName2: props.location.state.users[1].FirstName || null,
-                userID: [ props.location.state.users[0].UserID ], 
+                userName: props.location.state.users[0].FirstName || '', 
+                userName2: props.location.state.users[1].FirstName || '',
+                userID: [ props.location.state.users[0].UserID ] || [], 
                 chosen: false, // For the userModal
                 answer1: '',
                 answer2: '',
@@ -24,11 +24,6 @@ export default class Questionaire extends Component {
                 success: false,
                 num: 0
             }
-        }
-        catch {
-            window.location = "/rsvp"
-        }
-
     }
 
     componentDidMount() {
@@ -45,7 +40,7 @@ export default class Questionaire extends Component {
             text: this.state.text,
         }
         
-        Instance.post('/rsvp/qa', body)
+        Instance.post('/api/rsvp/qa', body)
             .then(res => {
                 this.setState({success: true})
             })
@@ -115,6 +110,3 @@ export default class Questionaire extends Component {
         )   
     }
 }
-/*
-
-*/

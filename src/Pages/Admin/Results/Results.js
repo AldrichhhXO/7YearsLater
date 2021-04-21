@@ -11,17 +11,21 @@ export default class Results extends Component {
         super(props);
         this.state = {
             polls: []
-
         }
+
+        document.title = "7YearsLater | RSVP Results"
+        Instance.get('/api/u/results')
+            .then( (res) => {
+                console.log(res.data)
+                this.setState({polls: res.data.polls})
+            })
+            .catch(err => {
+                
+            })
     }
 
     componentDidMount() {
-        document.title = "7YearsLater | RSVP Results"
-        Instance.get('/results')
-            .then(res => {
-                this.setState({polls: res.data.polls})
-            })
-            .catch()
+
     }
 
     render() {

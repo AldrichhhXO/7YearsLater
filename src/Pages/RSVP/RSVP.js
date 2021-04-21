@@ -10,7 +10,6 @@ import './RSVP.css'
 export default class RSVP extends Component {
     constructor(props) {
         super(props);
-        console.log("props", props)
         this.state = {
             firstName: '',
             lastName: '',
@@ -26,13 +25,13 @@ export default class RSVP extends Component {
     updateEmail = (e) => this.setState({email: e.target.value})
 
     checkForRsvp = (body) => {
-        Instance.post('/rsvp', body)
+        Instance.post('/api/rsvp', body)
         .then(res => {
             let usersArray = []
             for (let i = 0; i < res.data.length; i++) {
                 usersArray.push(res.data[i])
             }
-             this.setState({users: usersArray, verified: true})
+            this.setState({users: usersArray, verified: true})
         })
         .catch(err => {
             this.setState({error: true})

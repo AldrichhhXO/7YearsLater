@@ -10,34 +10,20 @@ export default class GuestList extends Component {
         this.state = {
             guestlist: [],
             originalGuestList: [],
-
         }
     }
 
 
     componentDidMount() {
-        Instance.get('/guestlist')
+        Instance.get('/api/u/guestlist')
             .then(res => {
                 this.setState({guestlist: res.data.guestlist})
             })
             .catch()
     }
-
-    filterSearch() {
-
-    }
-
-    toggleFilter(e) {
-        e.preventDefault()
-        e.target.classList.toggle("Selected-Filter")
-    }
     
     render() {
-
         let guests = this.state.guestlist.map((guest) => {
-            let plusID = guest.PlusOne
-
-
             return (                       
             <div className = "GuestList-Guest">
                 <div className = "General-Font">{guest.FirstName} {guest.LastName}</div>
@@ -51,28 +37,12 @@ export default class GuestList extends Component {
                 <Navbar />
 
                 <div className = "GuestList-Container">
-                    <p>{guests.length} Going</p>
+                    <p>{ guests.length > 0 ? guests.length : "IDK"} Going</p>
                     <div className = "GuestList-Grid">
                         <div className = "GuestList-Header General-Font"><strong><u>Name</u></strong></div>
                         <div className = "GuestList-Header General-Font"><strong><u>Email</u></strong></div>
                         <div className = "GuestList-Header General-Font"><strong><u>Plus One</u></strong></div>
-                        {guests}
-
-                        {/*
-
-                        <div className = "GuestList-Guest">
-                            <div className = "General-Font">Aldrich Reboja</div>
-                            <div className = "General-Font">Aktreboja@gmail.com</div>
-                            <div className = "General-Font">Stephanie Chavez</div>
-                        </div>
-
-                        <div className = "GuestList-Guest">
-                            <div className = "General-Font">Aldrich Reboja</div>
-                            <div className = "General-Font">Aktreboja@gmail.com</div>
-                            <div className = "General-Font">Stephanie Chavez</div>
-                        </div>
-                        */}
-
+                        {guests !== null ?guests : null}
                     </div>
                 </div>
             </div>

@@ -32,6 +32,7 @@ router.post('/admin', (req, res) => {
 
 router.get('/guestlist', (req, res) => {
     return mysql.retrieveGuestlist(res);
+
 })
 
 

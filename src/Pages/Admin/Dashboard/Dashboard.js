@@ -3,7 +3,6 @@ import './Dashboard.css'
 import Instance from '../../../API/Axios'
 import Guest from '../../../Components/Guest/Guest'
 import Navbar from '../../../Components/Navbar/Navbar'
-import { Link } from 'react-router-dom'
 
 export default class Dashboard extends React.Component {
     constructor(props) {
@@ -13,26 +12,29 @@ export default class Dashboard extends React.Component {
             acceptedGuests: [],
             needToRespond: []
         }
+
+        Instance.get('/api/u/dashboard')
+        .then(res => {
+            this.setState({guestlist: res.data.guestlist})
+            let guests = this.state.guestlist 
+            let accepted = []
+            let required = []
+            for (let i = 0; i < guests.length; i++) {
+                if (guests[i].Rsvp === 0) required.push(guests[i])
+                else accepted.push(guests[i])
+            }
+
+            this.setState({acceptedGuests: accepted})
+            this.setState({needToRespond: required})
+        })
+        .catch(err => {
+
+        })
     }
 
 
     componentDidMount() {
-        Instance.get('/dashboard')
-            .then(res => {
-                this.setState({guestlist: res.data.guestlist})
-                let guests = this.state.guestlist 
-                let accepted = []
-                let required = []
-                for (let i = 0; i < guests.length; i++) {
-                    if (guests[i].Rsvp === 0) required.push(guests[i])
-                    else accepted.push(guests[i])
-                }
 
-                this.setState({acceptedGuests: accepted, needToRespond: required})
-            })
-            .catch(err => {
-
-            })
     }
 
     render() {
@@ -51,7 +53,7 @@ export default class Dashboard extends React.Component {
                         <h1 className = "Guests-Container-Header">Accepted</h1>
                         <p className = "Guests-Container-Counter">{this.state.acceptedGuests.length} guests</p>
                         <div className = "Accepted-Guests">
-                            {this.state.acceptedGuests ? acceptedGuests : null}
+                            {  acceptedGuests}
                         </div>
                     </div>
 
