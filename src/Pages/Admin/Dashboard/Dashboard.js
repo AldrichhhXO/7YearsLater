@@ -20,7 +20,7 @@ export default class Dashboard extends React.Component {
         Instance.get('/dashboard')
             .then(res => {
                 this.setState({guestlist: res.data.guestlist})
-                let guests = this.state.guestlist
+                let guests = this.state.guestlist 
                 let accepted = []
                 let required = []
                 for (let i = 0; i < guests.length; i++) {
@@ -37,7 +37,6 @@ export default class Dashboard extends React.Component {
 
     render() {
         document.title = "Reboja | Dorsey - Dashboard"
-
         let guestlist = this.state.guestlist.map((guest) => { return <Guest firstName = {guest.FirstName} lastName = {guest.LastName} /> })
         let acceptedGuests = this.state.acceptedGuests.map((guest) => { return <Guest firstName = {guest.FirstName} lastName = {guest.LastName} /> })
         let pendingGuests = this.state.needToRespond.map((guest) => { return <Guest firstName = {guest.FirstName} lastName = {guest.LastName} /> })
@@ -52,7 +51,7 @@ export default class Dashboard extends React.Component {
                         <h1 className = "Guests-Container-Header">Accepted</h1>
                         <p className = "Guests-Container-Counter">{this.state.acceptedGuests.length} guests</p>
                         <div className = "Accepted-Guests">
-                            {acceptedGuests}
+                            {this.state.acceptedGuests ? acceptedGuests : null}
                         </div>
                     </div>
 
@@ -67,25 +66,6 @@ export default class Dashboard extends React.Component {
 
                 </div>
 
-
-
-
-
-                {/*
-                <div className = "Notification-Center">
-                    <NotificationContainer />
-                </div>
-
-
-                                        <h1>Guests who still need to RSVP</h1>
-                    <div className = "Dashboard-Stats-Container">
-                        {pendingGuests}
-                    </div>
-                    <div>
-                        <p>20 guests still need to reply</p>
-                    </div>
-
-                */}
             </div>
         )
     }
