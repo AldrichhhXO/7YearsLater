@@ -9,13 +9,13 @@ import Spinner from '../Spinner/Spinner'
 export default class Questionaire extends Component {
     constructor(props) {
         super(props);
-            console.log(props.location.state.users)
+        try{
             this.state = {
-                users: props.location.state.users || '',
+                users: this.props.location.state.users,
                 secondUser: false,
-                userName: props.location.state.users[0].FirstName || '', 
-                userName2: props.location.state.users[1].FirstName || '',
-                userID: [ props.location.state.users[0].UserID ] || [], 
+                userName: this.props.location.state.users[0].FirstName, 
+                userName2: this.props.location.state.users[1].FirstName || '',
+                userID: [ this.props.location.state.users[0].UserID ] || [], 
                 chosen: false, // For the userModal
                 answer1: '',
                 answer2: '',
@@ -24,6 +24,24 @@ export default class Questionaire extends Component {
                 success: false,
                 num: 0
             }
+        }
+        catch {
+            this.state = {
+                users: this.props.location.state.users,
+                secondUser: false,
+                userName: this.props.location.state.users[0].FirstName, 
+                userName2: '',
+                userID: [ this.props.location.state.users[0].UserID ], 
+                chosen: false, // For the userModal
+                answer1: '',
+                answer2: '',
+                answer3: '',
+                text: '',
+                success: false,
+                num: 0
+            }
+        }
+
     }
 
     componentDidMount() {

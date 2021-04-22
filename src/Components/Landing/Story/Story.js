@@ -15,6 +15,10 @@ export default function Story() {
             <p className = "Story-Text">{storyText2}</p>
             <br />
             <p className = "Story-Text">{storyText3}</p>
+            <br />
+            <p className = "Story-Text">{storyText4}</p>
+            <br />
+            <p className = "Story-Text">{storyText5}</p>
             <div className = "Story-Image"></div>
         </div>
     )
@@ -25,9 +29,12 @@ const storyText = "During a hot August evening, we were standing off to the side
 
 
 
-const storyText2= "  Anthony stood behind me, arms wrapped tightly across my chest.  Despite the rowdy & energized crowd, his warmth & tight grip made me feel safe.  I was flooded with euphoria.  He kissed me gently, from forehead to temple.  “You know I love you, right?”"
+const storyText2= "  Anthony stood behind me, arms wrapped tightly across my chest.  Despite the rowdy & energized crowd, his warmth & tight grip made me feel safe.  I was flooded with euphoria."
 
-const storyText3 = " I looked up at him bursting in laughter, thinking to myself, FINALLY! " +
-"I’ve loved him since our college days, although I made sure not to be the first one to admit it." +
-' "I love you too, baby"'
+const storyText3 = "He kissed me gently, from forehead to temple.  “You know I love you, right?”"
+
+const storyText4 = " I looked up at him bursting in laughter, thinking to myself, FINALLY! " +
+"I’ve loved him since our college days, although I made sure not to be the first one to admit it."
+
+const storyText5 = "I love you too, baby"
 

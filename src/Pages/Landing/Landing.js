@@ -82,6 +82,8 @@ export default function Landing() {
                 <p style = {{width: '80%', lineHeight: '30px', fontFamily: 'Open sans, sans serif',  textIndent: "20px", marginBottom: '100px'}}>Your love, laughter, & company on our wedding day is the greatest gift of all that you could give us.  No gifts are needed or expected.</p>
                 <CovidInformation />
                 <QA />  
+
+                <p className = "Section-Text" style = {{marginTop: '50px', lineHeight: '25px'}}>Finally - thank you for your ongoing love & support!  We are so excited to share this day with you & look forward to dancing the night away with all of our favorite people!</p>
                 <Credits />             
             </div>
         </div>

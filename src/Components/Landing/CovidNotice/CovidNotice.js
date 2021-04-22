@@ -6,7 +6,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 export default function CovidNotice() {
     useEffect(() => {
-        let timer = setTimeout(() => { document.getElementsByClassName("Covid-Notice")[0].getElementsByTagName("p")[0].classList.add("Message-Hide"); }, 10000);
+        let timer = setTimeout(() => { document.getElementsByClassName("Covid-Notice")[0].getElementsByTagName("p")[0].classList.add("Message-Hide"); }, 15000);
         return function cleanup() {
             clearTimeout(timer)
         }
