@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Spinner from '../Spinner/Spinner'
 
 import CovidNotice from '../../Components/Landing/CovidNotice/CovidNotice'
@@ -55,7 +55,7 @@ export default function Landing() {
                 <MenuBar />
                 <Carousel />
             </div>
-            <div className = "Right-Section">
+            <div className = "Right-Section" id ="right-section">
                 <EventSummary handler = {closeTimer}/>
                 <Story />
                 <div className ="About" id = "about">
@@ -83,7 +83,7 @@ export default function Landing() {
                 <CovidInformation />
                 <QA />  
 
-                <p className = "Section-Text" style = {{marginTop: '50px', lineHeight: '25px'}}>Finally - thank you for your ongoing love & support!  We are so excited to share this day with you & look forward to dancing the night away with all of our favorite people!</p>
+                <p className = "Section-Text" style = {{marginTop: '50px', lineHeight: '25px'}}><i>Finally - thank you for your ongoing love & support!  We are so excited to share this day with you & look forward to dancing the night away with all of our favorite people!</i></p>
                 <Credits />             
             </div>
         </div>

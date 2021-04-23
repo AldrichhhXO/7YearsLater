@@ -1,14 +1,11 @@
 .Carousel {
-    
     height: 100vh;
-
     top: 0px;
 }
 
 .Time-Text {
     position: absolute;
     z-index: 1;
-    
 }
 
 .Right-Section {
@@ -22,9 +19,7 @@
     justify-content: center;
 }
 
-
 .Location {
-
     font-size: 32px;
     width: 80%;
     margin: 0 auto;
@@ -90,7 +85,7 @@
 
 
 
-@media only screen and (min-width: 300px) {
+@media only screen and (min-width: 250px) {
     .Carousel {
         width: 100%;
     }

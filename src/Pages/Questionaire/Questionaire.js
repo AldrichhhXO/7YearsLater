@@ -6,27 +6,16 @@ import Instance from '../../API/Axios'
 import { Redirect } from 'react-router-dom'
 import Spinner from '../Spinner/Spinner'
 
+/**
+ * @name Questionaire Page
+ * @description Page that handles the RSVP questions for the guest
+ */
 export default class Questionaire extends Component {
     constructor(props) {
         super(props);
-        try{
+        try {
             this.state = {
-                users: this.props.location.state.users,
-                secondUser: false,
-                userName: this.props.location.state.users[0].FirstName, 
-                userName2: this.props.location.state.users[1].FirstName || '',
-                userID: [ this.props.location.state.users[0].UserID ] || [], 
-                chosen: false, // For the userModal
-                answer1: '',
-                answer2: '',
-                answer3: '',
-                text: '',
-                success: false,
-                num: 0
-            }
-        }
-        catch {
-            this.state = {
+                
                 users: this.props.location.state.users,
                 secondUser: false,
                 userName: this.props.location.state.users[0].FirstName, 
@@ -39,8 +28,34 @@ export default class Questionaire extends Component {
                 text: '',
                 success: false,
                 num: 0
+                
             }
+
+            let body = this.state.userID[0]
+
+            
+            Instance.get(`/api/rsvp/qa/${body}`)
+                .then(res => {
+                    
+                    if (res.data.user.length > 0 ) {
+                        this.state.users.push(res.data.user[0])
+                        this.setState({userName2: res.data.user[0].FirstName})
+                    }
+
+                    
+                    
+                    this.forceUpdate()
+                })
+                .catch(err => {
+    
+                })
+                
+    
         }
+        catch {
+            window.location = "/rsvp"
+        }
+        
 
     }
 
@@ -69,11 +84,10 @@ export default class Questionaire extends Component {
     
     selectGuest = (e) => {
         e.preventDefault()
-        let button = e.target.classList.toggle("Selected")
         let array = this.state.userID
         let contains = false;
         for (let i = 0; i < array.length; i++) {
-            if (array[i] == e.target.id) contains = true;
+            if (array[i] === e.target.id) contains = true;
         }
         if (contains) {
             array.pop()
@@ -103,7 +117,7 @@ export default class Questionaire extends Component {
         return (
             <div className = "Questionaire-Container">
                 <Spinner welcome = "Choose your Liquor" />
-                {this.state.chosen || this.state.users.length < 2 ? null : <UserModal mainUser = {this.state.userName} buttonHandler = {this.selectGuest} modalHandler = {this.modalHandler} users = {this.state.users} /> }
+                {  !this.state.chosen && this.state.users.length > 1 ? <UserModal mainUser = {this.state.userName} buttonHandler = {this.selectGuest} modalHandler = {this.modalHandler} users = {this.state.users} /> : null  }
                 <div className = "Left-Image"></div>
                 <div className = "Right-Content">
                     <h1 className = "Questionaire-Greeting">Welcome, {this.state.userName}!</h1>

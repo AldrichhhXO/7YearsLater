@@ -19,9 +19,9 @@ Router.post('/rsvp', (req, res, next) => {
 });
 
 
-Router.post('/rsvp/qa', (req, res) => {
+Router.post('/rsvp/qa/', (req, res) => {
     let { userID, answer1 , answer2, answer3, text } = req.body;
-
+   
     let body = {
         userID,
         answer1,
@@ -34,5 +34,8 @@ Router.post('/rsvp/qa', (req, res) => {
 
 
 
+Router.get('/rsvp/qa/:id', (req, res) => {
+    return mysql.checkPlusOne(req.params.id, res);
+})
 
-module.exports = Router;
+module.exports = Router;    

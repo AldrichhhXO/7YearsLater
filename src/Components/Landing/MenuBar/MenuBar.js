@@ -1,7 +1,33 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './MenuBar.css'
 
 export default function MenuBar() {
+
+
+    useEffect(() => {
+        document.addEventListener('scroll', (e) => {
+            let position = window.scrollY
+            let storyPosition = document.getElementById('story').getBoundingClientRect().top + window.scrollY
+            let bar = document.getElementsByClassName("bar")
+            if ( (storyPosition - position < 0 ) && window.innerWidth < 1200) {
+                for (let i =0 ; i < bar.length ; i++) {
+                    bar[i].classList.add("black")
+                }
+                document.getElementById("menu").classList.add("font-black")
+            }
+            else {
+                for (let i = 0; i < bar.length; i++) {
+                    bar[i].classList.remove("black")
+                }
+                document.getElementById("menu").classList.remove("font-black")
+            }
+        })
+
+
+    })
+
+
+
     function openMenuOptions(e) {
         e.preventDefault()
         let menuOption = document.getElementsByClassName("Menu-Option")
@@ -30,7 +56,7 @@ export default function MenuBar() {
                 <div className = "bar"></div>
                 <div className = "bar"></div>
             </div>
-            <p>Menu</p>
+            <p id = "menu">Menu</p>
         </div>
     )
 }

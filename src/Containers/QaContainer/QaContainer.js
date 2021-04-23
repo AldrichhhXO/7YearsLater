@@ -5,7 +5,7 @@ export default function QaContainer() {
     const questionsList = []
     for (let i = 0; i < questions.length; i++) {
 
-        if (i == 0 ) {
+        if (i === 0 ) {
             questionsList.push(<QaQuestion key ={i} question = {questions[i]} response = {answers[i]}/>);
         }
         else {

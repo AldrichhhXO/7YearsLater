@@ -13,7 +13,7 @@
     float: left;
     width: 61%;
     height: 100vh;
-    background: url(../../images/look.jpeg);
+    background: url(../../images/leave.jpeg);
     background-size: cover;
     background-position: -180px 0px;
 }
@@ -22,7 +22,7 @@
 @media only screen and (min-width: 250px) {
     .Right {
         width: 100%;
-        background: url(../../images/look.jpeg);
+        background: url(../../images/leave.jpeg);
         background-size: cover;
         background-position: -100px 0px;
         opacity: 0.8;

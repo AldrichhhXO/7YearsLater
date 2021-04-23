@@ -1,5 +1,4 @@
 import React from 'react'
-import CenteredLayout from '../../Layout/CenteredLayout/CenteredLayout'
 import './Success.css'
 import Spinner from '../Spinner/Spinner'
 

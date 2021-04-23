@@ -17,11 +17,8 @@ import Error from './Pages/Error/Error'
 import Spinner from './Pages/Spinner/Spinner'
 
 function App(props) {
-
   let check = "RebojaDorsey"
-
   let dashUrl = `/u/${check}/dashboard`
-  let guestUrl = `u/${check}/dashboard`
 
   return (
     <Router>
@@ -30,7 +27,7 @@ function App(props) {
 
         {/** RSVP Route */}
         <Route exact path = "/rsvp" render = {(props) => <RSVP {...props} /> } />
-        <Route exact path = "/rsvp/qa" render = {(props) => <Questionaire {...props}/> } />
+        <Route path = "/rsvp/qa/:id" render = {(props) => <Questionaire {...props}/> } />
         <Route exact path = "/rsvp/success" render = {(props) => <Success {...props}/>} />
 
         {/** Admin Routes */}

@@ -31,7 +31,6 @@ function retrieveGuestlist(res) {
             connection.end()
         }
         else {
-            console.log('GuestList: ', result)
             res.status(200).json({guestlist: result})
             connection.end()
         }
@@ -43,7 +42,7 @@ function retrieveGuestlist(res) {
 function checkRsvp(req, res) {
     let connection = connectDatabase();
     let checkQuery = "SELECT * FROM GuestList WHERE FirstName = ? AND LastName = ? AND Email = ?;"
-    let secondQuery = "SELECT * FROM GuestList WHERE (UserID = ? OR PlusOne = ?) AND Rsvp = 0;"
+    let secondQuery = "SELECT * FROM GuestList WHERE UserID = ? AND Rsvp = 0;"
     connection.query(checkQuery, [req.firstName, req.lastName, req.email], (error, result, fields) => {
         if (error) console.log(error.message);
         else {
@@ -51,17 +50,30 @@ function checkRsvp(req, res) {
                 res.status(308).json({message: "Invalid Credentials"});
             }
             else {
-                connection.query(secondQuery, [result[0].UserID, result[0].UserID], (err, result, fields) => {
-                    if (err) console.log(err.message)
-                    else {
-                        console.log(result)
-                        res.status(201).json(result)
-                    }
-                })
+                console.log(result)
+                res.status(201).json(result)    
+                }
             }
             connection.end()
+        }) 
+}
+
+function checkPlusOne(req, res) {
+    let connection = connectDatabase()
+    
+    let plusOneQuery = "SELECT * from GuestList WHERE PlusOne = ?;"
+
+    connection.query(plusOneQuery, [req], (err, result) => {
+        if (err) {
+            console.log(err)
+            res.status(500).json({error: 'error'}) 
         }
-    }) 
+        else {
+            console.log("PlusOne", result)
+            res.status(200).json({user: result})
+        }
+        connection.end()
+    })
 }
 
 
@@ -136,6 +148,7 @@ module.exports = {
     connectDatabase,
     retrieveGuestlist,
     checkRsvp,
+    checkPlusOne,
     postPollResults,
     getPollResults
 }

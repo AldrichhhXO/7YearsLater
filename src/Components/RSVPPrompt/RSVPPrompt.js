@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react'
-import { Redirect } from 'react-router-dom'
-import Instance from '../../API/Axios'
+import React from 'react'
 import './RSVPPrompt.css'
 
 export default function RSVP_Prompt(props) {

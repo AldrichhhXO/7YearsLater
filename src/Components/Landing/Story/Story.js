@@ -36,5 +36,5 @@ const storyText3 = "He kissed me gently, from forehead to temple.  “You know I
 const storyText4 = " I looked up at him bursting in laughter, thinking to myself, FINALLY! " +
 "I’ve loved him since our college days, although I made sure not to be the first one to admit it."
 
-const storyText5 = "I love you too, baby"
+const storyText5 = '"I love you too, baby."'
 

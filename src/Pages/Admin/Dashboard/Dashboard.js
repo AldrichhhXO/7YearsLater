@@ -39,7 +39,6 @@ export default class Dashboard extends React.Component {
 
     render() {
         document.title = "Reboja | Dorsey - Dashboard"
-        let guestlist = this.state.guestlist.map((guest) => { return <Guest firstName = {guest.FirstName} lastName = {guest.LastName} /> })
         let acceptedGuests = this.state.acceptedGuests.map((guest) => { return <Guest firstName = {guest.FirstName} lastName = {guest.LastName} /> })
         let pendingGuests = this.state.needToRespond.map((guest) => { return <Guest firstName = {guest.FirstName} lastName = {guest.LastName} /> })
 

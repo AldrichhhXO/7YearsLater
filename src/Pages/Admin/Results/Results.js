@@ -3,7 +3,6 @@ import Instance from '../../../API/Axios'
 import './Results.css'
 
 import Navbar from '../../../Components/Navbar/Navbar'
-import Poll from '../../../Components/Poll/Poll';
 
 export default class Results extends Component {
 

@@ -9,7 +9,7 @@
     justify-content: space-between;
     align-items: center;
     animation: closeMenu 2s forwards;
-    animation-delay: 16s;
+    animation-delay: 10s;
 }
 
 .Covid-Notice p {
@@ -52,7 +52,7 @@
 /*
     Mobile Devices
 */
-@media only screen and (min-width: 300px) {
+@media only screen and (min-width: 250px) {
     .Covid-Notice {
         height: fit-content;
     }
@@ -62,6 +62,11 @@
         line-height: 22px;
         text-align: left;
         width: 75%;
+    }
+
+
+    .Covid-Notice-Close {
+        margin-right: 20px;
     }
 }
 

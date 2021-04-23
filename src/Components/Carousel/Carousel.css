@@ -3,7 +3,9 @@
     height: 100vh;
 }
 
-
+.yeet {
+    width: 50%;
+}
 
 .Image1 {
     background: url(../../images/Carousel/image1.jpeg);
@@ -50,4 +52,38 @@
     background-size: cover;
     background-position: center;
     
+}
+
+
+
+@media only screen and (min-width: 250px) {
+    .Image2 {
+       
+        background-position: -700px 0px;
+       
+        
+    }
+
+    .Image3 {
+
+    }
+
+
+    .Image5 {
+        background-position: -700px 0px;
+    }
+}
+
+
+@media only screen and (min-width: 600px) {
+    .Image2, .Image5 {
+        background-position: -550px 0px;
+       
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .Image2, .Image5 {
+        background-position: center;
+    }
 }

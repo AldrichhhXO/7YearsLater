@@ -27,11 +27,9 @@ export default class RSVP extends Component {
     checkForRsvp = (body) => {
         Instance.post('/api/rsvp', body)
         .then(res => {
-            let usersArray = []
-            for (let i = 0; i < res.data.length; i++) {
-                usersArray.push(res.data[i])
-            }
-            this.setState({users: usersArray, verified: true})
+            let userArray = [res.data[0]]
+            console.log(res.data[0])
+            this.setState({users: userArray, verified: true})
         })
         .catch(err => {
             this.setState({error: true})
@@ -55,7 +53,7 @@ export default class RSVP extends Component {
         document.title = "7YearsLater | RSVP"
         if (this.state.verified) return (
             <Redirect  push to = {{ 
-                pathname: '/rsvp/qa', 
+                pathname: `/rsvp/qa/${this.state.users[0].UserID}`, 
                 state: {users: this.state.users }}} 
             />)
         else if (this.state.error) return (

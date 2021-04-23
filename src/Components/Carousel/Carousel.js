@@ -9,13 +9,12 @@ SwiperCore.use([Autoplay]);
 export default function Carousel() {
     return (
         <Swiper
-
             preloadImages = {true}
             slidesPerView = {1}
             loop = {true}
             autoplay = {true}
             speed = {1725}
-            style = {{transitionDelay: '5000ms', position: 'relative'}}
+            style = {{transitionDelay: '5000ms', position: 'relative', width: '100%'}}
 >
             <SwiperSlide><div className = "Slide-Image Image1"></div></SwiperSlide>
             <SwiperSlide><div className = "Slide-Image Image2"></div></SwiperSlide>

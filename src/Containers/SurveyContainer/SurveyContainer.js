@@ -1,9 +1,8 @@
 import React, { Component, useState } from 'react'
- import Instance from '../../API/Axios'
 import './SurveyContainer.css'
 import Poll from '../../Components/Poll/Poll'
 import AnswerContainer from '../../Containers/AnswerContainer/AnswerContainer'
-import { Redirect } from 'react-router-dom'
+
 
 /**
  * @name SurveyContainer
@@ -14,7 +13,6 @@ import { Redirect } from 'react-router-dom'
 export default function SurveyContainer(props) {
     let answers1 = ["Joyfully Accept", "Regretfully Decline"]
     let answers2 = ["Chicken", "Salmon", "Vegetarian"]
-    let answers3 = ["Yes", "No"] 
     let question1 = "Will you be able to join us at our wedding? Kindly reply by the date of June 21, 2021."
     let question2 = `What entree would you prefer at our wedding, ${props.user1}?`
     let question3 = `What entree would you prefer at our wedding, ${props.user2}?`
