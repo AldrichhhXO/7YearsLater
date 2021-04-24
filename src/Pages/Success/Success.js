@@ -3,7 +3,7 @@ import './Success.css'
 import Spinner from '../Spinner/Spinner'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapMarkerAlt, faConciergeBell } from '@fortawesome/free-solid-svg-icons'
+import { faMapMarkerAlt, faConciergeBell, faHome } from '@fortawesome/free-solid-svg-icons'
 
 /**
  * Note: Different message if the RSVP is declined.
@@ -29,6 +29,11 @@ export default function Success(props) {
         window.open(chapel, '_blank').focus();
     }
 
+
+    const returnToHome = () => {
+        window.location = "/"
+    }
+
     document.title = "Reboja | Dorsey - RSVP Confirmation"
         
 
@@ -44,15 +49,16 @@ export default function Success(props) {
                         <FontAwesomeIcon icon = {faMapMarkerAlt} size="3x" color="rgb(50,50,50)" className = "Activity-Icon"/>
                         <p className = "General-Font Activity">View Directions</p>
                     </div>
-
                     <div className = "Activity-Component" onClick = {openHotelSite}>
                         <FontAwesomeIcon icon = {faConciergeBell} size="3x" color="rgb(50,50,50)" className="Actvity-Icon"/>
                         <p className = "General-Font Activity">Book Hotel</p>
-                    </div>              
+                    </div>
+                    <div className = "Activity-Component" onClick = {returnToHome}>
+                        <FontAwesomeIcon icon = {faHome} size="3x" color="rgb(50,50,50)" className="Actvity-Icon"/>
+                        <p className = "General-Font Activity">Return to home</p>
+                    </div>           
                 </div>
             </div>
-
-
         </div>
     )
 }

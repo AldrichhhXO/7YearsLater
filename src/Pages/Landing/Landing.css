@@ -98,6 +98,10 @@
         width: 75%;
         height: fit-content;
     }
+
+    .Gift-Text {
+        font-size: 14px;
+    }
 }
 
 @media only screen and (min-width: 600px) {
@@ -122,5 +126,9 @@
 
     .Video-Placeholder {
         width: 79%;
+    }
+
+    .Gift-Text {
+        font-size: 17px;
     }
 }

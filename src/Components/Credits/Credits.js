@@ -11,9 +11,9 @@ export default function Credits() {
             <h1 className = "Credits-User">Aldrich Reboja</h1>
             <hr style = {{marginBottom: '50px', width: '50%', maxWidth: '300px'}}/>
             <div className = "Credits-Contacts">
-                <a className = "Contact" href = "https://www.linkedin.com/in/aktreboja/" target = "_blank" rel = "noopener noreferrer"><FontAwesomeIcon icon = {faLinkedin} size = "3x"/></a>
-                <a className = "Contact" href = "https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTMXgGpdwsCqrBvcwQrvNFkgWzKlDKBltfxGXzPjsFsStzgswfjCkCqRwsJcsVctWnWJfg" target = "_blank" rel = "noopener noreferrer"><FontAwesomeIcon icon = {faEnvelope}  size = "3x"/></a>
-                <a className = "Contact" href = "https://www.instagram.com/AldrichhhXO_" target = "_blank" rel = "noopener noreferrer"><FontAwesomeIcon icon = {faInstagramSquare} size = "3x"/></a>
+                <a className = "Contact" href = "https://www.linkedin.com/in/aktreboja/" target = "_blank" rel = "noopener noreferrer"><FontAwesomeIcon icon = {faLinkedin} size = "2x"/></a>
+                <a className = "Contact" href = "https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTMXgGpdwsCqrBvcwQrvNFkgWzKlDKBltfxGXzPjsFsStzgswfjCkCqRwsJcsVctWnWJfg" target = "_blank" rel = "noopener noreferrer"><FontAwesomeIcon icon = {faEnvelope}  size = "2x"/></a>
+                <a className = "Contact" href = "https://www.instagram.com/AldrichhhXO_" target = "_blank" rel = "noopener noreferrer"><FontAwesomeIcon icon = {faInstagramSquare} size = "2x"/></a>
             </div>
         </div>
     )

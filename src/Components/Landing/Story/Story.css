@@ -57,11 +57,22 @@
         width: 300px;
         height: 250px;
     }
+
+    .Story-Text {
+        width: 80%;
+    }
 }
 
 
 @media only screen and (min-width: 450px) {
     .Story-Image {
         
+    }
+}
+
+
+@media only screen and (min-width: 700px) {
+    .Story-Text {
+        width: 70%;
     }
 }

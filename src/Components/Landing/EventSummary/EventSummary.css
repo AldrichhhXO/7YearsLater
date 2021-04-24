@@ -37,6 +37,22 @@
         width: 90%;
         height: 480px;
     }
+
+    .Couple {
+        font-size: 24px
+    }
+
+    .Location {
+        font-size: 16px;
+    }
+
+    .Date {
+        font-size: 16px;
+    }
+
+    .Time {
+        font-size: 16px;
+    }
 }
 
 
@@ -44,6 +60,20 @@
     .RSVP-Container {
         height: 600px;
         width: 85%;
+    }
+
+
+    .Couple {
+        font-size: 2em;
+    }
+
+    .Location {
+        font-size: 28px;
+    }
+
+
+    .Date, .Time {
+        font-size: 24px;
     }
 }
 

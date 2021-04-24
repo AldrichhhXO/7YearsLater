@@ -37,7 +37,7 @@ export default function Schedule() {
                     </div>
                 </div>
 
-                <p>Dress code: Semi-formal or Dressy Casual.</p>
+                <p style = {{marginBottom: '-20px'}}>Dress code: Semi-formal or Dressy Casual.</p>
                 <p className = "Section-Text" style = {{margin: 'auto', width: '95%', marginTop: '50px', marginBottom: '50px'}}><i>{text}</i></p>
             </div>
         </div>

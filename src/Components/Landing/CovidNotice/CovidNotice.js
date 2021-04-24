@@ -5,12 +5,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 export default function CovidNotice() {
+
+    /*
     useEffect(() => {
         let timer = setTimeout(() => { document.getElementsByClassName("Covid-Notice")[0].getElementsByTagName("p")[0].classList.add("Message-Hide"); }, 9000);
         return function cleanup() {
             clearTimeout(timer)
         }
     })
+    */
 
     function closeCovidNotice(e) {
         document.getElementsByClassName("Covid-Notice")[0].getElementsByTagName("p")[0].classList.toggle("Message-Hide")

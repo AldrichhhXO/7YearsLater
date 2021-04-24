@@ -13,18 +13,18 @@
     float: left;
     width: 61%;
     height: 100vh;
-    background: url(../../images/leave.jpeg);
+    background: url(../../images/dance.jpeg);
     background-size: cover;
-    background-position: -180px 0px;
+    background-position: center;
 }
 
 
 @media only screen and (min-width: 250px) {
     .Right {
         width: 100%;
-        background: url(../../images/leave.jpeg);
+        background: url(../../images/dance.jpeg);
         background-size: cover;
-        background-position: -100px 0px;
+        background-position: center;
         opacity: 0.8;
     }
 

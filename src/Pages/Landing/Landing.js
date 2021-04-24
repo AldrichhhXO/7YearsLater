@@ -79,7 +79,8 @@ export default function Landing() {
                 <br id = 'gifts'/>
                 <h1 className = "Section-Header">Gifts</h1>
                 <hr className = "Section-Border" />
-                <p style = {{width: '80%', lineHeight: '30px', fontFamily: 'Open sans, sans serif',  textIndent: "20px", marginBottom: '100px'}}>Your love, laughter, & company on our wedding day is the greatest gift of all that you could give us.  No gifts are needed or expected.</p>
+                <p className = "Gift-Text" style = {{width: '80%', lineHeight: '30px', fontFamily: '"Open Sans", sans serif',  textIndent: "20px", marginBottom: '50px'}}>Your love, laughter, & company on our wedding day is the greatest gift of all that you could give us.  No gifts are needed or expected.</p>
+                <p className = "Gift-Text" style = {{width: '80%', lineHeight: '30px', fontFamily: 'Open sans, sans serif',  textIndent: "20px", marginBottom: '100px'}}>However, a wishing well will be available for those who want to wish us some wisdom for the future</p>
                 <CovidInformation />
                 <QA />  
 
