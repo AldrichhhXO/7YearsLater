@@ -24,4 +24,6 @@ app.use('/api/u', AdminRouter);
 
 app.get('/*', ( req , res ) => res.sendFile(path.join(buildPath, "index.html")));
 
+
+
 module.exports = app;

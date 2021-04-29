@@ -14,8 +14,7 @@ export default class Questionaire extends Component {
     constructor(props) {
         super(props);
         try {
-            this.state = {
-                
+            this.state = {  
                 users: this.props.location.state.users,
                 secondUser: false,
                 userName: this.props.location.state.users[0].FirstName, 
@@ -27,23 +26,17 @@ export default class Questionaire extends Component {
                 answer3: '',
                 text: '',
                 success: false,
-                num: 0
-                
+                num: 0 
             }
 
             let body = this.state.userID[0]
-
-            
             Instance.get(`/api/rsvp/qa/${body}`)
                 .then(res => {
                     
                     if (res.data.user.length > 0 ) {
                         this.state.users.push(res.data.user[0])
                         this.setState({userName2: res.data.user[0].FirstName})
-                    }
-
-                    
-                    
+                    }                    
                     this.forceUpdate()
                 })
                 .catch(err => {

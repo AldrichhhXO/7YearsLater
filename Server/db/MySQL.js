@@ -42,7 +42,7 @@ function retrieveGuestlist(res) {
 function checkRsvp(req, res) {
     let connection = connectDatabase();
     let checkQuery = "SELECT * FROM GuestList WHERE FirstName = ? AND LastName = ? AND Email = ?;"
-    let secondQuery = "SELECT * FROM GuestList WHERE UserID = ? AND Rsvp = 0;"
+   
     connection.query(checkQuery, [req.firstName, req.lastName, req.email], (error, result, fields) => {
         if (error) console.log(error.message);
         else {
@@ -60,9 +60,7 @@ function checkRsvp(req, res) {
 
 function checkPlusOne(req, res) {
     let connection = connectDatabase()
-    
     let plusOneQuery = "SELECT * from GuestList WHERE PlusOne = ?;"
-
     connection.query(plusOneQuery, [req], (err, result) => {
         if (err) {
             console.log(err)

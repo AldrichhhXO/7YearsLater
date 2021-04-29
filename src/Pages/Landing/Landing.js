@@ -79,13 +79,25 @@ export default function Landing() {
                 <br id = 'gifts'/>
                 <h1 className = "Section-Header">Gifts</h1>
                 <hr className = "Section-Border" />
-                <p className = "Gift-Text" style = {{width: '80%', lineHeight: '30px', fontFamily: '"Open Sans", sans serif',  textIndent: "20px", marginBottom: '50px'}}>Your love, laughter, & company on our wedding day is the greatest gift of all that you could give us.  No gifts are needed or expected.</p>
-                <p className = "Gift-Text" style = {{width: '80%', lineHeight: '30px', fontFamily: 'Open sans, sans serif',  textIndent: "20px", marginBottom: '100px'}}>However, a wishing well will be available for those who want to wish us some wisdom for the future</p>
+                <p className = "Gift-Text" style = {{width: '80%', lineHeight: '30px', fontFamily: '"Open Sans", sans serif',  textIndent: "20px"}}>Your love, laughter, & company on our wedding day is the greatest gift of all that you could give us.  No gifts are needed or expected.</p>
+                <p className = "Gift-Text" style = {{width: '80%', lineHeight: '30px', fontFamily: 'Open Sans, sans serif',  textIndent: "20px", marginBottom: '100px'}}>However, a wishing well will be available for those who want to wish us some wisdom for the future.</p>
                 <CovidInformation />
                 <QA />  
 
-                <p className = "Section-Text" style = {{marginTop: '50px', lineHeight: '25px'}}><i>Finally - thank you for your ongoing love & support!  We are so excited to share this day with you & look forward to dancing the night away with all of our favorite people!</i></p>
-                <Credits />             
+                <p className = "Section-Text" style = {{marginTop: '50px', lineHeight: '25px', marginBottom: '100px'}}><i>Finally - thank you for your ongoing love & support!  We are so excited to share this day with you & look forward to dancing the night away with all of our favorite people!</i></p>
+
+                <Credits 
+                    creditsText = "Photos and Video by Ian Clariza"
+                    instagramLink = "https://www.instagram.com/eyawnclariza/"
+                    emailLink = "https://mail.google.com/mail/u/0/#inbox?compose=VpCqJVFvvBRnqzxVkvzJfVTXvgvMZWRrDHgFptHLsPGNHsQppxXHXZzLsvnVlxxBTJBNDlB"
+                    website = "http://mainlyvideo.com"
+                />    
+                <Credits 
+                    creditsText = "Website Designed by Aldrich Reboja"
+                    emailLink = "https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTMXgGpdwsCqrBvcwQrvNFkgWzKlDKBltfxGXzPjsFsStzgswfjCkCqRwsJcsVctWnWJfg"
+                    linkedIn = "https://www.linkedin.com/in/aktreboja/" 
+                />  
+         
             </div>
         </div>
     )

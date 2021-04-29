@@ -40,7 +40,7 @@ export default function CovidInformation() {
                     <li>Vomiting</li>
                 </ul>
             
-            <p className = "Section-Text"><i>We greatly appreciate your patience & understanding throughout this entire process!  This is a special time for all of us to celebrate love & enjoy the presence of those we care for the most.  Thus, we do ask for everyone’s consideration & team work during such a challenging time!  Thank you!   </i></p>
+            <p className = "Section-Text" style = {{marginBottom: '100px'}}><i>We greatly appreciate your patience & understanding throughout this entire process!  This is a special time for all of us to celebrate love & enjoy the presence of those we care for the most.  Thus, we do ask for everyone’s consideration & team work during such a challenging time!  Thank you!   </i></p>
 
             {/*
 

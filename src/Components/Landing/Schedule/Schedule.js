@@ -28,7 +28,7 @@ export default function Schedule() {
                     <p className = "Time-Section"><strong>6pm</strong></p>
                     <div className = "Right-Details">
                         <p><strong><u>Reception</u></strong></p>
-                        <p style = {{fontSize: '22px'}}><strong><i>Hotel Maya, Jardín de Palmeras</i></strong></p>
+                        <p style = {{fontSize: '22px'}}><strong><i>Hotel Maya</i></strong></p>
                        
                         <p>700 Queensway Dr.</p>
                         <p>Long Beach, CA 90802</p>
@@ -37,7 +37,7 @@ export default function Schedule() {
                     </div>
                 </div>
 
-                <p style = {{marginBottom: '-20px'}}>Dress code: Semi-formal or Dressy Casual.</p>
+                <p style = {{marginBottom: '-20px', marginTop: '40px'}}><strong>Dress code: Semi-formal or Dressy Casual. </strong></p>
                 <p className = "Section-Text" style = {{margin: 'auto', width: '95%', marginTop: '50px', marginBottom: '50px'}}><i>{text}</i></p>
             </div>
         </div>

@@ -1,11 +1,27 @@
 .Activity-Container {
-    width: 50%;
+    width: 80%;
     margin-top: 50px;
     display: flex;
     justify-content: space-around;
-
 }
 
+.Success-Container {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Success-Left {
+    float: left;
+    width: 61%;
+    height: 100vh;
+    background: url(../../images/dance.jpeg);
+    background-size: cover;
+    background-position: center;
+}
 
 .Activity-Component {
     display: flex;
@@ -30,4 +46,48 @@
 .Success-Message {
     width: 70%;
     font-family: 20px;
+}
+
+
+
+
+@media only screen and (min-width: 250px) {
+
+    .Activity {
+        font-size: 12px;
+    }
+
+    .Success-Container {
+        width: 90%;
+        height: 70%;
+        max-width: 530px;
+        
+    }
+
+    .Success-Left {
+        width: 0%;
+    }
+}
+
+
+@media only screen and (min-width: 700px) {
+    .Activity{
+        font-size: 16px;
+    }
+}
+
+
+@media only screen and (min-width: 1250px) {
+    .Right {
+        width: 38.7%;
+        background: white;
+    }
+
+    .Success-Left {
+        width: 61%;
+    }
+
+    .Success-Container {
+        width: 100%;
+    }
 }

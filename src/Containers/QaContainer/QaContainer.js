@@ -44,7 +44,7 @@ let answers = [
     "There will be free parking at both ceremony & reception locations.",
     "There will not be a shuttle provided, so please plan accordingly.",
     "Please see our Schedule for the dress code.",
-    "Our wedding ceremony is indoors, but our reception will be outdoors.",
+    "Our wedding ceremony is indoors and our reception will be outdoors.",
     "To preserve the dignity & reverence of the marriage service, please refrain from taking photos/videos during the ceremony.",
     "Please see our COVID-19 information above.",
     "YES!  There is no party without dranks!  Please make arrangements to make it home safe or join our room block at Hotel Maya. ",

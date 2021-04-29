@@ -44,10 +44,10 @@
     background: url(../../../images/festival.jpeg);
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: 45px 0px;
+    background-position: center;
     margin: auto;
     margin-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 75px;
 }
 
 
@@ -74,5 +74,11 @@
 @media only screen and (min-width: 700px) {
     .Story-Text {
         width: 70%;
+    }
+
+    .Story-Image {
+        width: 350px;
+        height: 350px;
+        
     }
 }
