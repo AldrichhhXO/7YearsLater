@@ -1,10 +1,28 @@
 /* **************************** Navbar ********************* */
 
 .Navbar {
-    width: 50%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px auto;
+}
+
+
+.Navbar-Title, .Navbar-Links {
+    
+}
+
+.Navbar-Title {
+    font-size: 35px;
+    cursor: pointer;
+   
+}
+
+.Navbar-Links {
+    width: 100%;
     display: flex;
     justify-content: center;
-    margin: 10px auto;
 }
 
 .Navbar-Link {

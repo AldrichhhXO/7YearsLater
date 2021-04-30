@@ -41,7 +41,7 @@ export default class Results extends Component {
 
         return (
             <div className = "Results-Page">
-                <Navbar />
+                <Navbar title = {true}/>
 
 {/*
                 <div className = "Filters-Container">
@@ -56,10 +56,10 @@ export default class Results extends Component {
                     </div>
 */}
                 <div className = "Results-Container">
-                    <h1>Name</h1>
-                    <h1>Descision</h1>
-                    <h1>Meal Preference</h1>
-                    <h1>Text</h1>
+                    <h1><u>Name</u></h1>
+                    <h1><u>Decision</u></h1>
+                    <h1><u>Meal Preference</u></h1>
+                    <h1><u>Text</u></h1>
                     {polls}
                 </div>
             </div>
