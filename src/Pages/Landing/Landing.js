@@ -107,7 +107,8 @@ export default function Landing() {
                 <Credits 
                     creditsText = "Website Designed by Aldrich Reboja"
                     emailLink = "https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTMXgGpdwsCqrBvcwQrvNFkgWzKlDKBltfxGXzPjsFsStzgswfjCkCqRwsJcsVctWnWJfg"
-                    linkedIn = "https://www.linkedin.com/in/aktreboja/" 
+                    linkedIn = "https://www.linkedin.com/in/aktreboja/"
+                    website = "https://www.aktreboja.com"
                 />  
          
             </div>
