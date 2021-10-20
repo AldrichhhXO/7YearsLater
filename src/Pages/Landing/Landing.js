@@ -28,10 +28,22 @@ export default function Landing() {
         let countdown = new Date("Jul 29, 2021 16:00:00").getTime();
         let now = new Date().getTime();
         let amount = countdown - now;
-        let days = Math.floor(amount/ (1000 * 60 * 60 * 24))
-        let hours = Math.floor((amount % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        let minutes = Math.floor((amount % (1000 * 60 * 60)) / (1000 * 60));
-        let seconds = Math.floor((amount % (1000 * 60)) / 1000);
+        let days, hours, minutes, seconds
+
+        if (amount < 0 ) {
+            days = 0
+            hours = 0 
+            minutes = 0
+            seconds = 0
+        }
+        else {
+            days = Math.floor(amount/ (1000 * 60 * 60 * 24))
+            hours = Math.floor((amount % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            minutes = Math.floor((amount % (1000 * 60 * 60)) / (1000 * 60));
+            seconds = Math.floor((amount % (1000 * 60)) / 1000);
+        }
+
+
         document.getElementsByClassName("Time")[0].innerHTML  = days  + " Days " + hours + " Hrs " + minutes + " Mins " + seconds + " Secs"
     }
 
