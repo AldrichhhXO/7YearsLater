@@ -11,7 +11,7 @@ export default function EventSummary(props) {
                     <p className = "Date">Thursday, July  29, 2021</p>
                     <p className = "Time"></p>
                 </div> 
-                <button onClick = {props.handler} to = "/rsvp" className = "RSVP-Button">RSVP</button>
+                <button disabled aria-disabled onClick = {props.handler} to = "/rsvp" className = "RSVP-Button">RSVP</button>
             </div>
         </div>
     )

@@ -37,14 +37,14 @@ export default function Landing() {
             seconds = 0
         }
         else {
-            days = Math.floor(amount/ (1000 * 60 * 60 * 24))
+            days = Math.floor(amount/ (1000 * 60 * 60 * 24)) 
             hours = Math.floor((amount % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             minutes = Math.floor((amount % (1000 * 60 * 60)) / (1000 * 60));
             seconds = Math.floor((amount % (1000 * 60)) / 1000);
         }
 
 
-        document.getElementsByClassName("Time")[0].innerHTML  = days  + " Days " + hours + " Hrs " + minutes + " Mins " + seconds + " Secs"
+        // document.getElementsByClassName("Time")[0].innerHTML  = days  + " Days " + hours + " Hrs " + minutes + " Mins " + seconds + " Secs"
     }
 
     useEffect(() => {
